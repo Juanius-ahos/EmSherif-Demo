@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations</title>
+  <meta name="description" content="Secure your table at any of our locations worldwide. Experience Lebanese heritage redefined.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="pl" id="pl">
+    <div class="pl__ar">أم شريف</div>
+    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <div class="pl__w">Reservations</div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
+
+  <!-- Custom Cursor -->
+  <div class="crs" id="crs">
+    <div class="crs-d"></div>
+    <div class="crs-r"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/logo-white.png" alt="Logo" class="nav__logo-img">
+    </a>
+    <ul class="nav__links">
+      <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+      <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+      <li><a href="deli.html" class="nav__link">Deli</a></li>
+      <li><a href="locations.html" class="nav__link">Locations</a></li>
+      <li><a href="press.html" class="nav__link">Press</a></li>
+    </ul>
+    <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+    <button class="nav__b" id="burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mov" id="mov">
+    <ul class="mov__links">
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="cafe.html">Cafe</a></li>
+      <li><a href="deli.html">Deli</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="reservation.html" class="btn btn--g">Reserve a Table</a></li>
+    </ul>
+  </div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="ph">
+    <img src="assets/interior-cairo.jpg" alt="Restaurant interior" class="ph__bg" data-p>
+    <div class="ph__g"></div>
+    <div class="ph__ct">
+      <span class="ph__eb" data-ru>Reservations</span>
+      <h1 class="ph__h" data-ru>Reserve Your <em>Experience</em></h1>
+      <p class="ph__sub" data-ru>Secure your table at any of our locations worldwide.</p>
+    </div>
+  </section>
+
+  <!-- ============ RESERVATION FORM ============ -->
+  <section class="sec sec--nv">
+    <div class="wrap">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Reserve</p>
+        <h2 class="sh__h">Book a <em>Table</em></h2>
+      </div>
+
+      <form class="frm" data-ru>
+        <div class="frm__r">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="frm__r">
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input type="date" name="date" required>
+        </div>
+        <div class="frm__r">
+          <select name="time" required>
+            <option value="" disabled selected>Select Time</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="12:30">12:30 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="13:30">1:30 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="14:30">2:30 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="15:30">3:30 PM</option>
+            <option value="16:00">4:00 PM</option>
+            <option value="16:30">4:30 PM</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="17:30">5:30 PM</option>
+            <option value="18:00">6:00 PM</option>
+            <option value="18:30">6:30 PM</option>
+            <option value="19:00">7:00 PM</option>
+            <option value="19:30">7:30 PM</option>
+            <option value="20:00">8:00 PM</option>
+            <option value="20:30">8:30 PM</option>
+            <option value="21:00">9:00 PM</option>
+            <option value="21:30">9:30 PM</option>
+            <option value="22:00">10:00 PM</option>
+          </select>
+          <select name="guests" required>
+            <option value="" disabled selected>Number of Guests</option>
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+            <option value="6">6 Guests</option>
+            <option value="7">7 Guests</option>
+            <option value="8">8 Guests</option>
+            <option value="9">9 Guests</option>
+            <option value="10">10 Guests</option>
+            <option value="11">11 Guests</option>
+            <option value="12">12 Guests</option>
+          </select>
+        </div>
+        <div class="frm__r frm__r--full">
+          <select name="location" required>
+            <option value="" disabled selected>Select Location</option>
+            <optgroup label="Restaurant">
+              <option value="restaurant-downtown-beirut">Downtown Beirut</option>
+              <option value="restaurant-gemmayze-beirut">Gemmayze Beirut</option>
+              <option value="restaurant-katara-doha">Katara Doha</option>
+              <option value="restaurant-harrods-london">Harrods London</option>
+              <option value="restaurant-al-mouj-muscat">Al Mouj Muscat</option>
+              <option value="restaurant-kingdom-centre-riyadh">Kingdom Centre Riyadh</option>
+              <option value="restaurant-downtown-cairo">Downtown Cairo</option>
+            </optgroup>
+            <optgroup label="Café">
+              <option value="cafe-downtown-beirut">Downtown Beirut</option>
+              <option value="cafe-achrafieh-beirut">Achrafieh Beirut</option>
+              <option value="cafe-hamra-beirut">Hamra Beirut</option>
+              <option value="cafe-jounieh-beirut">Jounieh Beirut</option>
+              <option value="cafe-dbayeh-beirut">Dbayeh Beirut</option>
+              <option value="cafe-lusail-doha">Lusail Doha</option>
+              <option value="cafe-msheireb-doha">Msheireb Doha</option>
+              <option value="cafe-mayfair-london">Mayfair London</option>
+              <option value="cafe-knightsbridge-london">Knightsbridge London</option>
+              <option value="cafe-the-wave-muscat">The Wave Muscat</option>
+              <option value="cafe-al-olaya-riyadh">Al Olaya Riyadh</option>
+              <option value="cafe-tahlia-jeddah">Tahlia Jeddah</option>
+              <option value="cafe-zamalek-cairo">Zamalek Cairo</option>
+              <option value="cafe-abdali-amman">Abdali Amman</option>
+              <option value="cafe-symphony-centre-kuwait">Symphony Centre Kuwait</option>
+            </optgroup>
+            <optgroup label="Deli">
+              <option value="deli-harrods-london">Harrods London</option>
+              <option value="deli-downtown-beirut">Downtown Beirut</option>
+              <option value="deli-achrafieh-beirut">Achrafieh Beirut</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="frm__r frm__r--full">
+          <textarea name="requests" placeholder="Special Requests" rows="4"></textarea>
+        </div>
+        <div class="frm__r frm__r--full">
+          <button type="submit" class="btn btn--g">Request Reservation</button>
+        </div>
+        <p class="frm__n">For immediate assistance, please call our reservations team directly.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT INFO ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="g2">
+        <div class="ib" data-ru>
+          <div class="ib__lb">Reservations</div>
+          <div class="ib__v">
+            <h3>General Reservations</h3>
+            <a href="tel:+9611989898">+961 1 989 898</a>
+          </div>
+          <div class="ib__v">
+            <h3>Group Bookings (8+)</h3>
+            <a href="tel:+9611989899">+961 1 989 899</a>
+          </div>
+          <div class="ib__v">
+            <h3>Events &amp; Private Dining</h3>
+            <a href="mailto:events@emsherif.com">events@emsherif.com</a>
+          </div>
+          <div class="ib__v">
+            <h3>Operating Hours</h3>
+            <p>Daily 12:00 PM – 12:00 AM</p>
+          </div>
+        </div>
+        <div class="ib ib--dk" data-ri>
+          <img src="assets/interior-dubai.jpg" alt="Restaurant interior">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="ft">
+    <div class="ft__br">
+      <a href="index.html">
+        <img src="assets/logo-white.png" alt="Logo" class="ft__logo">
+      </a>
+      <p class="ft__tg">Lebanese Heritage, Redefined</p>
+    </div>
+    <div class="ft__cols">
+      <div class="ft__col">
+        <h4 class="ft__ct">Concepts</h4>
+        <ul>
+          <li><a href="restaurant.html">The Restaurant</a></li>
+          <li><a href="cafe.html">The Cafe</a></li>
+          <li><a href="deli.html">The Deli</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Explore</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="press.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Visit</h4>
+        <ul>
+          <li><a href="reservation.html">Reserve</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft__bt">
+      <p>&copy; 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <button class="x" id="lbX" aria-label="Close">&times;</button>
+    <img src="" alt="" class="lb__img" id="lbI">
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

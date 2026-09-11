@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Café — Em Sherif</title>
+  <meta name="description" content="A Parisian-inspired pâtisserie meets the warmth of Lebanese hospitality. Handcrafted pastries, artisanal coffee, and dishes that elevate the ordinary.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="pl" id="pl">
+    <div class="pl__ar">أم شريف</div>
+    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <div class="pl__w">The Café</div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
+
+  <!-- Custom Cursor -->
+  <div class="crs" id="crs">
+    <div class="crs-d"></div>
+    <div class="crs-r"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/logo-white.png" alt="Logo" class="nav__logo-img">
+    </a>
+    <ul class="nav__links">
+      <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+      <li><a href="cafe.html" class="nav__link nav__link--active">Cafe</a></li>
+      <li><a href="deli.html" class="nav__link">Deli</a></li>
+      <li><a href="locations.html" class="nav__link">Locations</a></li>
+      <li><a href="press.html" class="nav__link">Press</a></li>
+    </ul>
+    <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+    <button class="nav__b" id="burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mov" id="mov">
+    <button class="x" id="closeMov" aria-label="Close">&times;</button>
+    <ul class="mov__links">
+      <li><a href="restaurant.html"><span class="c">Restaurant</span></a></li>
+      <li><a href="cafe.html"><span class="c">Cafe</span></a></li>
+      <li><a href="deli.html"><span class="c">Deli</span></a></li>
+      <li><a href="locations.html"><span class="c">Locations</span></a></li>
+      <li><a href="press.html"><span class="c">Press</span></a></li>
+      <li><a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="ph">
+    <div class="ph__bg">
+      <img src="assets/cf1.jpg" alt="" data-p="0.3">
+    </div>
+    <div class="ph__g"></div>
+    <div class="ph__ct">
+      <p class="ph__eb" data-ru>The Café</p>
+      <h1 class="ph__h" data-ru>Where Every Moment is<br><em>Sweet</em></h1>
+      <p class="ph__sub" data-ru>A Parisian-inspired pâtisserie meets the warmth of Lebanese hospitality.</p>
+      <div class="ph__btns" data-ru>
+        <a href="#menu" class="btn btn--g">View Menu</a>
+        <a href="#story" class="btn btn--o">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="sec" id="story">
+    <div class="sec__in">
+      <div class="g2">
+        <div class="g2__m">
+          <div class="ir ir--tall">
+            <img src="assets/interior-dubai.jpg" alt="Interior" data-ri>
+          </div>
+        </div>
+        <div>
+          <div class="ch__eb" data-ru>
+            <span class="nm">01</span>
+          </div>
+          <h2 class="ch__tx h2" data-ru>A Pâtisserie Beyond<br><em>Borders</em></h2>
+          <div class="ch__tx" data-ru>
+            <p>The Café began as an extension of the Restaurant's vision — bringing the same obsession with quality to a more intimate, everyday setting. From its first location in Beirut, it quickly became a destination for those who appreciate the finer things in life: handcrafted pastries, artisanal coffee, and dishes that elevate the ordinary into the extraordinary.</p>
+            <p>Today, over 15 locations span from Beirut to London, each designed to feel like a living room — warm, inviting, and effortlessly elegant.</p>
+          </div>
+          <div class="ch__sg" data-ru>
+            <p>Mireille Hayek <span>Founder</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" data-marquee>
+    <div class="marquee__in">
+      <span class="marquee__it">Beirut <span class="dot"></span></span>
+      <span class="marquee__it">London <span class="dot"></span></span>
+      <span class="marquee__it">Doha <span class="dot"></span></span>
+      <span class="marquee__it">Muscat <span class="dot"></span></span>
+      <span class="marquee__it">Cairo <span class="dot"></span></span>
+      <span class="marquee__it">Amman <span class="dot"></span></span>
+      <span class="marquee__it">Riyadh <span class="dot"></span></span>
+      <span class="marquee__it">Jeddah <span class="dot"></span></span>
+      <span class="marquee__it">Kuwait <span class="dot"></span></span>
+    </div>
+  </div>
+
+  <!-- Philosophy -->
+  <section class="sec sec--nv">
+    <div class="sec__in">
+      <div class="g2 g2--r">
+        <div class="g2__m">
+          <div class="ir ir--wide">
+            <img src="assets/dish-2.jpg" alt="Pâtisserie" data-ri>
+          </div>
+        </div>
+        <div>
+          <div class="ch__eb" data-ru>
+            <span class="nm">02</span>
+          </div>
+          <h2 class="ch__tx h2" data-ru>Crafted with<br><em>Intention</em></h2>
+          <div class="ch__tx" data-ru>
+            <p>Every pastry is a miniature work of art. Every coffee is brewed to perfection. Every dish tells a story. Our pâtisserie chefs train in Paris, our baristas in Melbourne, and our chefs in Beirut — bringing the best of global culinary traditions to your table.</p>
+            <blockquote>"The café is where luxury becomes accessible — where a simple cup of coffee becomes a ritual of beauty."</blockquote>
+            <p class="ch__sg">— Mireille Hayek</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="sec sec--iv" id="menu">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Café Menu</p>
+        <h2 class="sh__h">A Taste of<br><em>Indulgence</em></h2>
+      </div>
+
+      <div class="md" data-ru>
+
+        <!-- Sweet -->
+        <div class="mcat">
+          <div class="mcat__t">Sweet</div>
+          <div class="mcat__s">Pâtisserie & Desserts</div>
+          <div class="mcat__l"></div>
+          <div class="mrow">
+            <span class="mrow__n">Pistachio Mille-Feuille</span>
+            <span class="mrow__d">Layered puff pastry, pistachio cream, gold leaf</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Rose & Lychee Entremet</span>
+            <span class="mrow__d">Rose mousse, lychee insert, raspberry glaze</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Lemon Tart</span>
+            <span class="mrow__d">Citrus curd, Italian meringue, sablé crust</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Chocolate Fondant</span>
+            <span class="mrow__d">Valrhona 70%, vanilla bean ice cream</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Crème Brûlée</span>
+            <span class="mrow__d">Tahitian vanilla, caramelized sugar</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Tiramisu</span>
+            <span class="mrow__d">Espresso-soaked ladyfingers, mascarpone</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Mille-Feuille Classique</span>
+            <span class="mrow__d">Vanilla pastry cream, caramelized puff</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Seasonal Fruit Pavlova</span>
+            <span class="mrow__d">Meringue, Chantilly, fresh berries</span>
+          </div>
+        </div>
+
+        <!-- Savory -->
+        <div class="mcat">
+          <div class="mcat__t">Savory</div>
+          <div class="mcat__s">Light Bites & Plates</div>
+          <div class="mcat__l"></div>
+          <div class="mrow">
+            <span class="mrow__n">Eggs Benedict</span>
+            <span class="mrow__d">Poached eggs, Canadian bacon, hollandaise</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Truffle Pasta</span>
+            <span class="mrow__d">Hand-rolled pasta, black truffle, parmesan</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Wagyu Burger</span>
+            <span class="mrow__d">Wagyu patty, caramelized onions, truffle aioli</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Grilled Halloumi Salad</span>
+            <span class="mrow__d">Halloumi, quinoa, pomegranate, za'atar dressing</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Smoked Salmon Toast</span>
+            <span class="mrow__d">Sourdough, cream cheese, capers, dill</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Shiitake Mushroom Risotto</span>
+            <span class="mrow__d">Arborio rice, shiitake, truffle oil</span>
+          </div>
+        </div>
+
+        <!-- Beverages -->
+        <div class="mcat">
+          <div class="mcat__t">Beverages</div>
+          <div class="mcat__s">Coffee, Tea & More</div>
+          <div class="mcat__l"></div>
+          <div class="mrow">
+            <span class="mrow__n">Em Sherif Signature Latte</span>
+            <span class="mrow__d">Espresso, cardamom, condensed milk</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Lebanese Coffee</span>
+            <span class="mrow__d">Finely ground, cardamom, served in traditional cups</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Fresh Juices</span>
+            <span class="mrow__d">Seasonal fruits, cold-pressed</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Iced Matcha</span>
+            <span class="mrow__d">Ceremonial grade matcha, oat milk</span>
+          </div>
+          <div class="mrow">
+            <span class="mrow__n">Rose Lemonade</span>
+            <span class="mrow__d">Homemade rose syrup, fresh lemon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="sec">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Gallery</p>
+        <h2 class="sh__h">Sweet Moments,<br><em>Captured</em></h2>
+      </div>
+      <div class="gal" data-gs>
+        <div class="gal__sc" data-gt>
+          <div class="gal__i gal__i--lg" data-f="assets/cf2.jpg">
+            <img src="assets/cf2.jpg" alt="Café interior" data-ri>
+            <div class="cap"><small>Pâtisserie</small><b>Morning Ritual</b></div>
+          </div>
+          <div class="gal__i gal__i--md" data-f="assets/cf3.jpg">
+            <img src="assets/cf3.jpg" alt="Pastries" data-ri>
+            <div class="cap"><small>Sweet</small><b>Artisan Selection</b></div>
+          </div>
+          <div class="gal__i gal__i--sm" data-f="assets/cf4.jpg">
+            <img src="assets/cf4.jpg" alt="Coffee" data-ri>
+            <div class="cap"><small>Beverage</small><b>Signature Latte</b></div>
+          </div>
+          <div class="gal__i gal__i--md" data-f="assets/cf5.jpg">
+            <img src="assets/cf5.jpg" alt="Dessert display" data-ri>
+            <div class="cap"><small>Pâtisserie</small><b>Sweet Elegance</b></div>
+          </div>
+          <div class="gal__i gal__i--lg" data-f="assets/cf6.jpg">
+            <img src="assets/cf6.jpg" alt="Café ambiance" data-ri>
+            <div class="cap"><small>Ambiance</small><b>Parisian Charm</b></div>
+          </div>
+          <div class="gal__i gal__i--sm" data-f="assets/cf7.jpg">
+            <img src="assets/cf7.jpg" alt="Latte art" data-ri>
+            <div class="cap"><small>Coffee</small><b>Latte Art</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations -->
+  <section class="sec sec--dk">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Find Us</p>
+        <h2 class="sh__h">Our Café<br><em>Locations</em></h2>
+      </div>
+      <div class="loc__ls">
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">01</span>
+          <div class="loc__c">Beirut <span class="fl">Downtown</span></div>
+          <div class="loc__m">
+            Riad El Solh, Beirut
+            <span class="loc__ph">☎ +961 1 989 000</span>
+            <span class="loc__hr">Open Daily 7:30 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">02</span>
+          <div class="loc__c">Beirut <span class="fl">Achrafieh</span></div>
+          <div class="loc__m">
+            Sassine Square, Achrafieh, Beirut
+            <span class="loc__ph">☎ +961 1 200 111</span>
+            <span class="loc__hr">Open Daily 7:30 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">03</span>
+          <div class="loc__c">Beirut <span class="fl">Hamra</span></div>
+          <div class="loc__m">
+            Hamra Street, Beirut
+            <span class="loc__ph">☎ +961 1 340 000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 10:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">04</span>
+          <div class="loc__c">Beirut <span class="fl">Jounieh</span></div>
+          <div class="loc__m">
+            Jounieh Waterfront, Lebanon
+            <span class="loc__ph">☎ +961 9 650 000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">05</span>
+          <div class="loc__c">Beirut <span class="fl">Dbayeh</span></div>
+          <div class="loc__m">
+            Dbayeh Highway, Lebanon
+            <span class="loc__ph">☎ +961 4 540 000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">06</span>
+          <div class="loc__c">Doha <span class="fl">Lusail</span></div>
+          <div class="loc__m">
+            Lusail Boulevard, Doha, Qatar
+            <span class="loc__ph">☎ +974 4473 0000</span>
+            <span class="loc__hr">Open Daily 7:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">07</span>
+          <div class="loc__c">Doha <span class="fl">Msheireb</span></div>
+          <div class="loc__m">
+            Msheireb Downtown, Doha, Qatar
+            <span class="loc__ph">☎ +974 4410 0000</span>
+            <span class="loc__hr">Open Daily 7:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">08</span>
+          <div class="loc__c">London <span class="fl">Mayfair</span></div>
+          <div class="loc__m">
+            34 South Audley St, London W1K 2WD, UK
+            <span class="loc__ph">☎ +44 20 7518 0000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 8:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">09</span>
+          <div class="loc__c">London <span class="fl">Knightsbridge</span></div>
+          <div class="loc__m">
+            12 Brompton Rd, London SW7 1ET, UK
+            <span class="loc__ph">☎ +44 20 7584 0000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 8:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">10</span>
+          <div class="loc__c">Muscat <span class="fl">The Wave</span></div>
+          <div class="loc__m">
+            The Wave Muscat, Oman
+            <span class="loc__ph">☎ +968 2450 0000</span>
+            <span class="loc__hr">Open Daily 7:00 AM – 10:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">11</span>
+          <div class="loc__c">Riyadh <span class="fl">Al Olaya</span></div>
+          <div class="loc__m">
+            Al Olaya District, Riyadh, Saudi Arabia
+            <span class="loc__ph">☎ +966 11 488 0000</span>
+            <span class="loc__hr">Open Daily 7:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">12</span>
+          <div class="loc__c">Jeddah <span class="fl">Tahlia</span></div>
+          <div class="loc__m">
+            Tahlia Street, Jeddah, Saudi Arabia
+            <span class="loc__ph">☎ +966 12 614 0000</span>
+            <span class="loc__hr">Open Daily 7:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">13</span>
+          <div class="loc__c">Cairo <span class="fl">Zamalek</span></div>
+          <div class="loc__m">
+            26 July Street, Zamalek, Cairo
+            <span class="loc__ph">☎ +20 2 2735 0000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 12:00 AM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">14</span>
+          <div class="loc__c">Amman <span class="fl">Abdali</span></div>
+          <div class="loc__m">
+            Abdali Boulevard, Amman, Jordan
+            <span class="loc__ph">☎ +962 6 461 0000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <span class="loc__i">15</span>
+          <div class="loc__c">Kuwait <span class="fl">Symphony Centre</span></div>
+          <div class="loc__m">
+            Symphony Centre, Kuwait City
+            <span class="loc__ph">☎ +965 2227 0000</span>
+            <span class="loc__hr">Open Daily 8:00 AM – 11:00 PM</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="ft">
+    <div class="ft__br">
+      <a href="index.html">
+        <img src="assets/logo-white.png" alt="Logo" class="ft__logo">
+      </a>
+      <p class="ft__tg">Lebanese Heritage, Redefined</p>
+    </div>
+    <div class="ft__cols">
+      <div class="ft__col">
+        <h4 class="ft__ct">Concepts</h4>
+        <ul>
+          <li><a href="restaurant.html">The Restaurant</a></li>
+          <li><a href="cafe.html">The Cafe</a></li>
+          <li><a href="deli.html">The Deli</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Explore</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="press.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Visit</h4>
+        <ul>
+          <li><a href="reservation.html">Reserve</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft__bt">
+      <p>&copy; 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <button class="x" id="lbX" aria-label="Close">&times;</button>
+    <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
+    <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
+    <img src="" alt="" class="lb__img" id="lbI">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

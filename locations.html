@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locations — Em Sherif</title>
+  <meta name="description" content="Three distinctive concepts across the globe — find the location nearest you.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="pl" id="pl">
+  <div class="pl__ar">أم شريف</div>
+  <div class="pl__ln"><div class="pl__bar"></div></div>
+  <div class="pl__w">Locations</div>
+</div>
+
+<!-- ============ PROGRESS ============ -->
+<div class="prog" id="prog"></div>
+
+<!-- ============ CURSOR ============ -->
+<div class="crs" id="crs">
+  <div class="crs-d"></div>
+  <div class="crs-r"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav__logo">
+    <img src="assets/logo-white.png" alt="" class="nav__logo-img">
+  </a>
+  <ul class="nav__links">
+    <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+    <li><a href="cafe.html" class="nav__link">Café</a></li>
+    <li><a href="deli.html" class="nav__link">Deli</a></li>
+    <li><a href="locations.html" class="nav__link nav__link--active">Locations</a></li>
+    <li><a href="press.html" class="nav__link">Press</a></li>
+  </ul>
+  <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+  <button class="nav__b" id="burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mov" id="mov">
+  <button class="x" id="closeMov" aria-label="Close">&times;</button>
+  <ul class="mov__links">
+    <li><a href="restaurant.html"><span class="c">Restaurant</span></a></li>
+    <li><a href="cafe.html"><span class="c">Café</span></a></li>
+    <li><a href="deli.html"><span class="c">Deli</span></a></li>
+    <li><a href="locations.html"><span class="c">Locations</span></a></li>
+    <li><a href="press.html"><span class="c">Press</span></a></li>
+    <li><a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a></li>
+  </ul>
+</div>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="ph">
+  <div class="ph__bg">
+    <img src="assets/banner-restaurant.jpg" alt="" data-p="0.3">
+  </div>
+  <div class="ph__g"></div>
+  <div class="ph__ct">
+    <p class="ph__eb" data-ru>Our World</p>
+    <h1 class="ph__h" data-ru>Where to Find<br><em>Us</em></h1>
+    <p class="ph__sub" data-ru>Three distinctive concepts across the globe — each a destination in its own right.</p>
+  </div>
+</section>
+
+<!-- ============ THE RESTAURANT LOCATIONS ============ -->
+<section class="sec sec--iv">
+  <div class="sec__in">
+    <div class="sh" data-ru>
+      <p class="sh__eb">The Restaurant</p>
+      <h2 class="sh__h">Fine Dining<br><em>Across the Globe</em></h2>
+      <p class="sh__s">Seven flagship restaurants bringing the art of Lebanese fine dining to the world's most iconic destinations.</p>
+    </div>
+
+    <div class="loc__ls">
+      <div class="loc__r" data-ru>
+        <span class="loc__i">01</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Downtown</span> <span class="tag">Flagship</span></span>
+          <span class="loc__ph">Riad El Solh, Beirut Central District, Lebanon</span>
+          <span class="loc__hr">☎ +961 1 989 898 · Open Daily 12:30 PM–11:30 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">02</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Gemmayze</span></span>
+          <span class="loc__ph">Rue Gouraud, Gemmayze, Beirut, Lebanon</span>
+          <span class="loc__hr">☎ +961 1 570 001 · Open Daily 12:00 PM–12:00 AM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">03</span>
+        <div>
+          <span class="loc__c">Doha <span class="fl">— Katara</span></span>
+          <span class="loc__ph">Building 16, Katara Cultural Village, Doha, Qatar</span>
+          <span class="loc__hr">☎ +974 4408 0740 · Open Daily 12:00 PM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">04</span>
+        <div>
+          <span class="loc__c">London <span class="fl">— Harrods</span></span>
+          <span class="loc__ph">87–135 Brompton Rd, Knightsbridge, London SW1X 7XL, UK</span>
+          <span class="loc__hr">☎ +44 20 7225 5544 · Mon–Sat 11:30 AM–9:00 PM, Sun 11:30 AM–8:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">05</span>
+        <div>
+          <span class="loc__c">Muscat <span class="fl">— Al Mouj</span></span>
+          <span class="loc__ph">Al Mouj Marina, Muscat, Oman</span>
+          <span class="loc__hr">☎ +968 2458 3535 · Open Daily 12:00 PM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">06</span>
+        <div>
+          <span class="loc__c">Riyadh <span class="fl">— Kingdom Centre</span></span>
+          <span class="loc__ph">Kingdom Tower, Riyadh, Saudi Arabia</span>
+          <span class="loc__hr">☎ +966 11 211 5500 · Open Daily 1:00 PM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">07</span>
+        <div>
+          <span class="loc__c">Cairo <span class="fl">— Downtown</span></span>
+          <span class="loc__ph">Downtown Cairo, Egypt</span>
+          <span class="loc__hr">☎ +20 2 2792 0000 · Open Daily 12:00 PM–12:00 AM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE CAFE LOCATIONS ============ -->
+<section class="sec sec--nv">
+  <div class="sec__in">
+    <div class="sh" data-ru>
+      <p class="sh__eb">The Café</p>
+      <h2 class="sh__h">Everyday<br><em>Indulgence</em></h2>
+      <p class="sh__s">Fifteen cafés and pâtisseries — from Beirut to London, each a neighborhood destination for artisan coffee and handcrafted pastries.</p>
+    </div>
+
+    <div class="loc__ls">
+      <div class="loc__r" data-ru>
+        <span class="loc__i">01</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Downtown</span></span>
+          <span class="loc__ph">Riad El Solh, Beirut, Lebanon</span>
+          <span class="loc__hr">☎ +961 1 989 000 · Open Daily 7:30 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">02</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Achrafieh</span></span>
+          <span class="loc__ph">Sassine Square, Achrafieh, Beirut</span>
+          <span class="loc__hr">☎ +961 1 200 111 · Open Daily 7:30 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">03</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Hamra</span></span>
+          <span class="loc__ph">Hamra Street, Beirut</span>
+          <span class="loc__hr">☎ +961 1 340 000 · Open Daily 8:00 AM–10:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">04</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Jounieh</span></span>
+          <span class="loc__ph">Jounieh Waterfront, Lebanon</span>
+          <span class="loc__hr">☎ +961 9 650 000 · Open Daily 8:00 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">05</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Dbayeh</span></span>
+          <span class="loc__ph">Dbayeh Highway, Lebanon</span>
+          <span class="loc__hr">☎ +961 4 540 000 · Open Daily 8:00 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">06</span>
+        <div>
+          <span class="loc__c">Doha <span class="fl">— Lusail</span></span>
+          <span class="loc__ph">Lusail Boulevard, Doha, Qatar</span>
+          <span class="loc__hr">☎ +974 4473 0000 · Open Daily 7:00 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">07</span>
+        <div>
+          <span class="loc__c">Doha <span class="fl">— Msheireb</span></span>
+          <span class="loc__ph">Msheireb Downtown, Doha, Qatar</span>
+          <span class="loc__hr">☎ +974 4410 0000 · Open Daily 7:00 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">08</span>
+        <div>
+          <span class="loc__c">London <span class="fl">— Mayfair</span></span>
+          <span class="loc__ph">34 South Audley St, London W1K 2WD, UK</span>
+          <span class="loc__hr">☎ +44 20 7518 0000 · Open Daily 8:00 AM–8:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">09</span>
+        <div>
+          <span class="loc__c">London <span class="fl">— Knightsbridge</span></span>
+          <span class="loc__ph">12 Brompton Rd, London SW7 1ET, UK</span>
+          <span class="loc__hr">☎ +44 20 7584 0000 · Open Daily 8:00 AM–8:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">10</span>
+        <div>
+          <span class="loc__c">Muscat <span class="fl">— The Wave</span></span>
+          <span class="loc__ph">The Wave Muscat, Oman</span>
+          <span class="loc__hr">☎ +968 2450 0000 · Open Daily 7:00 AM–10:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">11</span>
+        <div>
+          <span class="loc__c">Riyadh <span class="fl">— Al Olaya</span></span>
+          <span class="loc__ph">Al Olaya District, Riyadh, Saudi Arabia</span>
+          <span class="loc__hr">☎ +966 11 488 0000 · Open Daily 7:00 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">12</span>
+        <div>
+          <span class="loc__c">Jeddah <span class="fl">— Tahlia</span></span>
+          <span class="loc__ph">Tahlia Street, Jeddah, Saudi Arabia</span>
+          <span class="loc__hr">☎ +966 12 614 0000 · Open Daily 7:00 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">13</span>
+        <div>
+          <span class="loc__c">Cairo <span class="fl">— Zamalek</span></span>
+          <span class="loc__ph">26 July Street, Zamalek, Cairo</span>
+          <span class="loc__hr">☎ +20 2 2735 0000 · Open Daily 8:00 AM–12:00 AM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">14</span>
+        <div>
+          <span class="loc__c">Amman <span class="fl">— Abdali</span></span>
+          <span class="loc__ph">Abdali Boulevard, Amman, Jordan</span>
+          <span class="loc__hr">☎ +962 6 461 0000 · Open Daily 8:00 AM–11:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">15</span>
+        <div>
+          <span class="loc__c">Kuwait <span class="fl">— Symphony Centre</span></span>
+          <span class="loc__ph">Symphony Centre, Kuwait City</span>
+          <span class="loc__hr">☎ +965 2227 0000 · Open Daily 8:00 AM–11:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE DELI LOCATIONS ============ -->
+<section class="sec sec--dk">
+  <div class="sec__in">
+    <div class="sh" data-ru>
+      <p class="sh__eb">The Deli</p>
+      <h2 class="sh__h">Artisan<br><em>Provisions</em></h2>
+      <p class="sh__s">Three curated deli locations bringing restaurant-quality artisan provisions to your table.</p>
+    </div>
+
+    <div class="loc__ls">
+      <div class="loc__r" data-ru>
+        <span class="loc__i">01</span>
+        <div>
+          <span class="loc__c">London <span class="fl">— Harrods Food Hall</span></span>
+          <span class="loc__ph">87–135 Brompton Rd, Knightsbridge, London SW1X 7XL, UK</span>
+          <span class="loc__hr">☎ +44 20 7225 5500 · Mon–Sat 10:00 AM–9:00 PM, Sun 11:30 AM–6:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">02</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Downtown</span></span>
+          <span class="loc__ph">Riad El Solh, Beirut Central District</span>
+          <span class="loc__hr">☎ +961 1 989 899 · Open Daily 9:00 AM–9:00 PM</span>
+        </div>
+      </div>
+      <div class="loc__r" data-ru>
+        <span class="loc__i">03</span>
+        <div>
+          <span class="loc__c">Beirut <span class="fl">— Achrafieh</span></span>
+          <span class="loc__ph">Sassine Square, Achrafieh, Beirut</span>
+          <span class="loc__hr">☎ +961 1 200 222 · Open Daily 9:00 AM–9:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="ft__br">
+    <a href="index.html">
+      <img src="assets/logo-white.png" alt="" class="ft__logo">
+    </a>
+    <p class="ft__tg">Lebanese Heritage, Redefined</p>
+  </div>
+  <div class="ft__cols">
+    <div class="ft__col">
+      <h4 class="ft__ct">Concepts</h4>
+      <ul>
+        <li><a href="restaurant.html">The Restaurant</a></li>
+        <li><a href="cafe.html">The Café</a></li>
+        <li><a href="deli.html">The Deli</a></li>
+      </ul>
+    </div>
+    <div class="ft__col">
+      <h4 class="ft__ct">Explore</h4>
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="press.html">Press</a></li>
+      </ul>
+    </div>
+    <div class="ft__col">
+      <h4 class="ft__ct">Connect</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+      </ul>
+    </div>
+    <div class="ft__col">
+      <h4 class="ft__ct">Visit</h4>
+      <ul>
+        <li><a href="reservation.html">Reserve</a></li>
+        <li><a href="#">Private Dining</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft__bt">
+    <p>&copy; 2025 All Rights Reserved</p>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lb" id="lb">
+  <button class="x" id="lbX" aria-label="Close">&times;</button>
+  <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
+  <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
+  <img src="" alt="" class="lb__img" id="lbI">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

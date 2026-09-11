@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press & Awards — Em Sherif</title>
+  <meta name="description" content="Awards, recognition, and press coverage celebrating a legacy of Lebanese culinary excellence.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="pl" id="pl">
+    <div class="pl__ar">أم شريف</div>
+    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <div class="pl__w">Press & Awards</div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
+
+  <!-- Custom Cursor -->
+  <div class="crs" id="crs">
+    <div class="crs-d"></div>
+    <div class="crs-r"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/logo-white.png" alt="" class="nav__logo-img">
+    </a>
+    <ul class="nav__links">
+      <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+      <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+      <li><a href="deli.html" class="nav__link">Deli</a></li>
+      <li><a href="locations.html" class="nav__link">Locations</a></li>
+      <li><a href="press.html" class="nav__link nav__link--active">Press</a></li>
+    </ul>
+    <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+    <button class="nav__b" id="burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mov" id="mov">
+    <button class="x" id="closeMov" aria-label="Close">&times;</button>
+    <ul class="mov__links">
+      <li><a href="restaurant.html"><span class="c">Restaurant</span></a></li>
+      <li><a href="cafe.html"><span class="c">Cafe</span></a></li>
+      <li><a href="deli.html"><span class="c">Deli</span></a></li>
+      <li><a href="locations.html"><span class="c">Locations</span></a></li>
+      <li><a href="press.html"><span class="c">Press</span></a></li>
+      <li><a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="ph">
+    <div class="ph__bg">
+      <img src="assets/press-timeout.jpg" alt="" data-p="0.3">
+    </div>
+    <div class="ph__g"></div>
+    <div class="ph__ct">
+      <p class="ph__eb" data-ru>Awards & Recognition</p>
+      <h1 class="ph__h" data-ru>A Legacy of<br><em>Excellence</em></h1>
+      <p class="ph__sub" data-ru>Celebrated by the world's most respected culinary institutions.</p>
+    </div>
+  </section>
+
+  <!-- Key Awards -->
+  <section class="sec sec--iv">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Recognition</p>
+        <h2 class="sh__h">Our<br><em>Achievements</em></h2>
+      </div>
+      <div class="g4">
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="9">0</span>
+          <span class="stat__l">MENA's 50 Best Restaurants 2025</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="1">0</span>
+          <span class="stat__l">Michelin Star</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="30">0</span>
+          <span class="stat__l">Years of Heritage</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="15">0</span>
+          <span class="stat__l">Countries Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Timeline -->
+  <section class="sec sec--nv">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Our Journey</p>
+        <h2 class="sh__h">A Timeline of<br><em>Milestones</em></h2>
+      </div>
+
+      <div class="tl" data-ru>
+
+        <div class="tl__r">
+          <div class="tl__yr">1995</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">First Restaurant Opens</h3>
+            <p class="tl__d">Beirut, Lebanon — A vision becomes reality with the opening of the flagship restaurant in Downtown Beirut, redefining Lebanese fine dining.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2005</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">Expansion to London</h3>
+            <p class="tl__d">Harrods partnership begins — bringing Lebanese cuisine to the heart of Knightsbridge with a dedicated restaurant space inside the iconic department store.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2010</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">MENA's 50 Best — First Appearance</h3>
+            <p class="tl__d">First appearance at No. 12 on MENA's 50 Best Restaurants list, marking international recognition of Lebanese culinary excellence.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2015</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">Forbes 30 Under 30</h3>
+            <p class="tl__d">Yasmina Hayek recognized on Forbes 30 Under 30 list for her innovative approach to modern Lebanese cuisine and leadership in the culinary world.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2018</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">Cafe Concept Launched</h3>
+            <p class="tl__d">5 locations in first year — A Parisian-inspired pâtisserie meets Lebanese warmth, expanding the brand into a new dining category.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2020</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">Deli Concept Launched</h3>
+            <p class="tl__d">Artisan provisions arrive at Harrods Food Hall — curated delicacies and ready-to-enjoy creations that bring the restaurant experience home.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2022</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">Climbed to No. 9</h3>
+            <p class="tl__d">MENA's 50 Best Restaurants — Climbed to No. 9, cementing a position among the region's most celebrated dining destinations.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2023</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">Best Female Chef</h3>
+            <p class="tl__d">Yasmina Hayek wins Best Female Chef award, recognizing her extraordinary culinary vision and contributions to modern Lebanese gastronomy.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2024</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">25+ Locations Worldwide</h3>
+            <p class="tl__d">25+ locations across 6 countries — From Beirut to London, Doha to Muscat, Cairo to Riyadh, the brand continues its global expansion.</p>
+          </div>
+        </div>
+
+        <div class="tl__r">
+          <div class="tl__yr">2025</div>
+          <div class="tl__dot"></div>
+          <div class="tl__ct">
+            <h3 class="tl__h">No. 9 MENA's 50 Best</h3>
+            <p class="tl__d">Confirmed at No. 9 on MENA's 50 Best Restaurants 2025 — a testament to unwavering commitment to excellence and Lebanese heritage.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Features -->
+  <section class="sec sec--iv">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">In the Press</p>
+        <h2 class="sh__h">Featured<br><em>Stories</em></h2>
+      </div>
+      <div class="g2">
+        <a href="#" class="pc" data-ru>
+          <img src="assets/press-vogue.jpg" alt="Vogue Arabia feature">
+          <div class="pc__ov">
+            <span class="pc__tg">Vogue Arabia</span>
+            <h3 class="pc__h">The Restaurant That Redefined Lebanese Fine Dining</h3>
+          </div>
+        </a>
+        <a href="#" class="pc" data-ru>
+          <img src="assets/press-timeout.jpg" alt="Time Out feature">
+          <div class="pc__ov">
+            <span class="pc__tg">Time Out</span>
+            <h3 class="pc__h">Why This Beirut Restaurant Keeps Winning Awards</h3>
+          </div>
+        </a>
+        <a href="#" class="pc" data-ru>
+          <img src="assets/press-art.jpg" alt="Art of the Table feature">
+          <div class="pc__ov">
+            <span class="pc__tg">Art of the Table</span>
+            <h3 class="pc__h">Mireille Hayek: The Woman Behind the Brand</h3>
+          </div>
+        </a>
+        <a href="#" class="pc" data-ru>
+          <img src="assets/press-laha.jpg" alt="Laha Magazine feature">
+          <div class="pc__ov">
+            <span class="pc__tg">Laha Magazine</span>
+            <h3 class="pc__h">A Lebanese Culinary Empire Goes Global</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="sec sec--dk">
+    <div class="sec__in">
+      <div class="g4">
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="50">0<em>+</em></span>
+          <span class="stat__l">Awards Won</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="100">0<em>+</em></span>
+          <span class="stat__l">Media Features</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="25">0<em>+</em></span>
+          <span class="stat__l">Locations</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="3">0</span>
+          <span class="stat__l">Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation CTA -->
+  <section class="sec sec--nv">
+    <div class="sec__in sec__in--ct" style="text-align:center">
+      <h2 class="sec__h" data-ru style="font-family:var(--disp);font-weight:300;font-size:clamp(2rem,4.5vw,3.8rem);color:#fff;margin-bottom:12px">Experience the Legacy</h2>
+      <p class="sec__sub" data-ru style="font-family:var(--disp);font-style:italic;color:rgba(255,255,255,.5);margin-bottom:32px">Book your table and taste what the world is celebrating</p>
+      <a href="reservation.html" class="btn btn--g" data-ru>Reserve a Table</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="ft">
+    <div class="ft__br">
+      <a href="index.html">
+        <img src="assets/logo-white.png" alt="" class="ft__logo">
+      </a>
+      <p class="ft__tg">Lebanese Heritage, Redefined</p>
+    </div>
+    <div class="ft__cols">
+      <div class="ft__col">
+        <h4 class="ft__ct">Concepts</h4>
+        <ul>
+          <li><a href="restaurant.html">The Restaurant</a></li>
+          <li><a href="cafe.html">The Cafe</a></li>
+          <li><a href="deli.html">The Deli</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Explore</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="press.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Visit</h4>
+        <ul>
+          <li><a href="reservation.html">Reserve</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft__bt">
+      <p>&copy; 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <button class="x" id="lbX" aria-label="Close">&times;</button>
+    <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
+    <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
+    <img src="" alt="" class="lb__img" id="lbI">
+  </div>
+
+  <!-- Timeline Styles -->
+  <style>
+    .tl{position:relative;max-width:900px;margin:0 auto;padding-left:40px}
+    .tl::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;background:rgba(255,255,255,.12)}
+    .tl__r{position:relative;display:grid;grid-template-columns:80px 1fr;gap:0 36px;padding-bottom:clamp(36px,5vw,56px);align-items:start}
+    .tl__r:last-child{padding-bottom:0}
+    .tl__yr{font-family:var(--disp);font-weight:300;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--gold-l);line-height:1}
+    .tl__dot{position:absolute;left:-24px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(176,138,74,.15)}
+    .tl__ct{padding-top:2px}
+    .tl__h{font-family:var(--disp);font-weight:400;font-size:clamp(1.15rem,1.8vw,1.5rem);color:#fff;margin-bottom:6px;line-height:1.15}
+    .tl__d{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.55;max-width:52ch}
+    @media(max-width:680px){
+      .tl{padding-left:28px}
+      .tl::before{left:10px}
+      .tl__r{grid-template-columns:60px 1fr;gap:0 20px}
+      .tl__dot{left:-18px}
+    }
+  </style>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Em Sherif | The Deli — Artisan Provisions</title>
+  <meta name="description" content="Artisan provisions and ready-to-enjoy creations — bringing the Em Sherif experience to your table.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="pl" id="pl">
+    <div class="pl__ar">أم شريف</div>
+    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <div class="pl__w">The Deli</div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="crs" id="crs">
+    <div class="crs-d"></div>
+    <div class="crs-r"></div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/logo-white.png" alt="" class="nav__logo-img">
+    </a>
+    <ul class="nav__links">
+      <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+      <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+      <li><a href="deli.html" class="nav__link nav__link--active">Deli</a></li>
+      <li><a href="locations.html" class="nav__link">Locations</a></li>
+      <li><a href="press.html" class="nav__link">Press</a></li>
+    </ul>
+    <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+    <button class="nav__b" id="burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mov" id="mov">
+    <button class="x" id="closeMov" aria-label="Close">&times;</button>
+    <ul class="mov__links">
+      <li><a href="restaurant.html"><span class="c">Restaurant</span></a></li>
+      <li><a href="cafe.html"><span class="c">Cafe</span></a></li>
+      <li><a href="deli.html"><span class="c">Deli</span></a></li>
+      <li><a href="locations.html"><span class="c">Locations</span></a></li>
+      <li><a href="press.html"><span class="c">Press</span></a></li>
+      <li><a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="ph">
+    <div class="ph__bg">
+      <img src="assets/food-1.jpg" alt="" data-p="0.3">
+    </div>
+    <div class="ph__g"></div>
+    <div class="ph__ct">
+      <p class="ph__eb" data-ru>The Deli</p>
+      <h1 class="ph__h" data-ru>Curated with <em>Passion</em>,<br>Savored at Home</h1>
+      <p class="ph__sub" data-ru>Artisan provisions and ready-to-enjoy creations — bringing the experience to your table.</p>
+      <div class="ph__btns" data-ru>
+        <a href="#offerings" class="btn btn--g">Explore Offerings</a>
+        <a href="#locations" class="btn btn--o">Find a Deli</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="sec">
+    <div class="sec__in">
+      <div class="g2">
+        <div class="ir ir--tall" data-ri>
+          <img src="assets/food-3.jpg" alt="Artisan deli provisions">
+        </div>
+        <div>
+          <div class="ch__eb" data-ru>
+            <span class="nm">01</span> The Story
+          </div>
+          <div class="ch__tx" data-ru>
+            <h2>The Art of <em>Everyday Dining</em></h2>
+            <p>The Deli was born from a simple belief: that extraordinary food shouldn't be reserved for special occasions. Drawing from decades of culinary expertise, our deli curates the finest ingredients and ready-to-enjoy dishes that bring restaurant-quality dining into your home.</p>
+            <p>From hand-selected olive oils and house-made preserves to freshly prepared mezze platters and signature desserts, every item tells the story of Lebanese craftsmanship.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="sec sec--iv">
+    <div class="sec__in">
+      <div class="g2 g2--r">
+        <div>
+          <div class="ch__eb" data-ru>
+            <span class="nm">02</span> The Philosophy
+          </div>
+          <div class="ch__tx" data-ru>
+            <h2>From Our Kitchen<br>to <em>Yours</em></h2>
+            <p>Every product in our deli is either made in-house or carefully sourced from trusted artisan producers. We believe in transparency, quality, and the kind of attention to detail that transforms ingredients into experiences.</p>
+            <blockquote>"The deli is my love letter to the everyday — proof that beauty and flavor belong in every moment, not just the special ones."</blockquote>
+            <p class="ch__sg">Mireille Hayek <span>Founder</span></p>
+          </div>
+        </div>
+        <div class="g2__m ir ir--tall" data-ri>
+          <img src="assets/food-4.jpg" alt="Deli kitchen preparations">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="sec sec--nv" id="offerings">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">What We Offer</p>
+        <h2 class="sh__h">Curated for<br><em>Every Occasion</em></h2>
+      </div>
+      <div class="g3">
+        <div class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/food-2.jpg" alt="Ready-to-Enjoy Platters">
+          </div>
+          <div class="cc__ov">
+            <p class="cc__eb">Ready-to-Enjoy</p>
+            <h3 class="cc__h">Signature Platters</h3>
+            <p class="cc__d">Signature mezze selections, freshly prepared and beautifully presented</p>
+          </div>
+        </div>
+        <div class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/food-5.jpg" alt="Artisan Provisions">
+          </div>
+          <div class="cc__ov">
+            <p class="cc__eb">Artisan Provisions</p>
+            <h3 class="cc__h">House-Made Selections</h3>
+            <p class="cc__d">House-made preserves, tapenades, olive oils, and specialty ingredients</p>
+          </div>
+        </div>
+        <div class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/food-6.jpg" alt="Pastries and Desserts">
+          </div>
+          <div class="cc__ov">
+            <p class="cc__eb">Pastries & Desserts</p>
+            <h3 class="cc__h">Handcrafted Sweets</h3>
+            <p class="cc__d">Handcrafted sweets from our pâtisserie, available for takeaway</p>
+          </div>
+        </div>
+        <div class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/dish-2.jpg" alt="Bespoke Gifting">
+          </div>
+          <div class="cc__ov">
+            <p class="cc__eb">Bespoke Gifting</p>
+            <h3 class="cc__h">Curated Gift Boxes</h3>
+            <p class="cc__d">Curated gift boxes for celebrations, corporate gifting, and special occasions</p>
+          </div>
+        </div>
+        <div class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/dish-4.jpg" alt="Seasonal Collections">
+          </div>
+          <div class="cc__ov">
+            <p class="cc__eb">Seasonal Collections</p>
+            <h3 class="cc__h">Rotating Selections</h3>
+            <p class="cc__d">Rotating selections that celebrate the best of each season</p>
+          </div>
+        </div>
+        <div class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/dish-6.jpg" alt="Private Catering">
+          </div>
+          <div class="cc__ov">
+            <p class="cc__eb">Private Catering</p>
+            <h3 class="cc__h">Custom Menus</h3>
+            <p class="cc__d">Custom menus for intimate gatherings and events</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations -->
+  <section class="sec" id="locations">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Locations</p>
+        <h2 class="sh__h">Find Us<br><em>Near You</em></h2>
+      </div>
+      <div class="loc__ls">
+        <div class="loc__r" data-ru>
+          <div class="loc__i">01</div>
+          <div class="loc__c">
+            London<span class="fl">Harrods Food Hall</span>
+          </div>
+          <div class="loc__m">
+            87–135 Brompton Rd, Knightsbridge, London SW1X 7XL, UK
+            <span class="loc__ph">☎ +44 20 7225 5500</span>
+            <span class="loc__hr">Mon–Sat 10:00 AM – 9:00 PM · Sun 11:30 AM – 6:00 PM</span>
+          </div>
+        </div>
+        <div class="loc__r" data-ru>
+          <div class="loc__i">02</div>
+          <div class="loc__c">
+            Beirut<span class="fl">Downtown</span>
+          </div>
+          <div class="loc__m">
+            Riad El Solh, Beirut Central District
+            <span class="loc__ph">☎ +961 1 989 899</span>
+            <span class="loc__hr">Daily 9:00 AM – 9:00 PM</span>
+          </div>
+        </div>
+        <div class="loc__r" data-ru>
+          <div class="loc__i">03</div>
+          <div class="loc__c">
+            Beirut<span class="fl">Achrafieh</span>
+          </div>
+          <div class="loc__m">
+            Sassine Square, Achrafieh, Beirut
+            <span class="loc__ph">☎ +961 1 200 222</span>
+            <span class="loc__hr">Daily 9:00 AM – 9:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" data-marquee>
+    <div class="marquee__in">
+      <span class="marquee__it">Artisan Provisions</span>
+      <span class="dot"></span>
+      <span class="marquee__it">House-Made Preserves</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Signature Mezze</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Handcrafted Desserts</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Bespoke Gifting</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Seasonal Collections</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Private Catering</span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="ft">
+    <div class="ft__br">
+      <a href="index.html">
+        <img src="assets/logo-white.png" alt="" class="ft__logo">
+      </a>
+      <p class="ft__tg">Lebanese Heritage, Redefined</p>
+    </div>
+    <div class="ft__cols">
+      <div class="ft__col">
+        <h4 class="ft__ct">Concepts</h4>
+        <ul>
+          <li><a href="restaurant.html">The Restaurant</a></li>
+          <li><a href="cafe.html">The Cafe</a></li>
+          <li><a href="deli.html">The Deli</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Explore</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="press.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__ct">Visit</h4>
+        <ul>
+          <li><a href="reservation.html">Reserve</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft__bt">
+      <p>&copy; 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <button class="x" id="lbX" aria-label="Close">&times;</button>
+    <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
+    <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
+    <img src="" alt="" class="lb__img" id="lbI">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

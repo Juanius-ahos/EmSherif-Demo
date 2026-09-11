@@ -1,507 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Em Sherif Restaurant — Lebanese Fine Dining</title>
-<meta name="description" content="A meticulously crafted tribute to the art of Lebanese dining. Est. Beirut, 2011." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Em Sherif | Lebanese Heritage, Redefined</title>
+  <meta name="description" content="Four distinctive culinary destinations united by a singular vision — to transform every meal into a moment of beauty.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="crs" id="crs"><div class="crs-d"></div><div class="crs-r"></div></div>
+  <!-- Preloader -->
+  <div class="pl">
+    <div class="pl__tx">أم شريف</div>
+    <div class="pl__bar"><div class="prog"></div></div>
+  </div>
 
-<div class="pl" id="pl">
-  <img src="assets/logo-restaurant.png" alt="" style="height:56px;width:auto;opacity:0;transform:translateY(16px);animation:fu 1s var(--ease) .3s forwards" />
-  <div class="pl__ln"><div class="pl__bar"></div></div>
-  <div class="pl__w">Beirut &middot; Since 2011</div>
-</div>
+  <!-- Custom Cursor -->
+  <div class="crs"></div>
 
-<div class="prog" id="prog"></div>
-
-<header class="nav" id="nav">
-  <a class="nav__logo" href="#top" aria-label="Home">
-    <img src="assets/logo-restaurant.png" alt="Logo" />
-  </a>
-  <nav class="nav__links">
-    <a class="nav__link" href="#story">Story</a>
-    <a class="nav__link" href="#gallery">Gallery</a>
-    <a class="nav__link" data-open-menu>Menu</a>
-    <a class="nav__link" href="#locations">Locations</a>
-    <a class="nav__link" href="#recognition">Awards</a>
-    <a class="nav__link nav__rsvp" href="#reserve">Reserve</a>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/logo-white.png" alt="Logo" class="nav__logo-img">
+    </a>
+    <ul class="nav__links">
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="cafe.html">Cafe</a></li>
+      <li><a href="deli.html">Deli</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="press.html">Press</a></li>
+    </ul>
+    <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+    <button class="nav__b" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
   </nav>
-  <button class="nav__b" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-</header>
 
-<div class="mov" id="mov">
-  <button class="x" id="closeMov" aria-label="Close">&times;</button>
-  <a href="#story"><span class="c">Story</span></a>
-  <a href="#gallery"><span class="c">Gallery</span></a>
-  <a data-open-menu><span class="c">The Menu</span></a>
-  <a href="#locations"><span class="c">Locations</span></a>
-  <a href="#recognition"><span class="c">Awards</span></a>
-  <a href="#reserve"><span class="c">Reserve</span></a>
-</div>
+  <!-- Mobile Menu -->
+  <div class="mov">
+    <ul class="mov__links">
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="cafe.html">Cafe</a></li>
+      <li><a href="deli.html">Deli</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="reservation.html" class="btn btn--g">Reserve a Table</a></li>
+    </ul>
+  </div>
 
-<div class="lb" id="lb">
-  <button class="x" id="lbX" aria-label="Close">&times;</button>
-  <button class="nb pv" id="lbP">&#8249;</button>
-  <img id="lbI" src="" alt="" />
-  <button class="nb nx" id="lbN">&#8250;</button>
-</div>
-
-<section class="mo" id="mo" aria-label="Menu">
-  <div class="mo__b">
-    <a class="mo__bl" data-close-menu><img src="assets/logo-restaurant.png" alt="Logo" /></a>
-    <div class="mo__ba">
-      <button class="mo__bk" data-close-menu>&larr; Back</button>
-      <a class="mo__rv" data-go-rsv>Reserve</a>
+  <!-- Hero Section -->
+  <section class="ph">
+    <div class="ph__bg">
+      <img src="assets/interior-hero.jpg" alt="" data-p="0.3">
     </div>
-  </div>
-  <div class="mo__h">
-    <div class="mo__hb" style="background-image:url('assets/banner-1.jpg')"></div>
-    <div class="mo__hg"></div>
-    <div class="mo__hc">
-      <div class="mo__he">Em Sherif Restaurant</div>
-      <h1 class="mo__ht">The Menu</h1>
-      <p class="mo__hs">La vie Libanaise, served to share.</p>
-    </div>
-  </div>
-  <div class="mo__tabs">
-    <button class="mo__tab on" data-tab="bey">Beirut</button>
-    <button class="mo__tab" data-tab="doh">Doha</button>
-    <button class="mo__tab" data-tab="lon">London</button>
-    <button class="mo__tab" data-tab="cafe">Caf&eacute;</button>
-  </div>
-
-  <div class="mo__bd" data-view="bey">
-    <p class="mo__intro">The flagship table, where each dish is a meticulously crafted tribute to the art of Lebanese dining. Served to share.</p>
-    <div class="mo__cats">
-      <div class="mo__cat">
-        <div class="mo__ct">Furn</div><div class="mo__cs">From the oven</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Man&rsquo;oushe Zaatar</span><span class="mo__dp">10,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Man&rsquo;oushe Lahmeh</span><span class="mo__dp">15,000</span></div>
+    <div class="ph__g"></div>
+    <div class="ph__ct">
+      <p class="ph__eyebrow" data-ru>Est. 1995 · Beirut, Lebanon</p>
+      <h1 class="ph__h" data-ru>Where Heritage Meets<br><em>the Art of Dining</em></h1>
+      <p class="ph__sub" data-ru>Four distinctive culinary destinations united by a singular vision — to transform every meal into a moment of beauty.</p>
+      <div class="ph__btns" data-ru>
+        <a href="reservation.html" class="btn btn--g">Reserve a Table</a>
+        <a href="story.html" class="btn btn--o">Our Story</a>
       </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Salata</div><div class="mo__cs">Salads</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Fattouch</span><span class="mo__dp">42,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Tabboule</span><span class="mo__dp">40,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Malfouf Salad</span><span class="mo__dp">25,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Oriental Salad</span><span class="mo__dp">40,000</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Cold Mezze</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Hummus</span><span class="mo__dp">46,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Mutabbal Batenjen w Roumman</span><span class="mo__dp">46,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Labneh</span><span class="mo__dp">29,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Kibbeh Nayye</span><span class="mo__dp">87,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Fattet Batenjen</span><span class="mo__dp">38,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Fattet Kafteh</span><span class="mo__dp">75,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Samke Traboulsiyeh</span><span class="mo__dp">95,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Mouhammara</span><span class="mo__dp">56,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Yalanji</span><span class="mo__dp">38,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Arnabeet</span><span class="mo__dp">28,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Mdardara</span><span class="mo__dp">26,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Hindbeh</span><span class="mo__dp">38,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Balila</span><span class="mo__dp">32,000</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Hot Mezze</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Kibbeh Sajiyeh</span><span class="mo__dp">50,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Kibbeh Semakiyeh</span><span class="mo__dp">32,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Briwat Jebneh</span><span class="mo__dp">70,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Sambousik</span><span class="mo__dp">38,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Sawda Djej</span><span class="mo__dp">75,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Toshka</span><span class="mo__dp">75,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Hummus Bil Lahme</span><span class="mo__dp">78,000</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Grill</div><div class="mo__cs">Mechwi</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Taouk</span><span class="mo__dp">95,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Kebab</span><span class="mo__dp">115,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Makanek</span><span class="mo__dp">75,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Shrimps</span><span class="mo__dp">105,000</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Main Course</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Tabekh Em Sherif</span><span class="mo__dp">145,000</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Dessert</div><div class="mo__cs">Helo</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Em Ali</span><span class="mo__dp">125,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Nammoura</span><span class="mo__dp">30,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Muhallabiyeh</span><span class="mo__dp">38,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Meghleh</span><span class="mo__dp">45,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Foret Noire</span><span class="mo__dp">62,000</span></div>
-        <div class="mo__d"><span class="mo__dn">Cr&egrave;me Caramel</span><span class="mo__dp">62,000</span></div>
-      </div>
-    </div>
-    <div class="mo__brk"><img src="assets/c5.jpg" alt="" /></div>
-    <p class="mo__cr">Prices in Lebanese Pounds (LBP) &middot; Beirut &middot; <a href="https://emsherifrestaurant.com/menu/" target="_blank" rel="noopener">Official menus &rsaquo;</a></p>
-  </div>
-
-  <div class="mo__bd" data-view="doh" hidden>
-    <p class="mo__intro">A traditional, refined and multifaceted Lebanese culinary experience, curated with love and made with intention.</p>
-    <div class="mo__cats">
-      <div class="mo__cat">
-        <div class="mo__ct">Furn</div><div class="mo__cs">From the oven</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Manouche Zaatar</span><span class="mo__dp">52</span><span class="mo__dd">Wild thyme mix on flatbread</span></div>
-        <div class="mo__d"><span class="mo__dn">Manouche Jebneh</span><span class="mo__dp">60</span><span class="mo__dd">Cheese mix on flatbread</span></div>
-        <div class="mo__d"><span class="mo__dn">Lahme bi Ajeen</span><span class="mo__dp">72</span><span class="mo__dd">Ground spiced meat on flatbread</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Salata</div><div class="mo__cs">Salads</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Tabbouleh</span><span class="mo__dp">65</span><span class="mo__dd">Parsley, tomato, spring onion, mint, lemon, olive oil</span></div>
-        <div class="mo__d"><span class="mo__dn">Fattouch</span><span class="mo__dp">65</span><span class="mo__dd">Rocca, lettuce, radish, tomato, pomegranate molasses</span></div>
-        <div class="mo__d"><span class="mo__dn">Artichoke</span><span class="mo__dp">90</span><span class="mo__dd">Artichoke, leek confit, olive, pine nut, sumac</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Cold Mezze</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Hummus</span><span class="mo__dp">55</span><span class="mo__dd">Chickpea dip, tahini, extra virgin olive oil</span></div>
-        <div class="mo__d"><span class="mo__dn">Hummus Caviar</span><span class="mo__dp">775</span><span class="mo__dd">Chickpea dip, tahini, lemon, olive oil, 30 gr caviar</span></div>
-        <div class="mo__d"><span class="mo__dn">Mutabbal</span><span class="mo__dp">65</span><span class="mo__dd">Grilled aubergine dip, tahini, fresh pomegranate</span></div>
-        <div class="mo__d"><span class="mo__dn">Truffle Habra Nayye</span><span class="mo__dp">160</span><span class="mo__dd">Beef tartar, chive, fresh truffle shavings</span><span class="mo__da"><span>Add truffle</span><span>27</span></span></div>
-        <div class="mo__d"><span class="mo__dn">Kibbeh Nayye</span><span class="mo__dp">90</span><span class="mo__dd">Lebanese beef tartar, bulgur, radish, olive oil</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Fatteh</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Fattet Fatayer</span><span class="mo__dp">78</span><span class="mo__dd">Spinach and wild zaatar pastries, yoghurt, tomato</span></div>
-        <div class="mo__d"><span class="mo__dn">Fattet Batenjen</span><span class="mo__dp">85</span><span class="mo__dd">Eggplant, yoghurt, basil, pine nut, crispy pita</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Hot Mezze</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Wagyu Hummus</span><span class="mo__dp">240</span><span class="mo__dd">Chickpea dip, tahini, sauteed Wagyu beef</span></div>
-        <div class="mo__d"><span class="mo__dn">Mutabbal Kreidis</span><span class="mo__dp">108</span><span class="mo__dd">Grilled aubergine, sauteed prawns, chili oil</span></div>
-        <div class="mo__d"><span class="mo__dn">Wagyu Ras Asfour</span><span class="mo__dp">240</span><span class="mo__dd">Diced Wagyu beef, pomegranate molasses</span></div>
-        <div class="mo__d"><span class="mo__dn">Wagyu Shawarma Lahme</span><span class="mo__dp">208</span><span class="mo__dd">Beef shawarma, parsley, pickles, onion, tomato</span></div>
-        <div class="mo__d"><span class="mo__dn">Wagyu Kebab Karaz</span><span class="mo__dp">215</span><span class="mo__dd">Wagyu kebab balls, sour cherry sauce</span></div>
-        <div class="mo__d"><span class="mo__dn">Arnabeet</span><span class="mo__dp">74</span><span class="mo__dd">Roasted cauliflower, parsley tahini, parsley oil</span></div>
-        <div class="mo__d"><span class="mo__dn">Wagyu Makanek</span><span class="mo__dp">148</span><span class="mo__dd">Lebanese sausages, sumac, onion, pine nuts</span></div>
-        <div class="mo__d"><span class="mo__dn">Musakhan Roll</span><span class="mo__dp">95</span><span class="mo__dd">Chicken, sumac, onion, yoghurt, pomegranate</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Tabekh</div><div class="mo__cs">Slow-cooked</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Mushroom &amp; Truffle Moghrabiyeh</span><span class="mo__dp">275</span><span class="mo__dd">Mushroom moghrabiyeh hrisseh, truffle shaving</span><span class="mo__da"><span>Add truffle</span><span>35</span></span></div>
-        <div class="mo__d"><span class="mo__dn">Caviar Moghrabiyeh</span><span class="mo__dp">1099</span><span class="mo__dd">Fresh cream, lemon, caviar, moghrabiyeh, 50 gr caviar</span></div>
-        <div class="mo__d"><span class="mo__dn">Kharouf w Freekeh <em style="color:var(--grey)">(for 2)</em></span><span class="mo__dp">298</span><span class="mo__dd">Slow cooked Australian lamb shank, smoked green wheat</span></div>
-        <div class="mo__d"><span class="mo__dn">Freekeh Djej</span><span class="mo__dp">245</span><span class="mo__dd">Slow cooked free-range chicken, charred onion, plum</span></div>
-        <div class="mo__d"><span class="mo__dn">Lobster Mashboos</span><span class="mo__dp">395</span><span class="mo__dd">Omani lobster, spiced tomato rice</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Mechwi</div><div class="mo__cs">From the grill</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Taouk</span><span class="mo__dp">138</span><span class="mo__dd">Grilled marinated chicken skewers, garlic dip, lemon rice</span></div>
-        <div class="mo__d"><span class="mo__dn">Wagyu Kefta</span><span class="mo__dp">245</span><span class="mo__dd">Ground Wagyu beef, mint, parsley kefta, yoghurt</span></div>
-        <div class="mo__d"><span class="mo__dn">Lahme Wagyu</span><span class="mo__dp">315</span><span class="mo__dd">Wagyu beef skewers, zaatar and herb dip, tomato rice</span></div>
-        <div class="mo__d"><span class="mo__dn">Farrouj</span><span class="mo__dp">255</span><span class="mo__dd">Baby chicken, sumac, garlic dip, cardamom rice</span></div>
-      </div>
-    </div>
-    <div class="mo__brk"><img src="assets/wide-4.jpg" alt="" /></div>
-    <p class="mo__cr">Prices in Qatari Riyal (QAR) &middot; Doha &middot; <a href="https://emsherifrestaurant.com/menu/" target="_blank" rel="noopener">Official menus &rsaquo;</a></p>
-  </div>
-
-  <div class="mo__bd" data-view="lon" hidden>
-    <p class="mo__intro">A culinary journey at Harrods, where Lebanese traditions unfold with a timeless touch and flair.</p>
-    <div class="mo__cats">
-      <div class="mo__cat">
-        <div class="mo__ct">Available at Harrods</div><div class="mo__cs">Mayfair, London</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Full dining experience</span><span class="mo__dp"></span><span class="mo__dd">The complete Lebanese feast served to share</span></div>
-        <div class="mo__d"><span class="mo__dn">A La Carte</span><span class="mo__dp"></span><span class="mo__dd">Individual selection from the menu</span></div>
-        <div class="mo__d"><span class="mo__dn">Sunset Menu</span><span class="mo__dp"></span><span class="mo__dd">Available during early evening service</span></div>
-      </div>
-    </div>
-    <p class="mo__cr">Harrods, 87-135 Brompton Rd, London SW1X 7XL &middot; <a href="https://emsherifrestaurant.co.uk/menu/" target="_blank" rel="noopener">View full menu &rsaquo;</a></p>
-  </div>
-
-  <div class="mo__bd" data-view="cafe" hidden>
-    <p class="mo__intro">An all-day haven to indulge in creations inspired by family traditions and flavors while embracing a contemporary flair.</p>
-    <div class="mo__cats">
-      <div class="mo__cat">
-        <div class="mo__ct">From the Oven</div><div class="mo__cs">Men el Furn</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Man&rsquo;oushe Zaatar</span><span class="mo__dp">3.50</span><span class="mo__dd">Homemade thyme mix on flatbread</span></div>
-        <div class="mo__d"><span class="mo__dn">Man&rsquo;oushe Jebneh</span><span class="mo__dp">4.00</span><span class="mo__dd">Homemade cheese mix on flatbread</span></div>
-        <div class="mo__d"><span class="mo__dn">Lahme bi Ajeen</span><span class="mo__dp">4.25</span><span class="mo__dd">Spicy minced meat pie</span></div>
-        <div class="mo__d"><span class="mo__dn">Musakhan</span><span class="mo__dp">5.50</span><span class="mo__dd">Onion and sumac chicken on flatbread</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Eggs &amp; Dairy</div><div class="mo__cs">Beyd w Albane</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Beyd Ouyoun</span><span class="mo__dp">3.50</span><span class="mo__dd">Sunny side up eggs</span></div>
-        <div class="mo__d"><span class="mo__dn">Beyd Soujouk</span><span class="mo__dp">4.75</span><span class="mo__dd">Eggs any style, Lebanese spicy sausage</span></div>
-        <div class="mo__d"><span class="mo__dn">Goat Milk Labneh</span><span class="mo__dp">4.75</span><span class="mo__dd">Homemade goat labneh, olive oil</span></div>
-        <div class="mo__d"><span class="mo__dn">Halloum</span><span class="mo__dp">6.15</span><span class="mo__dd">Pan fried halloumi, tomato, wild zaatar</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Fatteh</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Fatteh Hummus</span><span class="mo__dp">5.25</span><span class="mo__dd">Chickpea, yoghurt, crispy bread, pine nuts</span></div>
-        <div class="mo__d"><span class="mo__dn">Fatteh Batenjen</span><span class="mo__dp">5.25</span><span class="mo__dd">Marinated eggplant, yoghurt, pine nuts</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Salads</div><div class="mo__cs">Salatat</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Tabbouleh</span><span class="mo__dp">4.65</span><span class="mo__dd">Parsley, tomato, bulgur, lemon, olive oil</span></div>
-        <div class="mo__d"><span class="mo__dn">Fattoush Debs Remmane</span><span class="mo__dp">4.65</span><span class="mo__dd">Chopped salad, pomegranate molasses</span></div>
-        <div class="mo__d"><span class="mo__dn">Kale Freekeh</span><span class="mo__dp">5.15</span><span class="mo__dd">Kale, freekeh, pistachio, seasonal fruit</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Cold Mezze</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Hummus</span><span class="mo__dp">4.15</span><span class="mo__dd">Chickpea dip, tahini, olive oil</span></div>
-        <div class="mo__d"><span class="mo__dn">Mutabbal</span><span class="mo__dp">4.15</span><span class="mo__dd">Flame grilled eggplant, tahini, pomegranate</span></div>
-        <div class="mo__d"><span class="mo__dn">Muhammara</span><span class="mo__dp">4.50</span><span class="mo__dd">Sweet pepper and walnut dip</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Hot Mezze</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Hummus Lahme</span><span class="mo__dp">6.75</span><span class="mo__dd">Chickpea, tahini, minced beef</span></div>
-        <div class="mo__d"><span class="mo__dn">Sambousik</span><span class="mo__dp">4.25</span><span class="mo__dd">Meat filled pastries</span></div>
-        <div class="mo__d"><span class="mo__dn">Falafel</span><span class="mo__dp">3.50</span><span class="mo__dd">Chickpea and herb fritters, tahini</span></div>
-        <div class="mo__d"><span class="mo__dn">Batata Harra</span><span class="mo__dp">4.80</span><span class="mo__dd">Spicy potatoes, coriander</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Sandwiches</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Burger Em Sherif</span><span class="mo__dp">8.25</span><span class="mo__dd">Beef patty, brioche, cheddar, coleslaw</span></div>
-        <div class="mo__d"><span class="mo__dn">Shawarma Djeij</span><span class="mo__dp">5.95</span><span class="mo__dd">Chicken shawarma, garlic cream</span></div>
-        <div class="mo__d"><span class="mo__dn">Taouk</span><span class="mo__dp">5.95</span><span class="mo__dd">Grilled chicken skewers, garlic cream, fries</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Mashewe</div><div class="mo__cs">From the grill</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Taouk Skewers</span><span class="mo__dp">12.50</span><span class="mo__dd">Marinated chicken, garlic cream</span></div>
-        <div class="mo__d"><span class="mo__dn">Kebab Skewers</span><span class="mo__dp">12.50</span><span class="mo__dd">Minced beef, cinnamon, tomato</span></div>
-        <div class="mo__d"><span class="mo__dn">Mixed Grills</span><span class="mo__dp">19.00</span><span class="mo__dd">Taouk, kebab and beef skewers</span></div>
-      </div>
-      <div class="mo__cat">
-        <div class="mo__ct">Helo</div><div class="mo__cs">Desserts</div><div class="mo__cl"></div>
-        <div class="mo__d"><span class="mo__dn">Muhallabiyeh Assal</span><span class="mo__dp">4.95</span><span class="mo__dd">Honey and bee pollen muhallabiyeh</span></div>
-        <div class="mo__d"><span class="mo__dn">Em Ali</span><span class="mo__dp">6.50</span><span class="mo__dd">Puffed pastry, vanilla milk, mixed nuts</span></div>
-        <div class="mo__d"><span class="mo__dn">Bouza w Ghazel el Banet</span><span class="mo__dp">7.75</span><span class="mo__dd">Mastika ice cream, candy floss</span></div>
-      </div>
-    </div>
-    <div class="mo__brk"><img src="assets/c7.jpg" alt="" /></div>
-    <p class="mo__cr">Prices in Jordanian Dinar (JOD) &middot; Amman &middot; <a href="https://emsherif-cafe.com/menu/" target="_blank" rel="noopener">Official menus &rsaquo;</a></p>
-  </div>
-
-  <div class="mo__ft">
-    <p>&ldquo;We promise a distinctive and exceptional take on renowned Lebanese dining&ndash;every time.&rdquo;</p>
-    <a class="btn btn--g" data-go-rsv><span>Reserve a table</span></a>
-  </div>
-</section>
-
-<main id="top">
-
-  <section class="hero">
-    <img class="hero__bg" src="assets/c3.jpg" alt="Dining room" />
-    <div class="hero__g"></div>
-    <div class="hero__ar">&#1575;&#1605; &#1588;&#1585;&#1610;&#1601;</div>
-    <div class="hero__meta"><span>Beirut</span><span>Lebanese Cuisine</span><span>Est. 2011</span></div>
-    <div class="hero__ct">
-      <span class="hero__eb">A Culinary Legacy</span>
-      <h1 class="hero__h">
-        <span class="ln"><span data-r>The Art of</span></span>
-        <span class="ln"><span data-r><em>Lebanese</em> Dining</span></span>
-      </h1>
-      <div class="hero__row">
-        <p class="hero__d">A meticulously crafted tribute to the art of Lebanese dining, where every moment is a celebration of culinary heritage.</p>
-        <div class="hero__ctas">
-          <a class="btn btn--g" href="#reserve"><span>Reserve a table</span></a>
-          <a class="btn btn--o" data-open-menu><span>View the menu</span></a>
+      <div class="ph__meta" data-ru>
+        <div class="ph__meta-item">
+          <span class="ph__meta-n">3</span>
+          <span class="ph__meta-l">Concepts</span>
+        </div>
+        <div class="ph__meta-item">
+          <span class="ph__meta-n">15+</span>
+          <span class="ph__meta-l">Locations</span>
+        </div>
+        <div class="ph__meta-item">
+          <span class="ph__meta-n">50+</span>
+          <span class="ph__meta-l">Awards</span>
         </div>
       </div>
     </div>
-    <div class="hero__sc">Scroll</div>
   </section>
 
-  <div class="marquee">
-    <div class="marquee__in" data-marquee>
-      <span class="marquee__it">Bread &amp; Salt <span class="dot"></span> La vie Libanaise <span class="dot"></span> Curated with Love <span class="dot"></span> Est. 2011 <span class="dot"></span> Beirut <span class="dot"></span> Welcome Home <span class="dot"></span> Fine Dining <span class="dot"></span></span>
-      <span class="marquee__it">Bread &amp; Salt <span class="dot"></span> La vie Libanaise <span class="dot"></span> Curated with Love <span class="dot"></span> Est. 2011 <span class="dot"></span> Beirut <span class="dot"></span> Welcome Home <span class="dot"></span> Fine Dining <span class="dot"></span></span>
+  <!-- Concept Grid -->
+  <section class="sec">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Our Concepts</p>
+        <h2 class="sh__h">Three Worlds,<br><em>One Vision</em></h2>
+      </div>
+      <div class="g3">
+        <a href="restaurant.html" class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/dish-1.jpg" alt="Fine Dining">
+          </div>
+          <div class="cc__ct">
+            <p class="cc__eb">Fine Dining</p>
+            <h3 class="cc__h">The Restaurant</h3>
+            <p class="cc__d">Beirut's most celebrated Lebanese dining experience</p>
+          </div>
+        </a>
+        <a href="cafe.html" class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/cf1.jpg" alt="Café & Pâtisserie">
+          </div>
+          <div class="cc__ct">
+            <p class="cc__eb">Café & Pâtisserie</p>
+            <h3 class="cc__h">The Café</h3>
+            <p class="cc__d">European elegance meets Lebanese warmth</p>
+          </div>
+        </a>
+        <a href="deli.html" class="cc" data-ru>
+          <div class="cc__img">
+            <img src="assets/food-1.jpg" alt="Artisan Deli">
+          </div>
+          <div class="cc__ct">
+            <p class="cc__eb">Artisan Deli</p>
+            <h3 class="cc__h">The Deli</h3>
+            <p class="cc__d">Curated provisions and ready-to-enjoy creations</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Statement -->
+  <section class="ch sec--nv">
+    <div class="sec__in">
+      <div class="ch__n" data-ru>01</div>
+      <div class="ch__eb" data-ru>
+        <img src="assets/logo-white.png" alt="Logo" class="ch__logo">
+      </div>
+      <h2 class="ch__tx h2" data-ru>Every dish is a love letter to <em>Lebanese heritage</em> — written in the language of modern cuisine.</h2>
+      <div class="ch__sg" data-ru>
+        <p class="ch__sg-n">Mireille Hayek</p>
+        <p class="ch__sg-t">Founder</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" data-marquee>
+    <div class="marquee__in">
+      <span class="marquee__it">Beirut</span>
+      <span class="dot"></span>
+      <span class="marquee__it">London</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Doha</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Muscat</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Cairo</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Amman</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Riyadh</span>
+      <span class="dot"></span>
+      <span class="marquee__it">Jeddah</span>
+      <span class="dot"></span>
     </div>
   </div>
 
-  <section class="manif">
-    <div class="manif__bg" data-pt>&#1575;&#1605; &#1588;&#1585;&#1610;&#1601;</div>
-    <div class="manif__eb" data-ru>Welcome home</div>
-    <p class="manif__t" data-ru>Bread and salt depict the alliance between people that happens over a shared meal. <em>Em Sherif</em> is a glimpse into la vie Libanaise.</p>
-    <div class="manif__w" data-ru>The mother of Sherif</div>
-  </section>
-
-  <section class="ch ch--iv" id="story">
-    <div class="ch__g ch__g--r">
-      <div class="ch__m">
-        <div class="ch__mi" data-ri><img src="assets/story-tall.jpg" alt="Founders" /></div>
-        <div class="ch__n">I</div>
-        <div class="ch__cap">Mireille &amp; Yasmina Hayek</div>
+  <!-- Gallery -->
+  <section class="sec">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Gallery</p>
+        <h2 class="sh__h">A Feast for<br><em>the Eyes</em></h2>
       </div>
-      <div class="ch__tx">
-        <div class="ch__eb" data-ru><span class="nm">I</span> Our Story</div>
-        <h2 class="ch__h" data-ru>A table set with love, <em>for the world</em></h2>
-        <p class="ch__p" data-ru>Step into a realm of culinary splendor, where Lebanese traditions unfold with a timeless touch and flair. Each dish is a meticulously crafted tribute to the art of Lebanese dining, made with intention and served with pride.</p>
-        <p class="ch__p" data-ru>Savor the finest flavors that pay homage to the rich culinary heritage of Lebanon and immerse yourself in our uniquely created ambiance to create an unforgettable dining experience&mdash;where every moment is a celebration of culinary heritage.</p>
-        <blockquote class="ch__q" data-ru>&ldquo;My passion for cooking is the secret to my success. I want this meal to remind you of the ones shared around my own table.&rdquo;</blockquote>
-        <div class="ch__sg" data-ru>Mireille Hayek<span>Founder</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="vb">
-    <video autoplay muted loop playsinline poster="assets/loc-doha.jpg"><source src="assets/hero-video.mp4" type="video/mp4" /></video>
-    <div class="vb__g"></div>
-    <div class="vb__in">
-      <div class="vb__eb" data-ru>The Experience</div>
-      <blockquote class="vb__q" data-ru>A traditional, refined and multifaceted Lebanese culinary experience, curated with love, made with intention.</blockquote>
-      <cite class="vb__c" data-ru>Em Sherif Restaurant</cite>
-    </div>
-  </section>
-
-  <section class="ch ch--nv">
-    <div class="ch__g">
-      <div class="ch__m">
-        <div class="ch__mi" data-ri><img src="assets/banner-1.jpg" alt="Mezze table" /></div>
-        <div class="ch__n">II</div>
-      </div>
-      <div class="ch__tx">
-        <div class="ch__eb" data-ru><span class="nm">II</span> The Table</div>
-        <h2 class="ch__h" data-ru>A feast <em>without end</em></h2>
-        <p class="ch__p" data-ru>There is no ordering at Em Sherif. You take your seat, and the table begins to fill, dish after dish, cold and hot mezze in generous succession, until generosity itself becomes the meal.</p>
-        <p class="ch__p" data-ru>Hummus and mutabbal, hand-rolled vine leaves, the finest Lebanese tartar, the grill, and sweet endings, all served to share, the way a Lebanese table has always been.</p>
-        <a class="btn btn--o" data-open-menu style="border-color:rgba(255,255,255,.5)"><span>Explore the menu</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="gal" id="gallery">
-    <div class="sh">
-      <div class="sh__eb" data-ru>The Rooms</div>
-      <h2 class="sh__h" data-ru>A world in royal blue &amp; gold</h2>
-      <p class="sh__s" data-ru>Inside the dining rooms.</p>
-    </div>
-    <div class="gal__sc" data-gs>
-      <div class="gal__tk" data-gt>
-        <figure class="gal__i gal__i--lg" data-f="assets/c1.jpg"><img src="assets/c1.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>Mirrors &amp; light</b></figcaption></figure>
-        <figure class="gal__i gal__i--md" data-f="assets/wide-1.jpg"><img src="assets/wide-1.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>Beneath the canopy</b></figcaption></figure>
-        <figure class="gal__i gal__i--sm" data-f="assets/c5.jpg"><img src="assets/c5.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>Olive &amp; azure</b></figcaption></figure>
-        <figure class="gal__i gal__i--lg" data-f="assets/wide-3.jpg"><img src="assets/wide-3.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>The blue room</b></figcaption></figure>
-        <figure class="gal__i gal__i--md" data-f="assets/c7.jpg"><img src="assets/c7.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>Brass &amp; tile</b></figcaption></figure>
-        <figure class="gal__i gal__i--sm" data-f="assets/dish-4.jpg"><img src="assets/dish-4.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>Set for the evening</b></figcaption></figure>
-        <figure class="gal__i gal__i--lg" data-f="assets/wide-4.jpg"><img src="assets/wide-4.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>Em Sherif blue</b></figcaption></figure>
-        <figure class="gal__i gal__i--md" data-f="assets/dish-1.jpg"><img src="assets/dish-1.jpg" alt="" /><figcaption class="cap"><small>The Room</small><b>Golden evenings</b></figcaption></figure>
-        <figure class="gal__i gal__i--sm" data-f="assets/c10.jpg"><img src="assets/c10.jpg" alt="" /><figcaption class="cap"><small>The Lounge</small><b>After dark</b></figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="mb">
-    <div class="mb__bg" data-p style="background-image:url('assets/banner-1.jpg')"></div>
-    <div class="mb__g"></div>
-    <div class="mb__in">
-      <div class="mb__eb" data-ru>The Menu</div>
-      <h2 class="mb__h" data-ru>From the furn to the grill</h2>
-      <p class="mb__d" data-ru>Beirut, Doha, London and the Caf&eacute;, each with its own table.</p>
-      <a class="btn btn--g" data-open-menu><span>View the menus</span></a>
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="stats__g">
-      <div class="st" data-ru><div class="st__n"><em data-c="2011">2011</em></div><div class="st__l">Founded in Beirut</div></div>
-      <div class="st" data-ru><div class="st__n"><em data-c="7">0</em></div><div class="st__l">Restaurant cities</div></div>
-      <div class="st" data-ru><div class="st__n"><em data-c="15">0</em></div><div class="st__l">Caf&eacute; locations</div></div>
-      <div class="st" data-ru><div class="st__n">No. 9<span style="font-size:.42em;vertical-align:super;font-style:italic;color:var(--gold-d)">Best</span></div><div class="st__l">MENA&rsquo;s 50 Best 2025</div></div>
-    </div>
-  </section>
-
-  <section class="locs" id="locations">
-    <div class="locs__hd">
-      <div>
-        <div class="ch__eb" data-ru style="margin-bottom:10px"><span class="nm">III</span> Locations</div>
-        <h2 class="locs__t" data-ru>From Beirut <em>to the world</em></h2>
-      </div>
-      <p class="locs__s" data-ru>Seven restaurant cities and fifteen caf&eacute; locations across the Middle East, Europe and beyond.</p>
-    </div>
-    <div class="locs__ls">
-      <div class="locs__r locs__r--f" data-ru><span class="locs__i">01</span><span class="locs__c">Beirut<span class="locs__tg">Flagship</span></span><span class="locs__m">Damascus Street, Monot<span class="locs__phone">+961 70 919 119</span><span class="locs__hours">Mon&ndash;Sun 12:30 PM &ndash; 4:00 PM</span></span></div>
-      <div class="locs__r" data-ru><span class="locs__i">02</span><span class="locs__c">Kuwait City<span class="fl">Kuwait</span></span><span class="locs__m">Palms Hotel, Rumaithiya<span class="locs__phone">+965 9097 7997</span><span class="locs__hours">Mon&ndash;Sun 12:30 PM &ndash; 5 PM &amp; 8 PM &ndash; 10:30 PM</span></span></div>
-      <div class="locs__r" data-ru><span class="locs__i">03</span><span class="locs__c">Damascus<span class="fl">Syria</span></span><span class="locs__m">Four Seasons Hotel<span class="locs__phone">+963 933 809 100</span><span class="locs__hours">Mon&ndash;Sun 9 AM &ndash; 3 AM</span></span></div>
-      <div class="locs__r" data-ru><span class="locs__i">04</span><span class="locs__c">London<span class="fl">United Kingdom</span></span><span class="locs__m">Harrods, Mayfair<span class="locs__phone">020 7893 8072</span><span class="locs__hours">Mon&ndash;Sun 12 PM &ndash; 9 PM</span></span></div>
-      <div class="locs__r" data-ru><span class="locs__i">05</span><span class="locs__c">Monte Carlo<span class="fl">Monaco</span></span><span class="locs__m">Casino Boulingrins<span class="locs__phone">+377 98 06 88 75</span><span class="locs__hours">Mon&ndash;Sun 9 AM &ndash; 3 AM</span></span></div>
-      <div class="locs__r" data-ru><span class="locs__i">06</span><span class="locs__c">Doha<span class="fl">Qatar</span></span><span class="locs__m">Al Maha Island<span class="locs__phone">+974 5 105 6666</span><span class="locs__hours">Mon&ndash;Sun 1 PM &ndash; 12 AM</span></span></div>
-      <div class="locs__r" data-ru><span class="locs__i">07</span><span class="locs__c">Muscat<span class="fl">Oman</span></span><span class="locs__m">The St. Regis Al Mouj<span class="locs__phone">+968 2271 0460</span><span class="locs__hours">Mon&ndash;Sun 1 PM &ndash; 11:30 PM</span></span></div>
-    </div>
-  </section>
-
-  <section class="rec" id="recognition">
-    <div class="sh">
-      <div class="sh__eb" data-ru><span class="nm" style="font-family:var(--disp);font-style:italic;font-size:1.4em;color:var(--gold-l);letter-spacing:0">IV</span> Recognition</div>
-      <h2 class="sh__h" data-ru>Awards &amp; Press</h2>
-      <p class="sh__s" data-ru>Celebrated by the guides, the press, and generations of guests.</p>
-    </div>
-    <div class="rec__g">
-      <div class="rec__c" data-ru><img src="assets/loc-doha.jpg" alt="" /><div class="rec__co"><div class="rec__ct">MENA&rsquo;s 50 Best Restaurants 2025</div><h3 class="rec__ch">No. 9 in the Middle East &amp; North Africa</h3><p class="rec__cd">Best Restaurant in Lebanon 2025</p></div></div>
-      <div class="rec__c" data-ru><img src="assets/yasmina.jpg" alt="" /><div class="rec__co"><div class="rec__ct">MENA&rsquo;s 50 Best</div><h3 class="rec__ch">Best Female Chef 2025</h3><p class="rec__cd">Yasmina Hayek &middot; Michelin Young Chef Award &middot; Forbes 30 Under 30</p></div></div>
-      <div class="rec__c" data-ru><img src="assets/press-vogue.jpg" alt="" /><div class="rec__co"><div class="rec__ct">In the Press</div><h3 class="rec__ch">A Culinary Icon</h3><p class="rec__cd">Michelin Guide &middot; Vogue Arabia &middot; Forbes &middot; Time Out</p></div></div>
-    </div>
-  </section>
-
-  <section class="rsv" id="reserve">
-    <div class="rsv__bg" data-p style="background-image:url('assets/dish-4.jpg')"></div>
-    <div class="rsv__gr"></div>
-    <div class="rsv__g">
-      <div>
-        <div class="rsv__eb" data-ru>Reservations</div>
-        <h2 class="rsv__h" data-ru>A place is kept <em>for you</em></h2>
-        <p class="rsv__ld" data-ru>Reserve your table and let the mezze begin.</p>
-        <div class="rsv__info">
-          <div data-ru><div class="rsv__lb">Flagship Address</div><div class="rsv__vl">Damascus Street, Monot, Beirut, Lebanon</div></div>
-          <div data-ru><div class="rsv__lb">Opening Hours</div><div class="rsv__vl">Monday to Sunday, 12:30 PM to 4:00 PM</div></div>
-          <div data-ru><div class="rsv__lb">Reservations</div><div class="rsv__vl"><a href="tel:+96170919119">+961 70 919 119</a></div></div>
+      <div class="gal" data-gs>
+        <div class="gal__sc" data-gt>
+          <div class="gal__i gal__i--lg" data-f="assets/dish-2.jpg">
+            <img src="assets/dish-2.jpg" alt="Signature dish" data-ri>
+          </div>
+          <div class="gal__i gal__i--md" data-f="assets/dish-3.jpg">
+            <img src="assets/dish-3.jpg" alt="Plated dish" data-ri>
+          </div>
+          <div class="gal__i gal__i--sm" data-f="assets/cf2.jpg">
+            <img src="assets/cf2.jpg" alt="Dessert" data-ri>
+          </div>
+          <div class="gal__i gal__i--md" data-f="assets/dish-4.jpg">
+            <img src="assets/dish-4.jpg" alt="Traditional dish" data-ri>
+          </div>
+          <div class="gal__i gal__i--lg" data-f="assets/food-2.jpg">
+            <img src="assets/food-2.jpg" alt="Artisan platter" data-ri>
+          </div>
+          <div class="gal__i gal__i--sm" data-f="assets/cf3.jpg">
+            <img src="assets/cf3.jpg" alt="Patisserie" data-ri>
+          </div>
+          <div class="gal__i gal__i--md" data-f="assets/dish-5.jpg">
+            <img src="assets/dish-5.jpg" alt="Grilled dish" data-ri>
+          </div>
+          <div class="gal__i gal__i--sm" data-f="assets/food-3.jpg">
+            <img src="assets/food-3.jpg" alt="Deli selection" data-ri>
+          </div>
         </div>
       </div>
-      <form class="rf" data-ru onsubmit="return false;">
-        <div class="rf__r"><input type="text" placeholder="First name" /><input type="text" placeholder="Last name" /></div>
-        <div class="rf__r"><input type="email" placeholder="Email" /><input type="tel" placeholder="Phone" /></div>
-        <div class="rf__r"><input type="date" /><select><option>Guests</option><option>2</option><option>4</option><option>6</option><option>8+</option></select></div>
-        <button class="btn btn--g"><span>Request reservation</span></button>
-        <p class="rf__n">A concierge will confirm your table within 24 hours.</p>
-      </form>
     </div>
   </section>
 
-</main>
+  <!-- Locations Preview -->
+  <section class="sec sec--iv">
+    <div class="sec__in">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Locations</p>
+        <h2 class="sh__h">Find Us<br><em>Near You</em></h2>
+      </div>
+      <div class="loc__ls">
+        <a href="locations.html" class="loc__r" data-ru>
+          <div class="loc__c">
+            <h3 class="loc__city">Beirut</h3>
+            <p class="loc__concept">Restaurant · Cafe · Deli</p>
+          </div>
+          <div class="loc__info">
+            <p class="loc__phone">+961 1 333 999</p>
+            <p class="loc__hours">Daily 12:00 PM – 12:00 AM</p>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <div class="loc__c">
+            <h3 class="loc__city">London</h3>
+            <p class="loc__concept">Restaurant · Cafe</p>
+          </div>
+          <div class="loc__info">
+            <p class="loc__phone">+44 20 7581 9999</p>
+            <p class="loc__hours">Daily 12:00 PM – 11:00 PM</p>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <div class="loc__c">
+            <h3 class="loc__city">Doha</h3>
+            <p class="loc__concept">Restaurant · Cafe</p>
+          </div>
+          <div class="loc__info">
+            <p class="loc__phone">+974 4412 9999</p>
+            <p class="loc__hours">Daily 12:00 PM – 12:00 AM</p>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <div class="loc__c">
+            <h3 class="loc__city">Muscat</h3>
+            <p class="loc__concept">Restaurant</p>
+          </div>
+          <div class="loc__info">
+            <p class="loc__phone">+968 2456 9999</p>
+            <p class="loc__hours">Daily 12:00 PM – 11:00 PM</p>
+          </div>
+        </a>
+        <a href="locations.html" class="loc__r" data-ru>
+          <div class="loc__c">
+            <h3 class="loc__city">Cairo</h3>
+            <p class="loc__concept">Cafe</p>
+          </div>
+          <div class="loc__info">
+            <p class="loc__phone">+20 2 2735 9999</p>
+            <p class="loc__hours">Daily 9:00 AM – 12:00 AM</p>
+          </div>
+        </a>
+      </div>
+      <div class="sec__cta" data-ru>
+        <a href="locations.html" class="btn btn--o">View All Locations</a>
+      </div>
+    </div>
+  </section>
 
-<footer class="ft">
-  <div class="ft__br">
-    <img src="assets/logo-restaurant.png" alt="Logo" style="height:48px;width:auto;display:inline-block" />
-    <p class="ft__tg">A tribute to the art of Lebanese dining since 2011.</p>
-  </div>
-  <div class="ft__cols">
-    <div class="ft__col">
-      <h5 class="ft__ct">Explore</h5>
-      <a href="#story">Our Story</a><a href="#gallery">Gallery</a><a data-open-menu>The Menu</a><a href="#locations">Locations</a>
+  <!-- Stats -->
+  <section class="sec sec--dk">
+    <div class="sec__in">
+      <div class="g3">
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="7">0</span>
+          <span class="stat__l">Restaurant Locations</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="15">0</span>
+          <span class="stat__l">Cafe Locations</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="30">0</span>
+          <span class="stat__l">Years Heritage</span>
+        </div>
+        <div class="stat" data-ru>
+          <span class="stat__n" data-c="9">0</span>
+          <span class="stat__l">MENA's 50 Best</span>
+        </div>
+      </div>
     </div>
-    <div class="ft__col">
-      <h5 class="ft__ct">Visit</h5>
-      <a href="#reserve">Reservations</a><a href="tel:+96170919119">+961 70 919 119</a><a href="#locations">Find a location</a>
-    </div>
-    <div class="ft__col">
-      <h5 class="ft__ct">Flagship</h5>
-      <a href="#reserve">Damascus Street, Monot</a><a href="#reserve">Beirut, Lebanon</a><a href="#reserve">12:30 PM &ndash; 4:00 PM</a>
-    </div>
-    <div class="ft__col">
-      <h5 class="ft__ct">Follow</h5>
-      <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/Emsheriflebanon" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.linkedin.com/company/em-sherif-restaurant/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://emsherifrestaurant.com" target="_blank" rel="noopener">emsherifrestaurant.com</a>
-    </div>
-  </div>
-  <div class="ft__bt">
-    <span>&copy; 2026 &middot; Beirut, Lebanon</span>
-    <span class="pt">Concept redesign</span>
-  </div>
-</footer>
+  </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js"></script>
+  <!-- Reservation CTA -->
+  <section class="sec sec--nv">
+    <div class="sec__in sec__in--ct">
+      <h2 class="sec__h" data-ru>Your Table Awaits</h2>
+      <p class="sec__sub" data-ru>Experience the art of Lebanese hospitality</p>
+      <a href="reservation.html" class="btn btn--g" data-ru>Reserve a Table</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="ft">
+    <div class="ft__br">
+      <a href="index.html">
+        <img src="assets/logo-white.png" alt="Logo" class="ft__logo">
+      </a>
+      <p class="ft__tagline">Lebanese Heritage, Redefined</p>
+    </div>
+    <div class="ft__cols">
+      <div class="ft__col">
+        <h4 class="ft__h">Concepts</h4>
+        <ul>
+          <li><a href="restaurant.html">The Restaurant</a></li>
+          <li><a href="cafe.html">The Cafe</a></li>
+          <li><a href="deli.html">The Deli</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__h">Explore</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="press.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__h">Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="ft__col">
+        <h4 class="ft__h">Visit</h4>
+        <ul>
+          <li><a href="reservation.html">Reserve</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft__bt">
+      <p>&copy; 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb">
+    <button class="lb__cl" aria-label="Close">&times;</button>
+    <img src="" alt="" class="lb__img">
+  </div>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

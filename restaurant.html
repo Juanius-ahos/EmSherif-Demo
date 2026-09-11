@@ -12,10 +12,11 @@
 </head>
 <body>
 
-<div class="pl" id="pl">
-  <img src="assets/logo-restaurant.png" class="pl__logo">
-  <div class="pl__bar"><div class="pl__fill"></div></div>
-  <p class="pl__text">The Restaurant</p>
+<div class="preloader" id="pl">
+  <div class="preloader__inner">
+    <div class="preloader__logo"><img src="assets/logo-restaurant.png" alt="Em Sherif"></div>
+    <div class="preloader__bar"><div class="preloader__fill"></div></div>
+  </div>
 </div>
 
 <div class="prog" id="prog"></div>
@@ -29,7 +30,7 @@
     <li><a href="deli.html" class="nav__link">Deli</a></li>
     <li><a href="locations.html" class="nav__link">Locations</a></li>
   </ul>
-  <a href="reservation.html" class="nav__cta btn btn--navy"><span>Reserve</span></a>
+  <a class="nav__cta" href="reservation.html"><span>Reserve</span></a>
   <button class="nav__b" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -56,7 +57,7 @@
 <section class="sec">
   <div class="wrap">
     <div class="g2">
-      <div class="ir ir--tall" data-ri><img src="assets/story.jpg" alt="Our story"></div>
+      <div class="ir ir--tall" data-ri><img src="assets/story.jpg" alt="Our story" loading="lazy"></div>
       <div>
         <div class="ch__eb"><span class="n">01</span> Our Story</div>
         <div class="ch__tx">
@@ -82,7 +83,7 @@
           <p>Today, that legacy continues with Yasmina Hayek, who was named MENA's Best Female Chef in 2025. Under her creative direction, Em Sherif continues to push culinary boundaries while honoring the traditions that made it beloved.</p>
         </div>
       </div>
-      <div class="ir ir--tall" data-ri><img src="assets/yasmina.jpg" alt="Yasmina Hayek"></div>
+      <div class="ir ir--tall" data-ri><img src="assets/yasmina.jpg" alt="Yasmina Hayek" loading="lazy"></div>
     </div>
   </div>
 </section>

@@ -62,6 +62,42 @@
     document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeMenu(); });
   }
 
+  /* ---- Background music (65% volume, mute toggle, persists across pages) ---- */
+  (function(){
+    var audio = document.getElementById("bgm"), btn = document.getElementById("soundBtn");
+    if(!audio) return;
+    audio.volume = 0.65;
+    var muted = false;
+    try{ muted = localStorage.getItem("esMuted") === "1"; }catch(e){}
+    try{ var t = parseFloat(sessionStorage.getItem("esTime")); if(t > 0) audio.currentTime = t; }catch(e){}
+    audio.muted = muted;
+    function syncBtn(){ if(btn) btn.classList.toggle("muted", audio.muted || audio.paused); }
+    function tryPlay(){ var p = audio.play(); if(p && p.catch) p.catch(function(){}); }
+    if(!muted) tryPlay();
+    syncBtn();
+    // Browsers block autoplay-with-sound until a gesture — start on the first one.
+    var evs = ["pointerdown","keydown","touchstart","wheel","scroll"];
+    function firstGesture(){ if(!audio.muted && audio.paused) tryPlay(); setTimeout(syncBtn, 80);
+      evs.forEach(function(ev){ window.removeEventListener(ev, firstGesture); }); }
+    evs.forEach(function(ev){ window.addEventListener(ev, firstGesture, { passive:true }); });
+    if(btn){
+      btn.addEventListener("click", function(e){
+        e.stopPropagation();
+        if(audio.muted || audio.paused){ audio.muted = false; tryPlay(); }
+        else { audio.muted = true; }
+        try{ localStorage.setItem("esMuted", audio.muted ? "1" : "0"); }catch(e){}
+        syncBtn();
+      });
+    }
+    audio.addEventListener("play", syncBtn);
+    audio.addEventListener("pause", syncBtn);
+    function save(){ try{ sessionStorage.setItem("esTime", audio.currentTime || 0);
+      localStorage.setItem("esMuted", audio.muted ? "1" : "0"); }catch(e){} }
+    window.addEventListener("pagehide", save);
+    window.addEventListener("beforeunload", save);
+    setInterval(save, 3000);
+  })();
+
   /* ---- Lightbox (gallery) ---- */
   (function(){
     var triggers = [].slice.call(document.querySelectorAll("[data-f]")),
@@ -124,7 +160,7 @@
     gsap.ticker.lagSmoothing(0);
   }
 
-  /* ---- Hero entrance ---- */
+  /* ---- Hero entrance (bottom-left hero) ---- */
   var heroCt = document.querySelector(".hero__ct");
   if(heroCt){
     gsap.timeline({ delay:.5 })
@@ -132,6 +168,16 @@
       .from(".hero__h",    { y:26, opacity:0, duration:.9, ease:"power3.out" }, "-=0.4")
       .from(".hero__sub",  { y:16, opacity:0, duration:.7, ease:"power3.out" }, "-=0.5")
       .from(".hero__scroll",{ opacity:0, duration:.5, ease:"power2.out" }, "-=0.2");
+  }
+
+  /* ---- Centered hero entrance ---- */
+  var cheroCt = document.querySelector(".chero__ct");
+  if(cheroCt){
+    gsap.timeline({ delay:.5 })
+      .from(".chero__eb",   { y:16, opacity:0, duration:.7, ease:"power3.out" })
+      .from(".chero__logo", { y:24, opacity:0, duration:1, ease:"power3.out" }, "-=0.4")
+      .from(".chero__tag",  { y:14, opacity:0, duration:.7, ease:"power3.out" }, "-=0.55")
+      .from(".chero__scroll",{ opacity:0, duration:.5, ease:"power2.out" }, "-=0.2");
   }
 
   /* ---- Page hero entrance ---- */
@@ -165,10 +211,13 @@
   });
 
   /* ---- Hero video subtle parallax drift ---- */
-  var heroMedia = document.querySelector(".hero video.bg, .hero img.bg");
-  if(heroMedia){
+  if(document.querySelector(".hero .bg")){
     gsap.to(".hero .bg", { yPercent:12, ease:"none",
       scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:true } });
+  }
+  if(document.querySelector(".chero .bg")){
+    gsap.to(".chero .bg", { yPercent:12, ease:"none",
+      scrollTrigger:{ trigger:".chero", start:"top top", end:"bottom top", scrub:true } });
   }
 
   /* ---- Counters ---- */

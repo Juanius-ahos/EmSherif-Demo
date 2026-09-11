@@ -64,7 +64,13 @@
       <img class="chero__logo" src="assets/logo-restaurant.png" alt="Em Sherif">
       <p class="chero__tag">A Lebanese table, set with love.</p>
     </div>
-    <div class="chero__scroll"><span>Scroll</span><div class="ln"></div></div>
+    <button class="scrollbadge" id="scrollBadge" aria-label="Scroll to explore">
+      <svg class="scrollbadge__ring" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><path id="sbPath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"></path></defs>
+        <text><textPath href="#sbPath" xlink:href="#sbPath" startOffset="0">Em Sherif · Scroll to explore · Em Sherif · </textPath></text>
+      </svg>
+      <span class="scrollbadge__arrow">&darr;</span>
+    </button>
   </section>
 
   <!-- (2) Editorial intro over full-bleed image -->
@@ -164,7 +170,7 @@
 
   <!-- (7) Contact & location -->
   <section class="contact">
-    <div class="contact__media"><img src="assets/room-tall.jpg" alt="Em Sherif interior" data-p loading="lazy"></div>
+    <div class="contact__media"><img src="assets/pano-wide.jpg" alt="Em Sherif interior" data-p loading="lazy"></div>
     <div class="contact__panel">
       <div class="contact__grid">
         <div>

@@ -4,20 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reservations — Em Sherif</title>
+  <meta name="description" content="Reserve your table at Em Sherif — Restaurant, Cafe, Sea Cafe, and Deli locations worldwide.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <div class="pl" id="pl">
     <img src="assets/logo-restaurant.png" class="pl__logo">
     <div class="pl__bar"><div class="pl__fill"></div></div>
+    <p class="pl__text">Reservations</p>
   </div>
 
+  <div class="prog" id="prog"></div>
+
   <nav class="nav" id="nav">
-    <a class="nav__logo"><img src="assets/logo-restaurant.png"></a>
+    <a class="nav__logo" href="index.html"><img src="assets/logo-restaurant.png" alt="Em Sherif"></a>
     <ul class="nav__links">
       <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
       <li><a href="cafe.html" class="nav__link">Cafe</a></li>
@@ -25,22 +29,22 @@
       <li><a href="deli.html" class="nav__link">Deli</a></li>
       <li><a href="locations.html" class="nav__link">Locations</a></li>
     </ul>
-    <a href="reservation.html" class="nav__cta btn btn--black">Reserve</a>
-    <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+    <a href="reservation.html" class="nav__cta btn btn--navy"><span>Reserve</span></a>
+    <button class="nav__b" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="mov" id="mov">
-    <button class="mov__x" id="closeMov">&times;</button>
+    <button class="mov__x" id="closeMov" aria-label="Close">&times;</button>
     <a href="restaurant.html"><span class="t">Restaurant</span></a>
     <a href="cafe.html"><span class="t">Cafe</span></a>
     <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
     <a href="deli.html"><span class="t">Deli</span></a>
     <a href="locations.html"><span class="t">Locations</span></a>
-    <a href="reservation.html" class="btn btn--black"><span class="t">Reserve</span></a>
+    <a href="reservation.html" class="btn btn--outline"><span class="t">Reserve</span></a>
   </div>
 
   <section class="ph">
-    <img src="assets/interior-cafe.jpg" class="bg">
+    <img src="assets/interior-cafe.jpg" class="bg" alt="" data-p>
     <div class="ph__g"></div>
     <div class="ph__ct">
       <span class="ph__eb">Reservations</span>
@@ -55,78 +59,100 @@
         <p class="sh__eb">Book a Table</p>
         <h2 class="sh__h">Reserve <em>Now</em></h2>
       </div>
-      <div style="max-width:800px;margin:0 auto;background:#fff;padding:clamp(24px,3vw,40px);border:1px solid var(--light-grey)">
+      <div style="max-width:800px;margin:0 auto;background:#fff;padding:clamp(28px,4vw,48px);border:1px solid var(--border);position:relative">
         <form>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <input type="text" placeholder="Name" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
-            <input type="email" placeholder="Email" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div>
+              <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Name</label>
+              <input type="text" placeholder="Your full name" required style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            </div>
+            <div>
+              <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Email</label>
+              <input type="email" placeholder="your@email.com" required style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            </div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <input type="tel" placeholder="Phone" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
-            <input type="date" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+            <div>
+              <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Phone</label>
+              <input type="tel" placeholder="+961 70 000 000" required style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            </div>
+            <div>
+              <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Date</label>
+              <input type="date" required style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            </div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <input type="time" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
-            <select required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
-              <option value="" disabled selected>Number of Guests</option>
-              <option value="1">1 Guest</option>
-              <option value="2">2 Guests</option>
-              <option value="3">3 Guests</option>
-              <option value="4">4 Guests</option>
-              <option value="5">5 Guests</option>
-              <option value="6">6 Guests</option>
-              <option value="7">7 Guests</option>
-              <option value="8">8 Guests</option>
-              <option value="9">9 Guests</option>
-              <option value="10">10 Guests</option>
-              <option value="11">11 Guests</option>
-              <option value="12">12 Guests</option>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+            <div>
+              <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Time</label>
+              <input type="time" required style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            </div>
+            <div>
+              <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Guests</label>
+              <select required style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+                <option value="" disabled selected>Select guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="7">7 Guests</option>
+                <option value="8">8+ Guests</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:16px">
+            <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Location</label>
+            <select required style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+              <option value="" disabled selected>Select a location</option>
+              <optgroup label="Restaurant">
+                <option value="r-beirut">Beirut — Lebanon</option>
+                <option value="r-kuwait">Kuwait City — Kuwait</option>
+                <option value="r-damascus">Damascus — Syria</option>
+                <option value="r-london">London — UK</option>
+                <option value="r-monte-carlo">Monte Carlo — Monaco</option>
+                <option value="r-doha">Doha — Qatar</option>
+                <option value="r-muscat">Muscat — Oman</option>
+              </optgroup>
+              <optgroup label="Cafe">
+                <option value="c-beirut">Beirut — Lebanon</option>
+                <option value="c-paris">Paris — France</option>
+                <option value="c-kuwait">Kuwait City — Kuwait</option>
+                <option value="c-riyadh">Riyadh — Saudi Arabia</option>
+                <option value="c-cairo-white">Cairo — White by The Waterway</option>
+                <option value="c-cairo-park">Cairo — Park St.</option>
+                <option value="c-dubai">Dubai — UAE</option>
+                <option value="c-abu-dhabi">Abu Dhabi — UAE</option>
+                <option value="c-baghdad">Baghdad — Iraq</option>
+                <option value="c-erbil">Erbil — Iraq</option>
+                <option value="c-amman">Amman — Jordan</option>
+                <option value="c-abidjan">Abidjan — Côte d'Ivoire</option>
+                <option value="c-doha">Doha — Qatar</option>
+                <option value="c-al-khobar">Al Khobar — Saudi Arabia</option>
+                <option value="c-istanbul">Istanbul — Turkey</option>
+                <option value="c-madrid">Madrid — Spain</option>
+              </optgroup>
+              <optgroup label="Sea Cafe">
+                <option value="s-beirut">Beirut — Lebanon</option>
+                <option value="s-manama">Manama — Bahrain</option>
+                <option value="s-abu-dhabi">Abu Dhabi — UAE</option>
+                <option value="s-riyadh">Riyadh — Saudi Arabia</option>
+              </optgroup>
+              <optgroup label="Deli">
+                <option value="d-london">London — UK</option>
+                <option value="d-beirut">Beirut — Lebanon</option>
+              </optgroup>
             </select>
           </div>
-          <select required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
-            <option value="" disabled selected>Select Location</option>
-            <optgroup label="Restaurant">
-              <option value="r-beirut">Beirut — Lebanon</option>
-              <option value="r-kuwait">Kuwait City — Kuwait</option>
-              <option value="r-damascus">Damascus — Syria</option>
-              <option value="r-london">London — UK</option>
-              <option value="r-monte-carlo">Monte Carlo — Monaco</option>
-              <option value="r-doha">Doha — Qatar</option>
-              <option value="r-muscat">Muscat — Oman</option>
-            </optgroup>
-            <optgroup label="Cafe">
-              <option value="c-beirut">Beirut — Lebanon</option>
-              <option value="c-paris">Paris — France</option>
-              <option value="c-kuwait">Kuwait City — Kuwait</option>
-              <option value="c-riyadh">Riyadh — Saudi Arabia</option>
-              <option value="c-cairo-white">Cairo — White by The Waterway</option>
-              <option value="c-cairo-park">Cairo — Park St.</option>
-              <option value="c-dubai">Dubai — UAE</option>
-              <option value="c-abu-dhabi">Abu Dhabi — UAE</option>
-              <option value="c-baghdad">Baghdad — Iraq</option>
-              <option value="c-erbil">Erbil — Iraq</option>
-              <option value="c-amman">Amman — Jordan</option>
-              <option value="c-abidjan">Abidjan — Côte d'Ivoire</option>
-              <option value="c-doha">Doha — Qatar</option>
-              <option value="c-al-khobar">Al Khobar — Saudi Arabia</option>
-              <option value="c-istanbul">Istanbul — Turkey</option>
-              <option value="c-madrid">Madrid — Spain</option>
-            </optgroup>
-            <optgroup label="Sea Cafe">
-              <option value="s-beirut">Beirut — Lebanon</option>
-              <option value="s-manama">Manama — Bahrain</option>
-              <option value="s-abu-dhabi">Abu Dhabi — UAE</option>
-              <option value="s-riyadh">Riyadh — Saudi Arabia</option>
-            </optgroup>
-            <optgroup label="Deli">
-              <option value="d-london">London — UK</option>
-              <option value="d-beirut">Beirut — Lebanon</option>
-            </optgroup>
-          </select>
-          <textarea placeholder="Special Requests" rows="3" style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none;resize:vertical"></textarea>
-          <button type="submit" class="btn btn--black" style="width:100%;justify-content:center">Request Reservation</button>
+          <div style="margin-top:16px">
+            <label style="font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;display:block">Special Requests</label>
+            <textarea placeholder="Allergies, celebrations, seating preferences..." rows="3" style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:var(--sans);font-size:.88rem;color:var(--ink);outline:none;resize:vertical;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+          </div>
+          <div style="margin-top:32px">
+            <button type="submit" class="btn btn--navy btn--lg" style="width:100%"><span>Request Reservation</span></button>
+          </div>
         </form>
-        <p style="text-align:center;font-size:.75rem;color:var(--grey);margin-top:16px">For immediate assistance, please call our reservations team.</p>
+        <p style="text-align:center;font-size:.72rem;color:var(--grey);margin-top:20px">For immediate assistance, please call our reservations team.</p>
       </div>
     </div>
   </section>
@@ -135,17 +161,17 @@
     <div class="wrap">
       <div class="g2">
         <div>
-          <div class="sh" style="text-align:left;margin:0 0 24px">
-            <p class="sh__eb">Get in Touch</p>
-            <h2 class="sh__h">Contact <em>Us</em></h2>
+          <div class="sh" style="text-align:left;margin:0 0 32px">
+            <p class="sh__eb" style="justify-content:flex-start">Get in Touch</p>
+            <h2 class="sh__h" style="text-align:left">Contact <em>Us</em></h2>
           </div>
-          <p style="font-size:.88rem;color:var(--grey);margin-bottom:24px">General Reservations</p>
-          <p style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.6rem);margin-bottom:32px">+961 70 919 119</p>
-          <p style="font-size:.88rem;color:var(--grey);margin-bottom:24px">Events & Private Dining</p>
-          <p style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.6rem)">events@emsherif.com</p>
+          <p style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:8px">General Reservations</p>
+          <p style="font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.8rem);margin-bottom:36px;color:var(--ink)">+961 70 919 119</p>
+          <p style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:8px">Events & Private Dining</p>
+          <p style="font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--ink)">events@emsherif.com</p>
         </div>
         <div class="ir ir--tall" data-ri>
-          <img src="assets/interior-dubai.jpg">
+          <img src="assets/interior-dubai.jpg" alt="Em Sherif interior">
         </div>
       </div>
     </div>
@@ -154,7 +180,7 @@
   <footer class="ft">
     <div class="wrap">
       <div class="ft__top">
-        <img src="assets/logo-restaurant.png" class="ft__logo">
+        <img src="assets/logo-restaurant.png" alt="Em Sherif">
         <p class="ft__tag">Lebanese Heritage, Redefined</p>
       </div>
       <div class="ft__cols">
@@ -169,15 +195,11 @@
           <p class="ft__ct">Explore</p>
           <a href="locations.html">Locations</a>
           <a href="reservation.html">Reservations</a>
-          <a href="#">Gallery</a>
-          <a href="#">Press</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Connect</p>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">TripAdvisor</a>
-          <a href="#">Contact</a>
+          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank" rel="noopener">Facebook</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Legal</p>
@@ -186,16 +208,17 @@
         </div>
       </div>
       <div class="ft__bt">
-        <p>&copy; 2026 All Rights Reserved.</p>
+        <p>&copy; 2026 Em Sherif. All Rights Reserved.</p>
+        <p>Beirut · London · Paris · Dubai · Doha</p>
       </div>
     </div>
   </footer>
 
   <div class="lb" id="lb">
-    <button class="lb__x" id="lbX">&times;</button>
-    <button class="lb__p" id="lbP">&#8249;</button>
-    <button class="lb__n" id="lbN">&#8250;</button>
-    <img id="lbI">
+    <button class="lb__x" id="lbX" aria-label="Close">&times;</button>
+    <button class="lb__p" id="lbP" aria-label="Previous">&#8249;</button>
+    <button class="lb__n" id="lbN" aria-label="Next">&#8250;</button>
+    <img id="lbI" alt="">
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>

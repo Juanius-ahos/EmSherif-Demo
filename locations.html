@@ -4,20 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locations — Em Sherif</title>
+  <meta name="description" content="Em Sherif locations worldwide — Restaurant, Cafe, Sea Cafe, and Deli across the globe.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <div class="pl" id="pl">
     <img src="assets/logo-restaurant.png" class="pl__logo">
     <div class="pl__bar"><div class="pl__fill"></div></div>
+    <p class="pl__text">Locations</p>
   </div>
 
+  <div class="prog" id="prog"></div>
+
   <nav class="nav" id="nav">
-    <a class="nav__logo"><img src="assets/logo-restaurant.png"></a>
+    <a class="nav__logo" href="index.html"><img src="assets/logo-restaurant.png" alt="Em Sherif"></a>
     <ul class="nav__links">
       <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
       <li><a href="cafe.html" class="nav__link">Cafe</a></li>
@@ -25,22 +29,22 @@
       <li><a href="deli.html" class="nav__link">Deli</a></li>
       <li><a href="locations.html" class="nav__link on">Locations</a></li>
     </ul>
-    <a href="reservation.html" class="nav__cta btn btn--black">Reserve</a>
-    <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+    <a href="reservation.html" class="nav__cta btn btn--navy"><span>Reserve</span></a>
+    <button class="nav__b" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="mov" id="mov">
-    <button class="mov__x" id="closeMov">&times;</button>
+    <button class="mov__x" id="closeMov" aria-label="Close">&times;</button>
     <a href="restaurant.html"><span class="t">Restaurant</span></a>
     <a href="cafe.html"><span class="t">Cafe</span></a>
     <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
     <a href="deli.html"><span class="t">Deli</span></a>
     <a href="locations.html"><span class="t">Locations</span></a>
-    <a href="reservation.html" class="btn btn--black"><span class="t">Reserve</span></a>
+    <a href="reservation.html" class="btn btn--outline"><span class="t">Reserve</span></a>
   </div>
 
   <section class="ph">
-    <img src="assets/banner-restaurant.jpg" class="bg">
+    <img src="assets/banner-restaurant.jpg" class="bg" alt="" data-p>
     <div class="ph__g"></div>
     <div class="ph__ct">
       <span class="ph__eb">Our World</span>
@@ -95,7 +99,7 @@
     </div>
   </section>
 
-  <section class="sec sec--black">
+  <section class="sec sec--navy">
     <div class="wrap">
       <div class="sh">
         <p class="sh__eb">The Cafe</p>
@@ -217,7 +221,7 @@
     </div>
   </section>
 
-  <section class="sec sec--black">
+  <section class="sec sec--navy">
     <div class="wrap">
       <div class="sh">
         <p class="sh__eb">The Deli</p>
@@ -241,7 +245,7 @@
   <footer class="ft">
     <div class="wrap">
       <div class="ft__top">
-        <img src="assets/logo-restaurant.png" class="ft__logo">
+        <img src="assets/logo-restaurant.png" alt="Em Sherif">
         <p class="ft__tag">Lebanese Heritage, Redefined</p>
       </div>
       <div class="ft__cols">
@@ -256,15 +260,11 @@
           <p class="ft__ct">Explore</p>
           <a href="locations.html">Locations</a>
           <a href="reservation.html">Reservations</a>
-          <a href="#">Gallery</a>
-          <a href="#">Press</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Connect</p>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">TripAdvisor</a>
-          <a href="#">Contact</a>
+          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank" rel="noopener">Facebook</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Legal</p>
@@ -273,16 +273,17 @@
         </div>
       </div>
       <div class="ft__bt">
-        <p>&copy; 2026 All Rights Reserved.</p>
+        <p>&copy; 2026 Em Sherif. All Rights Reserved.</p>
+        <p>Beirut · London · Paris · Dubai · Doha</p>
       </div>
     </div>
   </footer>
 
   <div class="lb" id="lb">
-    <button class="lb__x" id="lbX">&times;</button>
-    <button class="lb__p" id="lbP">&#8249;</button>
-    <button class="lb__n" id="lbN">&#8250;</button>
-    <img id="lbI">
+    <button class="lb__x" id="lbX" aria-label="Close">&times;</button>
+    <button class="lb__p" id="lbP" aria-label="Previous">&#8249;</button>
+    <button class="lb__n" id="lbN" aria-label="Next">&#8250;</button>
+    <img id="lbI" alt="">
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>

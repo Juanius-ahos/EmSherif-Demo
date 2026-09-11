@@ -4,17 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant — Em Sherif</title>
+  <meta name="description" content="Em Sherif Restaurant — A fine dining tribute to Lebanese culinary artistry, where every dish tells a story of heritage.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="pl" id="pl"><img src="assets/logo-restaurant.png" class="pl__logo"><div class="pl__bar"><div class="pl__fill"></div></div></div>
+<div class="pl" id="pl">
+  <img src="assets/logo-restaurant.png" class="pl__logo">
+  <div class="pl__bar"><div class="pl__fill"></div></div>
+  <p class="pl__text">The Restaurant</p>
+</div>
+
+<div class="prog" id="prog"></div>
 
 <nav class="nav" id="nav">
-  <a class="nav__logo"><img src="assets/logo-restaurant.png"></a>
+  <a class="nav__logo" href="index.html"><img src="assets/logo-restaurant.png" alt="Em Sherif"></a>
   <ul class="nav__links">
     <li><a href="restaurant.html" class="nav__link on">Restaurant</a></li>
     <li><a href="cafe.html" class="nav__link">Cafe</a></li>
@@ -22,26 +29,26 @@
     <li><a href="deli.html" class="nav__link">Deli</a></li>
     <li><a href="locations.html" class="nav__link">Locations</a></li>
   </ul>
-  <a href="reservation.html" class="nav__cta btn btn--black">Reserve</a>
-  <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+  <a href="reservation.html" class="nav__cta btn btn--navy"><span>Reserve</span></a>
+  <button class="nav__b" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mov" id="mov">
-  <button class="mov__x" id="closeMov">&times;</button>
+  <button class="mov__x" id="closeMov" aria-label="Close">&times;</button>
   <a href="restaurant.html"><span class="t">Restaurant</span></a>
   <a href="cafe.html"><span class="t">Cafe</span></a>
   <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
   <a href="deli.html"><span class="t">Deli</span></a>
   <a href="locations.html"><span class="t">Locations</span></a>
-  <a href="reservation.html" class="btn btn--black"><span class="t">Reserve a Table</span></a>
+  <a href="reservation.html" class="btn btn--outline"><span class="t">Reserve a Table</span></a>
 </div>
 
 <section class="ph">
-  <img src="assets/interior-hero.jpg" class="bg" data-p>
+  <img src="assets/interior-hero.jpg" class="bg" alt="" data-p>
   <div class="ph__g"></div>
   <div class="ph__ct">
-    <span class="ph__eb eb">The Restaurant</span>
-    <h1>A Symphony of <em>Lebanese Elegance</em></h1>
+    <span class="ph__eb">The Restaurant</span>
+    <h1 class="ph__h">A Symphony of <em>Lebanese Elegance</em></h1>
     <p class="ph__sub">Since 2011, our flagship restaurant has been the beating heart of Beirut's culinary scene.</p>
   </div>
 </section>
@@ -49,7 +56,7 @@
 <section class="sec">
   <div class="wrap">
     <div class="g2">
-      <div class="ir ir--tall" data-ri><img src="assets/story.jpg"></div>
+      <div class="ir ir--tall" data-ri><img src="assets/story.jpg" alt="Our story"></div>
       <div>
         <div class="ch__eb"><span class="n">01</span> Our Story</div>
         <div class="ch__tx">
@@ -57,14 +64,14 @@
           <p>A culinary splendor that transcends borders, Em Sherif Restaurant was founded in 2011 by the visionary Mireille Hayek. From the very first bite, guests are transported on a sensory journey through the rich tapestry of Lebanese cuisine — where tradition meets innovation, and every dish tells a story.</p>
           <p>What began as a passion project in Beirut has grown into an international phenomenon, with locations spanning from the shores of the Mediterranean to the heart of London.</p>
           <blockquote>"Lebanese cuisine is not just food — it is the story of a civilization, a celebration of life itself."</blockquote>
-          <div class="ch__sg"><span>Mireille Hayek</span> — Founder & President</div>
+          <div class="ch__sg">Mireille Hayek <span>Founder & President</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec sec--black">
+<section class="sec sec--navy">
   <div class="wrap">
     <div class="g2 g2--r">
       <div>
@@ -75,14 +82,14 @@
           <p>Today, that legacy continues with Yasmina Hayek, who was named MENA's Best Female Chef in 2025. Under her creative direction, Em Sherif continues to push culinary boundaries while honoring the traditions that made it beloved.</p>
         </div>
       </div>
-      <div class="ir ir--tall" data-ri><img src="assets/yasmina.jpg"></div>
+      <div class="ir ir--tall" data-ri><img src="assets/yasmina.jpg" alt="Yasmina Hayek"></div>
     </div>
   </div>
 </section>
 
 <section class="sec sec--grey">
   <div class="wrap">
-      <div class="sh">
+    <div class="sh">
       <p class="sh__eb">Our Menus</p>
       <h2 class="sh__h">Crafted with <em>Love</em></h2>
     </div>
@@ -123,9 +130,9 @@
   </div>
 </section>
 
-<section class="sec sec--black">
+<section class="sec sec--navy">
   <div class="wrap">
-      <div class="sh">
+    <div class="sh">
       <p class="sh__eb">Our Locations</p>
       <h2 class="sh__h">Where to Find <em>Us</em></h2>
     </div>
@@ -172,7 +179,7 @@
 <footer class="ft">
   <div class="wrap">
     <div class="ft__top">
-      <img src="assets/logo-restaurant.png">
+      <img src="assets/logo-restaurant.png" alt="Em Sherif">
       <p class="ft__tag">Lebanese Heritage, Redefined</p>
     </div>
     <div class="ft__cols">
@@ -190,8 +197,8 @@
       </div>
       <div class="ft__col">
         <p class="ft__ct">Connect</p>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
+        <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/Emsheriflebanon" target="_blank" rel="noopener">Facebook</a>
       </div>
       <div class="ft__col">
         <p class="ft__ct">Legal</p>
@@ -201,15 +208,16 @@
     </div>
     <div class="ft__bt">
       <p>&copy; 2026 Em Sherif. All Rights Reserved.</p>
+      <p>Beirut · London · Paris · Dubai · Doha</p>
     </div>
   </div>
 </footer>
 
 <div class="lb" id="lb">
-  <button class="lb__x" id="lbX">&times;</button>
-  <button class="lb__p" id="lbP">&#8249;</button>
-  <button class="lb__n" id="lbN">&#8250;</button>
-  <img class="lb__i" id="lbI">
+  <button class="lb__x" id="lbX" aria-label="Close">&times;</button>
+  <button class="lb__p" id="lbP" aria-label="Previous">&#8249;</button>
+  <button class="lb__n" id="lbN" aria-label="Next">&#8250;</button>
+  <img class="lb__i" id="lbI" alt="">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>

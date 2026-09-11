@@ -6,10 +6,11 @@
   var R=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
   var M=window.innerWidth<1024;
 
-  /* Preloader */
-  function hp(){var p=document.getElementById("pl");if(p)p.classList.add("done")}
-  window.addEventListener("load",function(){setTimeout(hp,500)});
-  setTimeout(hp,3000);
+  /* Preloader — dismiss after 1.5s max, or when DOM is ready */
+  function hp(){var p=document.getElementById("pl");if(p&&!p.classList.contains("done"))p.classList.add("done")}
+  setTimeout(hp,1500);
+  if(document.readyState==="complete")setTimeout(hp,100);
+  else window.addEventListener("load",function(){setTimeout(hp,100)});
 
   /* Progress */
   var pg=document.getElementById("prog");

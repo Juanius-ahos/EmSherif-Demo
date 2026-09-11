@@ -72,14 +72,16 @@
     try{ var t = parseFloat(sessionStorage.getItem("esTime")); if(t > 0) audio.currentTime = t; }catch(e){}
     audio.muted = muted;
     function syncBtn(){ if(btn) btn.classList.toggle("muted", audio.muted || audio.paused); }
-    function tryPlay(){ var p = audio.play(); if(p && p.catch) p.catch(function(){}); }
-    if(!muted) tryPlay();
+    function tryPlay(){ if(audio.muted) return; var p = audio.play(); if(p && p.catch) p.catch(function(){}); }
+    // Best-effort autoplay: attempt immediately and again once buffered.
+    if(!muted){ tryPlay(); audio.addEventListener("canplay", tryPlay); }
     syncBtn();
-    // Browsers block autoplay-with-sound until a gesture — start on the first one.
-    var evs = ["pointerdown","keydown","touchstart","wheel","scroll"];
+    // Browsers only allow sound to start after a real "user activation" gesture
+    // (click / tap / keypress — NOT scroll or wheel). Start on the first one.
+    var evs = ["pointerdown","mousedown","touchend","keydown","click"];
     function firstGesture(){ if(!audio.muted && audio.paused) tryPlay(); setTimeout(syncBtn, 80);
-      evs.forEach(function(ev){ window.removeEventListener(ev, firstGesture); }); }
-    evs.forEach(function(ev){ window.addEventListener(ev, firstGesture, { passive:true }); });
+      if(!audio.paused){ evs.forEach(function(ev){ document.removeEventListener(ev, firstGesture, true); }); } }
+    evs.forEach(function(ev){ document.addEventListener(ev, firstGesture, true); });
     if(btn){
       btn.addEventListener("click", function(e){
         e.stopPropagation();
@@ -185,14 +187,69 @@
   if(phCt){
     gsap.timeline({ delay:.3 })
       .from(".ph__eb",  { y:16, opacity:0, duration:.6, ease:"power3.out" })
-      .from(".ph__h",   { y:22, opacity:0, duration:.8, ease:"power3.out" }, "-=0.35")
-      .from(".ph__sub", { y:14, opacity:0, duration:.6, ease:"power3.out" }, "-=0.4");
+      .from(".ph__sub", { y:14, opacity:0, duration:.6, ease:"power3.out" }, "-=0.2");
+    /* .ph__h is animated by the split-text word reveal below */
   }
 
   /* ---- Fade-up reveals ---- */
   gsap.utils.toArray("[data-ru]").forEach(function(el){
     gsap.from(el, { y:32, opacity:0, duration:.9, ease:"power3.out",
       scrollTrigger:{ trigger:el, start:"top 88%" } });
+  });
+
+  /* ---- Split-text word-rise reveal ---- */
+  function splitToWords(el){
+    var out = [];
+    [].forEach.call(el.childNodes, function(n){
+      if(n.nodeType === 3){                       // text node → wrap each word
+        n.textContent.split(/(\s+)/).forEach(function(part){
+          if(part === "") return;
+          if(/^\s+$/.test(part)){ out.push(document.createTextNode(part)); }
+          else { var w = document.createElement("span"); w.className = "word"; w.textContent = part; out.push(w); }
+        });
+      } else if(n.nodeName === "BR"){ out.push(n.cloneNode()); }
+      else if(n.nodeName === "EM"){                // keep <em>, split its words too
+        var em = document.createElement("em");
+        n.textContent.split(/(\s+)/).forEach(function(part){
+          if(part === "") return;
+          if(/^\s+$/.test(part)){ em.appendChild(document.createTextNode(part)); }
+          else { var w = document.createElement("span"); w.className = "word"; w.textContent = part; em.appendChild(w); }
+        });
+        out.push(em);
+      } else { out.push(n.cloneNode(true)); }
+    });
+    el.textContent = "";
+    out.forEach(function(o){ el.appendChild(o); });
+    return el.querySelectorAll(".word");
+  }
+  gsap.utils.toArray("[data-split]").forEach(function(el){
+    var words = splitToWords(el);
+    gsap.from(words, { yPercent:115, opacity:0, duration:.9, ease:"power3.out", stagger:.045,
+      scrollTrigger:{ trigger:el, start:"top 86%" } });
+  });
+
+  /* ---- Big headlines drift gently as they scroll ---- */
+  gsap.utils.toArray(".edi__h,.contact__h").forEach(function(h){
+    gsap.fromTo(h, { y:26 }, { y:-26, ease:"none",
+      scrollTrigger:{ trigger:h, start:"top bottom", end:"bottom top", scrub:true } });
+  });
+
+  /* ---- Concept card images parallax on scroll ---- */
+  gsap.utils.toArray(".card img").forEach(function(img){
+    gsap.fromTo(img, { yPercent:-6 }, { yPercent:6, ease:"none",
+      scrollTrigger:{ trigger:img.closest(".card"), start:"top bottom", end:"bottom top", scrub:true } });
+  });
+
+  /* ---- Overline rule grows in ---- */
+  gsap.utils.toArray(".edi__eb").forEach(function(eb){
+    gsap.from(eb, { opacity:0, x:-16, duration:.7, ease:"power3.out",
+      scrollTrigger:{ trigger:eb, start:"top 90%" } });
+  });
+
+  /* ---- Footer columns stagger ---- */
+  gsap.utils.toArray(".ft__cols").forEach(function(fc){
+    gsap.from(fc.children, { y:20, opacity:0, duration:.6, stagger:.08, ease:"power3.out",
+      scrollTrigger:{ trigger:fc, start:"top 92%" } });
   });
 
   /* ---- Image clip reveal + subtle zoom ---- */

@@ -407,6 +407,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .leaflet-popup-content{margin:12px 16px;line-height:1.4}
 .es-pop-city{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--navy)}
 .es-pop-con{display:block;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.es-pop-link{display:inline-block;margin-top:11px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color .3s}
+.es-pop-link:hover{color:var(--gold)}
 .leaflet-bar a{color:var(--navy)}
 .leaflet-control-attribution{font-size:9px;background:rgba(255,255,255,.7)}
 

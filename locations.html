@@ -340,8 +340,11 @@
     }).addTo(map);
     var icon = L.divIcon({ className:"es-pin", html:"<span></span>", iconSize:[16,16], iconAnchor:[8,8], popupAnchor:[0,-9] });
     var markers = locs.map(function(o){
+      var q = encodeURIComponent("Em Sherif " + o.c.replace(" — ", ", "));
+      var dir = "https://www.google.com/maps/search/?api=1&query=" + q;
       return L.marker(o.ll, { icon:icon, title:o.c }).addTo(map)
-        .bindPopup('<span class="es-pop-city">'+o.c+'</span><span class="es-pop-con">'+o.k+'</span>');
+        .bindPopup('<span class="es-pop-city">'+o.c+'</span><span class="es-pop-con">'+o.k+'</span>'+
+          '<a class="es-pop-link" href="'+dir+'" target="_blank" rel="noopener">Get directions &rarr;</a>');
     });
     map.fitBounds(L.featureGroup(markers).getBounds().pad(0.15));
     setTimeout(function(){ map.invalidateSize(); }, 400);

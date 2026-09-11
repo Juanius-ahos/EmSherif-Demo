@@ -3,7 +3,7 @@
 <meta name="description" content="Em Sherif Restaurant, the art of Lebanese dining since 2011. A concept redesign of the flagship restaurant." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" />
 <style>
   :root{
     --navy:#17324E; --navy-2:#1E3E5F; --navy-deep:#112537; --navy-ink:#0E1F2E;
@@ -13,6 +13,7 @@
     --disp:"Cormorant Garamond","Crimson Pro",Georgia,serif;
     --serif:"Crimson Pro","Cormorant Garamond",Georgia,serif;
     --sans:"Montserrat","Helvetica Neue",Arial,sans-serif;
+    --arab:"Amiri","Cormorant Garamond",serif;
     color-scheme:light;
   }
   *{box-sizing:border-box}
@@ -92,11 +93,14 @@
   .hero .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
   /* intro / welcome */
-  .intro{text-align:center;padding:clamp(84px,12vw,150px) 0;background:var(--paper)}
-  .intro .eyebrow{display:block;margin-bottom:26px}
-  .intro h2{font-size:clamp(1.8rem,3.6vw,2.9rem);font-weight:300;max-width:920px;margin:0 auto;color:var(--navy);line-height:1.32}
+  .intro{position:relative;overflow:hidden;text-align:center;padding:clamp(96px,14vw,180px) 0;background:var(--paper)}
+  .intro .watermark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--arab);font-weight:700;font-size:clamp(9rem,30vw,26rem);line-height:1;color:var(--navy);opacity:.05;white-space:nowrap;pointer-events:none;user-select:none}
+  .intro .inner{position:relative;z-index:1}
+  .intro .eyebrow{display:block;margin-bottom:28px}
+  .intro h2{font-size:clamp(1.85rem,3.7vw,3rem);font-weight:300;max-width:900px;margin:0 auto;color:var(--navy);line-height:1.36;letter-spacing:.002em}
   .intro h2 em{font-style:italic}
-  .intro .welcome{margin-top:30px;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-2)}
+  .intro .welcome{margin-top:34px;font-family:var(--arab);font-size:clamp(1.7rem,4vw,2.6rem);color:var(--gold-2);line-height:1}
+  .intro .welcome-en{margin-top:8px;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--muted)}
 
   /* story */
   .story{background:var(--cream);padding:clamp(84px,12vw,150px) 0;overflow:hidden}
@@ -255,7 +259,11 @@
   .mp-hero .eyebrow{color:var(--gold-soft);display:block;margin-bottom:14px}
   .mp-hero h1{font-family:var(--disp);font-weight:300;font-size:clamp(2.6rem,7vw,4.8rem);color:#fff}
   .mp-hero p{font-family:var(--serif);font-style:italic;color:rgba(255,255,255,.9);font-size:clamp(1rem,2vw,1.25rem);margin-top:8px}
-  .mp-body{max-width:1120px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(22px,5vw,64px)}
+  .mp-choose{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:clamp(34px,5vw,56px) 20px 0}
+  .mtab{font-family:var(--sans);font-weight:500;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--line);padding:1em 1.9em;cursor:pointer;transition:.4s}
+  .mtab:hover{color:var(--navy);border-color:var(--navy)}
+  .mtab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .mp-body{max-width:1120px;margin:0 auto;padding:clamp(44px,5vw,72px) clamp(22px,5vw,64px) clamp(56px,7vw,96px)}
   .mp-intro{text-align:center;max-width:640px;margin:0 auto clamp(46px,6vw,72px);color:#41506A;font-family:var(--serif);font-size:1.2rem;line-height:1.62}
   .mp-cats{column-count:2;column-gap:clamp(34px,5vw,72px)}
   @media(max-width:760px){.mp-cats{column-count:1}}
@@ -332,10 +340,12 @@
 
   <!-- INTRO / WELCOME -->
   <section class="intro">
-    <div class="wrap">
+    <div class="watermark" aria-hidden="true">أم شريف</div>
+    <div class="wrap inner">
       <span class="eyebrow">Welcome home</span>
       <h2>Bread and salt depict the alliance between people that happens over a shared meal. Em Sherif, which translates to <em>&ldquo;the mother of Sherif,&rdquo;</em> is a glimpse into la vie Libanaise.</h2>
-      <p class="welcome">Welcome to Em Sherif.</p>
+      <p class="welcome">أم شريف</p>
+      <p class="welcome-en">Welcome to Em Sherif</p>
     </div>
   </section>
 
@@ -379,7 +389,7 @@
           <h3>A Feast of Mezze</h3>
           <p>Cold and hot mezze arrive in generous succession, from hummus and mutabbal to kibbeh nayye and the finest Lebanese tartar, each plate meant to be shared.</p>
         </div>
-        <div class="im reveal"><img src="assets/food-1.jpg" alt="Signature Em Sherif dish" /></div>
+        <div class="im reveal"><img src="assets/banner-1.jpg" alt="An Em Sherif mezze spread" /></div>
       </div>
       <div class="show-row rev">
         <div class="tx reveal">
@@ -546,7 +556,7 @@
     </div>
   </div>
   <div class="mp-hero">
-    <div class="bg" style="background-image:url('assets/food-1.jpg')"></div>
+    <div class="bg" style="background-image:url('assets/banner-1.jpg')"></div>
     <div class="scrim"></div>
     <div class="c">
       <span class="eyebrow">Em Sherif Restaurant</span>
@@ -554,7 +564,99 @@
       <p>La vie Libanaise, served to share.</p>
     </div>
   </div>
-  <div class="mp-body">
+  <div class="mp-choose">
+    <button class="mtab active" data-menu-tab="beirut">Restaurant &middot; Beirut</button>
+    <button class="mtab" data-menu-tab="doha">Restaurant &middot; Doha</button>
+    <button class="mtab" data-menu-tab="cafe">Em Sherif Café</button>
+  </div>
+
+  <div class="mp-body mp-view" data-menu-view="beirut">
+    <p class="mp-intro">Beirut, mon amour. The flagship table, where each dish is a tribute to the art of Lebanese dining. Served to share.</p>
+    <div class="mp-cats">
+      <div class="mcat">
+        <div class="ct">Furn</div><div class="cs">From the oven</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Man&rsquo;oushe Zaatar</span><span class="pr">10,000</span></div>
+        <div class="mrow"><span class="nm">Man&rsquo;oushe Lahmeh</span><span class="pr">15,000</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Salata</div><div class="cs">Salads</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Fattouch</span><span class="pr">42,000</span></div>
+        <div class="mrow"><span class="nm">Tabboule</span><span class="pr">40,000</span></div>
+        <div class="mrow"><span class="nm">Malfouf Salad</span><span class="pr">25,000</span></div>
+        <div class="mrow"><span class="nm">Oriental Salad</span><span class="pr">40,000</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Cold Mezze</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Sahen Khodra</span><span class="pr">16,000</span></div>
+        <div class="mrow"><span class="nm">Kabis Mehchi</span><span class="pr">18,000</span></div>
+        <div class="mrow"><span class="nm">Hummus</span><span class="pr">46,000</span></div>
+        <div class="mrow"><span class="nm">Mutabbal Batenjen w Roumman</span><span class="pr">46,000</span></div>
+        <div class="mrow"><span class="nm">Labneh</span><span class="pr">29,000</span></div>
+        <div class="mrow"><span class="nm">Kibbeh Nayye</span><span class="pr">87,000</span></div>
+        <div class="mrow"><span class="nm">Yalanji</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Arnabeet</span><span class="pr">28,000</span></div>
+        <div class="mrow"><span class="nm">Fattet Batenjen</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Fattet Kafteh</span><span class="pr">75,000</span></div>
+        <div class="mrow"><span class="nm">Samke Traboulsiyeh</span><span class="pr">95,000</span></div>
+        <div class="mrow"><span class="nm">Mouhammara</span><span class="pr">56,000</span></div>
+        <div class="mrow"><span class="nm">Mdardara</span><span class="pr">26,000</span></div>
+        <div class="mrow"><span class="nm">Artichoke</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Hindbeh</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Harak Esbao</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Balila</span><span class="pr">32,000</span></div>
+        <div class="mrow"><span class="nm">Batenjen Salad</span><span class="pr">30,000</span></div>
+        <div class="mrow"><span class="nm">Bemieh Bil Zeit</span><span class="pr">25,000</span></div>
+        <div class="mrow"><span class="nm">Loubiyeh Bil Zeit</span><span class="pr">38,000</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Hot Mezze</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Bulghur Banadoura</span><span class="pr">26,000</span></div>
+        <div class="mrow"><span class="nm">Kibbeh Sajiyeh</span><span class="pr">50,000</span></div>
+        <div class="mrow"><span class="nm">Kibbeh Semakiyeh</span><span class="pr">32,000</span></div>
+        <div class="mrow"><span class="nm">Briwat Jebneh</span><span class="pr">70,000</span></div>
+        <div class="mrow"><span class="nm">Sambousik</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Batata Mekliyeh</span><span class="pr">30,000</span></div>
+        <div class="mrow"><span class="nm">Sawda Djej</span><span class="pr">75,000</span></div>
+        <div class="mrow"><span class="nm">Kibbet Lahme</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Toshka</span><span class="pr">75,000</span></div>
+        <div class="mrow"><span class="nm">Kebbeh Naanaa</span><span class="pr">65,000</span></div>
+        <div class="mrow"><span class="nm">Hummus Bil Lahme</span><span class="pr">78,000</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Grill</div><div class="cs">Mechwi</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Taouk</span><span class="pr">95,000</span></div>
+        <div class="mrow"><span class="nm">Kebab</span><span class="pr">115,000</span></div>
+        <div class="mrow"><span class="nm">Makanek</span><span class="pr">75,000</span></div>
+        <div class="mrow"><span class="nm">Shrimps</span><span class="pr">105,000</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Main Course</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Tabekh Em Sherif</span><span class="pr">145,000</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Dessert</div><div class="cs">Helo</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Em Ali</span><span class="pr">125,000</span></div>
+        <div class="mrow"><span class="nm">Nammoura</span><span class="pr">30,000</span></div>
+        <div class="mrow"><span class="nm">Maamoul Jibneh</span><span class="pr">45,000</span></div>
+        <div class="mrow"><span class="nm">Muhallabiyeh</span><span class="pr">38,000</span></div>
+        <div class="mrow"><span class="nm">Meghleh</span><span class="pr">45,000</span></div>
+        <div class="mrow"><span class="nm">Foret Noire</span><span class="pr">62,000</span></div>
+        <div class="mrow"><span class="nm">Cr&egrave;me Caramel</span><span class="pr">62,000</span></div>
+        <div class="mrow"><span class="nm">Tamiryeh</span><span class="pr">30,000</span></div>
+      </div>
+    </div>
+    <div class="mp-break"><img src="assets/c5.jpg" alt="Em Sherif Beirut dining room" /></div>
+    <p class="mp-cur">Prices in Lebanese Pounds (LBP) &middot; Em Sherif Restaurant, Beirut &middot; <a href="https://emsherifrestaurant.com/menu/" target="_blank" rel="noopener" style="color:var(--gold-2)">Other locations &rsaquo;</a></p>
+  </div>
+
+  <div class="mp-body mp-view" data-menu-view="doha" hidden>
     <p class="mp-intro">A traditional, refined and multifaceted Lebanese culinary experience, curated with love and made with intention. Dishes are served to share.</p>
 
     <div class="mp-cats">
@@ -664,8 +766,128 @@
 
     </div>
     <div class="mp-break"><img src="assets/wide-4.jpg" alt="Em Sherif dining room" /></div>
-    <p class="mp-cur">All prices in Qatari Riyal &middot; Em Sherif Restaurant, Doha</p>
+    <p class="mp-cur">Prices in Qatari Riyal (QAR) &middot; Em Sherif Restaurant, Doha &middot; <a href="https://emsherifrestaurant.com/menu/" target="_blank" rel="noopener" style="color:var(--gold-2)">Other locations &rsaquo;</a></p>
   </div>
+
+  <div class="mp-body mp-view" data-menu-view="cafe" hidden>
+    <p class="mp-intro">An all-day Lebanese table, from the oven and the mezze plates to the grill and sweet endings. Served to share.</p>
+    <div class="mp-cats">
+      <div class="mcat">
+        <div class="ct">From the Oven</div><div class="cs">Men el Furn</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Man&rsquo;oushe Zaatar</span><span class="pr">3.50</span><span class="dsc">Homemade thyme mix on flatbread</span></div>
+        <div class="mrow"><span class="nm">Man&rsquo;oushe Jebneh</span><span class="pr">4.00</span><span class="dsc">Homemade cheese mix on flatbread</span></div>
+        <div class="mrow"><span class="nm">Bokjat Jebneh</span><span class="pr">4.60</span><span class="dsc">Cheese mix pie, leafy greens</span></div>
+        <div class="mrow"><span class="nm">Lahme bi Ajeen</span><span class="pr">4.25</span><span class="dsc">Spicy minced meat pie</span></div>
+        <div class="mrow"><span class="nm">Lahme bi Ajeen Debs</span><span class="pr">4.30</span><span class="dsc">Minced meat pie, pomegranate molasses</span></div>
+        <div class="mrow"><span class="nm">Musakhan</span><span class="pr">5.50</span><span class="dsc">Onion and sumac chicken on flatbread</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Eggs &amp; Dairy</div><div class="cs">Beyd w Albane</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Beyd Ouyoun</span><span class="pr">3.50</span><span class="dsc">Sunny side up eggs</span></div>
+        <div class="mrow"><span class="nm">Beyd Makhfouk</span><span class="pr">3.50</span><span class="dsc">Scrambled eggs</span></div>
+        <div class="mrow"><span class="nm">Beyd Soujouk</span><span class="pr">4.75</span><span class="dsc">Eggs any style, Lebanese spicy sausage</span></div>
+        <div class="mrow"><span class="nm">Beyd bi Kawarma</span><span class="pr">4.75</span><span class="dsc">Eggs any style, lamb confit</span></div>
+        <div class="mrow"><span class="nm">Beyd Shakshouka</span><span class="pr">4.25</span><span class="dsc">Eggs, tomato and pepper sauce</span></div>
+        <div class="mrow"><span class="nm">Goat Milk Labneh</span><span class="pr">4.75</span><span class="dsc">Homemade goat labneh, olive oil</span></div>
+        <div class="mrow"><span class="nm">Cow Milk Labneh</span><span class="pr">3.95</span><span class="dsc">Homemade cow labneh, olive oil</span></div>
+        <div class="mrow"><span class="nm">Halloum</span><span class="pr">6.15</span><span class="dsc">Pan fried halloumi, tomato, wild zaatar</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Fatteh</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Fatteh Hummus</span><span class="pr">5.25</span><span class="dsc">Chickpea, yoghurt, crispy bread, pine nuts</span></div>
+        <div class="mrow"><span class="nm">Fatteh Batenjen</span><span class="pr">5.25</span><span class="dsc">Marinated eggplant, yoghurt, pine nuts</span></div>
+        <div class="mrow"><span class="nm">Fatteh Maftoul</span><span class="pr">5.25</span><span class="dsc">Spiced pearl semolina, crispy bread</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Salads</div><div class="cs">Salatat</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Tabbouleh</span><span class="pr">4.65</span><span class="dsc">Parsley, tomato, bulgur, lemon, olive oil</span></div>
+        <div class="mrow"><span class="nm">Fattoush Debs Remmane</span><span class="pr">4.65</span><span class="dsc">Chopped salad, pomegranate molasses</span></div>
+        <div class="mrow"><span class="nm">Fattoush Hamod w Zeit</span><span class="pr">4.65</span><span class="dsc">Chopped salad, sumac, lemon vinegar</span></div>
+        <div class="mrow"><span class="nm">Oriental Salad</span><span class="pr">4.75</span><span class="dsc">Leafy greens, onion, sumac</span></div>
+        <div class="mrow"><span class="nm">Shmandar</span><span class="pr">4.50</span><span class="dsc">Beetroot, purslane, caramelized walnut</span></div>
+        <div class="mrow"><span class="nm">Kale Freekeh</span><span class="pr">5.15</span><span class="dsc">Kale, freekeh, pistachio, seasonal fruit</span></div>
+        <div class="mrow"><span class="nm">Ardishawke</span><span class="pr">5.15</span><span class="dsc">Artichoke, greens, pine nuts, grilled olives</span></div>
+        <div class="mrow"><span class="nm">Raheb</span><span class="pr">4.75</span><span class="dsc">Flame grilled aubergine, lemon garlic</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Nayy</div><div class="cs">Raw</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Kebbeh Nayyeh</span><span class="pr">8.75</span><span class="dsc">Creamy Lebanese beef tartar, bulgur, basil</span></div>
+        <div class="mrow"><span class="nm">Habra Nayyeh</span><span class="pr">8.50</span><span class="dsc">Creamy Lebanese beef tartar</span></div>
+        <div class="mrow"><span class="nm">Frakeh</span><span class="pr">8.50</span><span class="dsc">Beef tartar, spiced bulgur mix</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Cold Mezze</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Hummus</span><span class="pr">4.15</span><span class="dsc">Chickpea dip, tahini, olive oil</span></div>
+        <div class="mrow"><span class="nm">Hummus Snoubar</span><span class="pr">5.25</span><span class="dsc">Chickpea, tahini, toasted pine nut</span></div>
+        <div class="mrow"><span class="nm">Mutabbal</span><span class="pr">4.15</span><span class="dsc">Flame grilled eggplant, tahini, pomegranate</span></div>
+        <div class="mrow"><span class="nm">Muhammara</span><span class="pr">4.50</span><span class="dsc">Sweet pepper and walnut dip</span></div>
+        <div class="mrow"><span class="nm">Bemieh bil Zeit</span><span class="pr">3.75</span><span class="dsc">Okra in tomato and olive oil</span></div>
+        <div class="mrow"><span class="nm">Mloukhiyeh bil Zeit</span><span class="pr">4.75</span><span class="dsc">Mouloukhiya in olive oil, tahini</span></div>
+        <div class="mrow"><span class="nm">Banadoura Shanklish</span><span class="pr">5.50</span><span class="dsc">Heirloom tomato, shanklish cheese</span></div>
+        <div class="mrow"><span class="nm">Rosto</span><span class="pr">6.50</span><span class="dsc">Roast beef, pickled sauce, radish</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Hot Mezze</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Hummus Lahme</span><span class="pr">6.75</span><span class="dsc">Chickpea, tahini, minced beef</span></div>
+        <div class="mrow"><span class="nm">Hummus Ras Asfour</span><span class="pr">7.95</span><span class="dsc">Chickpea, tahini, beef cubes</span></div>
+        <div class="mrow"><span class="nm">Kibbeh Summakiyeh</span><span class="pr">4.95</span><span class="dsc">Meat and bulgur pie, onion, sumac</span></div>
+        <div class="mrow"><span class="nm">Sambousik</span><span class="pr">4.25</span><span class="dsc">Meat filled pastries</span></div>
+        <div class="mrow"><span class="nm">Falafel</span><span class="pr">3.50</span><span class="dsc">Chickpea and herb fritters, tahini</span></div>
+        <div class="mrow"><span class="nm">Soujouk</span><span class="pr">6.50</span><span class="dsc">Grilled spicy sausage, tomato, pepper</span></div>
+        <div class="mrow"><span class="nm">Makanek Debs Remmane</span><span class="pr">6.50</span><span class="dsc">Lebanese sausage, pomegranate molasses</span></div>
+        <div class="mrow"><span class="nm">Ras Asfour Debs Remmane</span><span class="pr">7.95</span><span class="dsc">Beef cubes, pomegranate molasses, pine nuts</span></div>
+        <div class="mrow"><span class="nm">Batata Harra</span><span class="pr">4.80</span><span class="dsc">Spicy potatoes, coriander</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Sandwiches</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Burger Em Sherif</span><span class="pr">8.25</span><span class="dsc">Beef patty, brioche, cheddar, coleslaw</span></div>
+        <div class="mrow"><span class="nm">Grilled Beef</span><span class="pr">7.50</span><span class="dsc">Tenderloin, hummus, pickled cucumber</span></div>
+        <div class="mrow"><span class="nm">Arayes Kefta</span><span class="pr">7.25</span><span class="dsc">Kefta and cheese on grilled bread</span></div>
+        <div class="mrow"><span class="nm">Shawarma Lahmeh</span><span class="pr">7.75</span><span class="dsc">Beef shawarma, tahini sauce</span></div>
+        <div class="mrow"><span class="nm">Shawarma Djeij</span><span class="pr">5.95</span><span class="dsc">Chicken shawarma, garlic cream</span></div>
+        <div class="mrow"><span class="nm">Taouk</span><span class="pr">5.95</span><span class="dsc">Grilled chicken skewers, garlic cream, fries</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Mashewe</div><div class="cs">From the grill</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Beef Skewers</span><span class="pr">15.75</span><span class="dsc">Grilled beef skewers, tomato, chilli, onion</span></div>
+        <div class="mrow"><span class="nm">Kebab Skewers</span><span class="pr">12.50</span><span class="dsc">Minced beef, cinnamon, tomato</span></div>
+        <div class="mrow"><span class="nm">Kefta Skewers</span><span class="pr">12.50</span><span class="dsc">Minced beef, parsley, tomato</span></div>
+        <div class="mrow"><span class="nm">Taouk Skewers</span><span class="pr">12.50</span><span class="dsc">Marinated chicken, garlic cream</span></div>
+        <div class="mrow"><span class="nm">Riyash</span><span class="pr">15.95</span><span class="dsc">Grilled marinated lamb chops</span></div>
+        <div class="mrow"><span class="nm">Mixed Grills</span><span class="pr">19.00</span><span class="dsc">Taouk, kebab and beef skewers</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Mains</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Hummus Shawarma</span><span class="pr">14.95</span><span class="dsc">Hummus, beef shawarma, parsley, onion</span></div>
+        <div class="mrow"><span class="nm">Shawarma Lahme</span><span class="pr">14.95</span><span class="dsc">Beef shawarma, parsley, onion, tomato</span></div>
+        <div class="mrow"><span class="nm">Shawarma Djeij</span><span class="pr">9.95</span><span class="dsc">Chicken shawarma, lettuce, pickled cucumber</span></div>
+        <div class="mrow"><span class="nm">Beefteak w Batata</span><span class="pr">14.95</span><span class="dsc">Pan fried beef steak, creamy walnut sauce</span></div>
+      </div>
+      <div class="mcat">
+        <div class="ct">Helo</div><div class="cs">Desserts</div>
+        <div class="vline"></div>
+        <div class="mrow"><span class="nm">Kahwe w Hal</span><span class="pr">5.95</span><span class="dsc">Coffee and cardamom sponge, white chocolate</span></div>
+        <div class="mrow"><span class="nm">Muhallabiyeh Assal</span><span class="pr">4.95</span><span class="dsc">Honey and bee pollen muhallabiyeh</span></div>
+        <div class="mrow"><span class="nm">Aysh el Saraya</span><span class="pr">5.95</span><span class="dsc">Caramelized toasted bread, ashta</span></div>
+        <div class="mrow"><span class="nm">Mafrouket Festok</span><span class="pr">7.75</span><span class="dsc">Pistachio and semolina dough, ashta cream</span></div>
+        <div class="mrow"><span class="nm">Bouza w Ghazel el Banet</span><span class="pr">7.75</span><span class="dsc">Mastika ice cream, candy floss</span></div>
+        <div class="mrow"><span class="nm">Em Ali</span><span class="pr">6.50</span><span class="dsc">Puffed pastry, vanilla milk, mixed nuts</span></div>
+      </div>
+    </div>
+    <div class="mp-break"><img src="assets/c7.jpg" alt="Em Sherif Café interior" /></div>
+    <p class="mp-cur">Prices in Jordanian Dinar (JOD) &middot; Em Sherif Café, Amman &middot; <a href="https://emsherif-cafe.com/menu/" target="_blank" rel="noopener" style="color:var(--gold-2)">Other locations &rsaquo;</a></p>
+  </div>
+
   <div class="mp-foot">
     <p>&ldquo;I want this meal to remind you of the ones shared around my own table.&rdquo; Welcome home.</p>
     <a class="btn btn-gold" data-reserve-from-menu><span>Reserve a table</span></a>
@@ -707,6 +929,13 @@
   document.querySelectorAll("[data-menu]").forEach(function(el){ el.addEventListener("click",function(e){e.preventDefault();mm.classList.remove("open");openMenu();}); });
   document.querySelectorAll("[data-home]").forEach(function(el){ el.addEventListener("click",function(e){e.preventDefault();closeMenu();}); });
   document.querySelectorAll("[data-reserve-from-menu]").forEach(function(el){ el.addEventListener("click",function(e){e.preventDefault();closeMenu();setTimeout(function(){var r=document.getElementById("reserve");if(r)r.scrollIntoView({behavior:"smooth"});},140);}); });
+  var mtabs=document.querySelectorAll(".mtab"), mviews=document.querySelectorAll(".mp-view"), mchoose=menuPage.querySelector(".mp-choose");
+  mtabs.forEach(function(tab){ tab.addEventListener("click",function(){
+    var v=tab.getAttribute("data-menu-tab");
+    mtabs.forEach(function(t){ t.classList.toggle("active",t===tab); });
+    mviews.forEach(function(view){ view.hidden = view.getAttribute("data-menu-view")!==v; });
+    if(mchoose) menuPage.scrollTo({top:Math.max(0,mchoose.offsetTop-72),behavior:"smooth"});
+  }); });
   if(location.hash==="#menu") openMenu();
   document.addEventListener("keydown",function(e){ if(e.key==="Escape" && menuPage.classList.contains("open")) closeMenu(); });
 

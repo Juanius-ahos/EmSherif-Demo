@@ -100,19 +100,6 @@
     setInterval(save, 3000);
   })();
 
-  /* ---- Fancy scroll badge: glide into the site on click ---- */
-  (function(){
-    var sb = document.getElementById("scrollBadge");
-    if(!sb) return;
-    sb.addEventListener("click", function(){
-      var hero = document.querySelector(".chero,.hero");
-      var next = hero ? hero.nextElementSibling : null;
-      var y = next ? (next.getBoundingClientRect().top + window.scrollY - 8) : window.innerHeight;
-      if(window.__lenis){ window.__lenis.scrollTo(y, { duration:1.4 }); }
-      else { window.scrollTo({ top:y, behavior:"smooth" }); }
-    });
-  })();
-
   /* ---- Lightbox (gallery) ---- */
   (function(){
     var triggers = [].slice.call(document.querySelectorAll("[data-f]")),

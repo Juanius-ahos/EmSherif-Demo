@@ -1,0 +1,789 @@
+<title>Em Sherif Restaurant</title>
+<meta charset="utf-8" />
+<meta name="description" content="Em Sherif, the art of Lebanese dining. A cinematic concept redesign of the flagship restaurant." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" />
+<style>
+  :root{
+    --navy:#123560; --navy-2:#0E2A4E; --navy-deep:#0A1E3A; --navy-ink:#08182E;
+    --ink:#182336; --paper:#FBF8F1; --cream:#F5EFE2; --cream-2:#EBE2CE;
+    --gold:#B0894C; --gold-hi:#CFAE6A; --gold-soft:#E7D3A2;
+    --muted:#6C7488; --line:rgba(24,35,54,.14);
+    --disp:"Cormorant Garamond","Crimson Pro",Georgia,serif;
+    --serif:"Crimson Pro","Cormorant Garamond",Georgia,serif;
+    --sans:"Montserrat","Helvetica Neue",Arial,sans-serif;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.75;overflow-x:hidden}
+  body.noscroll{overflow:hidden}
+  ::selection{background:rgba(18,53,96,.16)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3,h4{margin:0;font-family:var(--disp);font-weight:400;line-height:1.03;text-wrap:balance}
+  p{margin:0}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 clamp(22px,5vw,64px)}
+  .wide{max-width:1560px;margin:0 auto;padding:0 clamp(22px,5vw,64px)}
+
+  .eyebrow{font-family:var(--sans);font-weight:500;font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
+  .eyebrow.lt{color:var(--gold-soft)}
+  .divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto}
+  .divider .ln{height:1px;width:60px;background:var(--gold);opacity:.6}
+  .divider .dot{width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
+  .serif-lead{font-family:var(--serif);font-weight:300;font-size:clamp(1.12rem,1.9vw,1.45rem);line-height:1.6;color:#3B4761}
+
+  .btn{display:inline-flex;align-items:center;gap:.8em;cursor:pointer;border:none;font-family:var(--sans);font-weight:500;letter-spacing:.22em;text-transform:uppercase;font-size:.68rem;padding:1.2em 2.4em;transition:.55s cubic-bezier(.19,1,.22,1);position:relative}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--navy);transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+  .btn-outline:hover{background:#fff;color:var(--navy)}
+
+  #progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));z-index:100;transition:width .1s linear}
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:98;opacity:.03;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  #preloader{position:fixed;inset:0;z-index:130;background:var(--navy-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;animation:plHide .9s cubic-bezier(.7,0,.3,1) 2s forwards}
+  #preloader img{height:84px;filter:brightness(0) invert(1);opacity:0;animation:plLogo 1.1s ease .2s forwards}
+  #preloader .pbar{width:170px;height:1px;background:rgba(255,255,255,.16);overflow:hidden}
+  #preloader .pbar i{display:block;height:100%;width:0;background:var(--gold-soft);animation:plBar 1.7s cubic-bezier(.5,0,.1,1) .25s forwards}
+  #preloader.done{animation:plHide .8s cubic-bezier(.7,0,.3,1) forwards}
+  @keyframes plLogo{to{opacity:1}}@keyframes plBar{to{width:100%}}@keyframes plHide{to{opacity:0;visibility:hidden}}
+
+  .cursor{position:fixed;top:0;left:0;z-index:125;pointer-events:none;display:none;mix-blend-mode:difference}
+  .cursor .ring{width:46px;height:46px;border:1px solid rgba(255,255,255,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%) scale(.6);transition:transform .35s cubic-bezier(.19,1,.22,1);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;font-family:var(--sans)}
+  .cursor.grow .ring{transform:translate(-50%,-50%) scale(1)}
+
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:26px clamp(22px,5vw,64px);transition:.5s ease}
+  header.nav.scrolled{background:rgba(251,248,241,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line);padding-top:15px;padding-bottom:15px}
+  .nav .logo img{height:50px;width:auto;transition:.5s ease}
+  .nav.scrolled .logo img{height:38px}
+  .nav .logo .w{filter:brightness(0) invert(1)}
+  .nav.scrolled .logo .w{display:none}
+  .nav .logo .n{display:none}.nav.scrolled .logo .n{display:block}
+  nav.links{display:flex;align-items:center;gap:36px}
+  nav.links a{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#fff;transition:.3s;position:relative;padding-bottom:3px;cursor:pointer}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold-soft);transition:.4s}
+  nav.links a:hover::after{width:100%}
+  .nav.scrolled nav.links a{color:var(--ink)}
+  .nav.scrolled nav.links a::after{background:var(--gold)}
+  nav.links .rsv{border:1px solid rgba(255,255,255,.5);padding:.85em 1.7em}
+  nav.links .rsv::after{display:none}
+  nav.links .rsv:hover{background:#fff;color:var(--navy)}
+  .nav.scrolled nav.links .rsv{border-color:var(--navy)}
+  .nav.scrolled nav.links .rsv:hover{background:var(--navy);color:#fff}
+  .burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .burger span{width:26px;height:1.5px;background:#fff;transition:.3s}
+  .nav.scrolled .burger span{background:var(--ink)}
+  @media(max-width:940px){nav.links{display:none}.burger{display:flex}}
+  .mobile-menu{position:fixed;inset:0;z-index:120;background:var(--navy-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:.45s}
+  .mobile-menu.open{opacity:1;pointer-events:auto}
+  .mobile-menu a{color:#fff;font-family:var(--disp);font-size:1.9rem;cursor:pointer}
+  .mobile-menu .close{position:absolute;top:22px;right:26px;font-size:2rem;color:#fff;background:none;border:none;cursor:pointer}
+
+  .hero{position:relative;height:100svh;min-height:640px;max-height:1040px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--navy-deep)}
+  .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,18,38,.55),rgba(8,18,38,.28) 38%,rgba(8,18,38,.62))}
+  .hero-inner{position:relative;z-index:2;color:#fff;padding:0 22px;max-width:960px}
+  .hero .brandmark{height:clamp(76px,12vw,128px);margin:0 auto 28px;filter:brightness(0) invert(1) drop-shadow(0 6px 30px rgba(0,0,0,.4))}
+  .hero .eyebrow{color:var(--gold-soft);display:block;margin-bottom:22px}
+  .hero h1{font-family:var(--disp);font-weight:300;font-size:clamp(2.5rem,6vw,5rem);letter-spacing:.005em;line-height:1.04;margin-bottom:.34em;text-shadow:0 4px 44px rgba(0,0,0,.4)}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p.sub{font-family:var(--serif);font-weight:300;font-size:clamp(1.02rem,1.7vw,1.3rem);color:rgba(255,255,255,.92);max-width:600px;margin:0 auto 2.4em}
+  .hero .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll-cue .l{width:1px;height:44px;background:linear-gradient(rgba(255,255,255,.8),transparent);animation:cue 2.2s ease-in-out infinite}
+  @keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+  .ribbon{background:var(--navy-deep);color:#fff;padding:20px 0;overflow:hidden;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.08)}
+  .ribbon .track{display:inline-flex;animation:marq 36s linear infinite;will-change:transform}
+  .ribbon:hover .track{animation-play-state:paused}
+  .ribbon .item{display:inline-flex;align-items:center;gap:30px;padding:0 30px;font-family:var(--serif);font-size:1.15rem;letter-spacing:.04em;color:rgba(255,255,255,.9)}
+  .ribbon .item::after{content:"✦";color:var(--gold-soft);font-size:.7rem}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  .intro{text-align:center;padding:clamp(84px,12vw,150px) 0}
+  .intro .divider{margin-bottom:34px}
+  .intro h2{font-size:clamp(1.9rem,3.9vw,3.1rem);font-weight:300;max-width:970px;margin:0 auto;color:var(--ink);line-height:1.28}
+  .intro h2 em{font-style:italic;color:var(--navy)}
+
+  .story{background:var(--cream);padding:clamp(84px,12vw,150px) 0;overflow:hidden}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px);align-items:center}
+  @media(max-width:880px){.story-grid{grid-template-columns:1fr;gap:44px}}
+  .story .stack{position:relative}
+  .story .stack .imgclip{overflow:hidden}
+  .story .stack .main img{width:100%;height:clamp(440px,58vw,640px);object-fit:cover;transform:scale(1.12);will-change:transform}
+  .story .stack .frame{position:absolute;inset:16px;border:1px solid rgba(255,255,255,.5);pointer-events:none}
+  .story .stack .cap{position:absolute;left:0;bottom:-1px;background:var(--navy);color:#fff;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;padding:.95em 1.5em}
+  .story .stack .inset{position:absolute;right:-24px;bottom:-38px;width:42%;box-shadow:0 30px 60px -24px rgba(8,18,38,.5);border:6px solid var(--cream)}
+  .story .stack .inset img{width:100%;height:220px;object-fit:cover;object-position:top;display:block}
+  @media(max-width:520px){.story .stack .inset{display:none}}
+  .story .txt .eyebrow{display:block;margin-bottom:20px}
+  .story .txt h2{font-size:clamp(2.1rem,4.5vw,3.4rem);margin-bottom:.5em;color:var(--ink);font-weight:300}
+  .story .txt p{color:#3C475F;font-size:1.03rem;margin-bottom:1.3em;max-width:52ch}
+  .story .txt .quote{font-family:var(--serif);font-style:italic;font-size:1.28rem;color:var(--navy);border-left:2px solid var(--gold);padding-left:22px;margin:1.7em 0}
+  .story .signoff{font-family:var(--serif);font-size:1.18rem;color:var(--ink)}
+  .story .signoff span{display:block;font-family:var(--sans);font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+  .band{position:relative;height:clamp(500px,80vh,780px);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+  .band .bg{position:absolute;inset:-14% 0;background-size:cover;background-position:center;will-change:transform}
+  .band .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,38,.5),rgba(8,18,38,.66))}
+  .band .content{position:relative;z-index:2;color:#fff;max-width:900px;padding:0 24px}
+  .band .content .eyebrow{color:var(--gold-soft);display:block;margin-bottom:22px}
+  .band blockquote{margin:0;font-family:var(--disp);font-weight:300;font-style:italic;font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.22}
+  .band cite{display:block;font-family:var(--sans);font-style:normal;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:28px}
+
+  .showcase{padding:clamp(80px,10vw,140px) 0}
+  .show-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,84px);align-items:center;margin-bottom:clamp(60px,8vw,110px)}
+  .show-row:last-child{margin-bottom:0}
+  .show-row .im{overflow:hidden}
+  .show-row .im img{width:100%;height:clamp(400px,50vw,560px);object-fit:cover;transition:transform 1.2s cubic-bezier(.19,1,.22,1)}
+  .show-row:hover .im img{transform:scale(1.05)}
+  .show-row.rev .tx{order:2}.show-row.rev .im{order:1}
+  @media(max-width:820px){.show-row{grid-template-columns:1fr;gap:26px}.show-row.rev .tx{order:0}.show-row.rev .im{order:0}}
+  .show-row .tx .eyebrow{display:block;margin-bottom:18px}
+  .show-row .tx h3{font-family:var(--disp);font-weight:300;font-size:clamp(2rem,4vw,3rem);color:var(--ink);margin-bottom:.4em}
+  .show-row .tx p{color:#3C475F;font-size:1.02rem;max-width:46ch}
+
+  .hgallery{background:var(--navy-ink);color:#fff;padding:clamp(70px,9vw,120px) 0}
+  .hgallery .head{text-align:center;margin-bottom:clamp(40px,6vw,60px)}
+  .hgallery .head h2{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;color:#fff}
+  .hgallery .head .eyebrow{display:block;margin-bottom:14px}
+  .hgrid{column-count:3;column-gap:16px}
+  @media(max-width:900px){.hgrid{column-count:2}}
+  @media(max-width:560px){.hgrid{column-count:1}}
+  .panel{position:relative;overflow:hidden;background:#0d1e38;cursor:pointer;break-inside:avoid;margin-bottom:16px;display:block}
+  .panel img{width:100%;height:auto;display:block;transition:transform 1.2s cubic-bezier(.19,1,.22,1)}
+  .panel:hover img{transform:scale(1.05)}
+  .panel .cap{position:absolute;left:0;bottom:0;right:0;padding:24px;background:linear-gradient(180deg,transparent,rgba(8,18,38,.85));display:flex;flex-direction:column;gap:5px;opacity:0;transition:.5s}
+  .panel:hover .cap{opacity:1}
+  .panel .cap small{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft)}
+  .panel .cap b{font-family:var(--serif);font-weight:400;font-size:1.3rem;color:#fff}
+
+  .mteaser{position:relative;overflow:hidden;text-align:center;color:#fff;padding:clamp(90px,13vw,170px) 0}
+  .mteaser .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05)}
+  .mteaser .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,38,.66),rgba(8,18,38,.76))}
+  .mteaser .inner{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 24px}
+  .mteaser .eyebrow{color:var(--gold-soft);display:block;margin-bottom:20px}
+  .mteaser h2{font-size:clamp(2.3rem,5.2vw,4rem);font-weight:300;margin-bottom:.4em}
+  .mteaser p{color:rgba(255,255,255,.85);font-family:var(--serif);font-size:1.2rem;margin-bottom:2em}
+
+  .stats{background:var(--navy-deep);color:#fff;padding:clamp(70px,9vw,120px) 0;text-align:center}
+  .stats .row{display:flex;justify-content:center;gap:clamp(26px,6vw,90px);flex-wrap:wrap}
+  .stat .n{font-family:var(--disp);font-weight:300;font-size:clamp(2.8rem,6vw,4.6rem);line-height:1;color:#fff}
+  .stat .n em{font-style:normal;color:var(--gold-soft)}
+  .stat .l{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:12px}
+
+  .sec-head-c{text-align:center;max-width:660px;margin:0 auto clamp(48px,7vw,72px)}
+  .sec-head-c .divider{margin-bottom:26px}
+  .sec-head-c h2{font-size:clamp(2.3rem,5vw,3.8rem);font-weight:300;color:var(--ink);margin-bottom:.35em}
+  .sec-head-c p{color:var(--muted)}
+
+  .locations{padding:clamp(84px,12vw,150px) 0}
+  .loc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media(max-width:900px){.loc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.loc-grid{grid-template-columns:1fr}}
+  .loc{position:relative;height:330px;overflow:hidden;background:var(--navy);cursor:pointer}
+  .loc img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:1s;transform:scale(1.02)}
+  .loc:hover img{transform:scale(1.09);opacity:.72}
+  .loc .info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(180deg,transparent 42%,rgba(8,18,38,.76))}
+  .loc .flag{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:auto}
+  .loc .info h3{color:#fff;font-size:1.7rem;font-weight:400}
+  .loc .info .addr{color:rgba(255,255,255,.78);font-size:.78rem;margin-top:3px}
+  .loc.txt{background:var(--cream);display:flex;align-items:center;justify-content:center;text-align:center}
+  .loc.txt h3{color:var(--navy);font-size:1.6rem}
+  .loc.txt .flag{color:var(--gold);margin-bottom:8px}
+  .loc.txt .soon{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+
+  .recog{background:var(--cream);padding:clamp(84px,12vw,150px) 0}
+  .recog .sec-head-c{margin-bottom:clamp(44px,6vw,64px)}
+  .recog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.recog-grid{grid-template-columns:1fr}}
+  .rcard{position:relative;overflow:hidden;height:460px;background:var(--navy)}
+  .rcard img{width:100%;height:100%;object-fit:cover;transition:1s}
+  .rcard:hover img{transform:scale(1.06)}
+  .rcard .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,38,.1) 30%,rgba(8,18,38,.86));display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:#fff}
+  .rcard .ov .tag{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
+  .rcard .ov h3{font-family:var(--disp);font-weight:400;font-size:1.9rem;line-height:1.08}
+  .rcard .ov p{font-size:.9rem;color:rgba(255,255,255,.82);margin-top:8px}
+
+  .reserve{position:relative;overflow:hidden;color:#fff;padding:clamp(84px,12vw,160px) 0;background:var(--navy-deep)}
+  .reserve .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.24}
+  .reserve .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,58,.86),rgba(8,18,38,.93))}
+  .reserve-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,84px);align-items:center}
+  @media(max-width:880px){.reserve-grid{grid-template-columns:1fr;gap:44px}}
+  .reserve .eyebrow{color:var(--gold-soft);display:block;margin-bottom:20px}
+  .reserve h2{font-size:clamp(2.5rem,5.4vw,4.2rem);font-weight:300;margin-bottom:.4em}
+  .reserve h2 em{font-style:italic;color:var(--gold-soft)}
+  .reserve .info-block{margin-top:32px;display:flex;flex-direction:column;gap:22px}
+  .reserve .info-block .lbl{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:5px}
+  .reserve .info-block .val{font-family:var(--serif);font-size:1.22rem;color:#fff}
+  .reserve .info-block .val a:hover{color:var(--gold-soft)}
+  .form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);padding:clamp(28px,4vw,44px)}
+  .form .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .form input,.form select{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.28);color:#fff;font-family:var(--sans);font-weight:300;font-size:.9rem;padding:12px 2px;transition:.3s}
+  .form input::placeholder{color:rgba(255,255,255,.45)}
+  .form input:focus,.form select:focus{outline:none;border-color:var(--gold-soft)}
+  .form select option{color:#000}
+  .form .btn{width:100%;justify-content:center;margin-top:16px}
+  .form .note{font-size:.66rem;color:rgba(255,255,255,.5);margin-top:14px;text-align:center}
+
+  footer{background:var(--navy-ink);color:rgba(255,255,255,.7);padding:74px 0 34px}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:46px;border-bottom:1px solid rgba(255,255,255,.1)}
+  @media(max-width:760px){.foot-top{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.foot-top{grid-template-columns:1fr}}
+  .foot-top .logo img{height:58px;filter:brightness(0) invert(1);margin-bottom:16px}
+  .foot-top p{font-size:.92rem;max-width:34ch;font-family:var(--serif)}
+  .foot-top h5{font-family:var(--sans);font-weight:500;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 18px}
+  .foot-top a{display:block;font-size:.9rem;margin-bottom:11px;transition:.3s;color:rgba(255,255,255,.7);cursor:pointer}
+  .foot-top a:hover{color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-size:.72rem;color:rgba(255,255,255,.45)}
+  .foot-bottom .pitch{color:var(--gold-soft);letter-spacing:.18em;text-transform:uppercase;font-size:.62rem}
+
+  .lightbox{position:fixed;inset:0;z-index:128;background:rgba(6,14,28,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.4s;padding:30px}
+  .lightbox.open{opacity:1;pointer-events:auto}
+  .lightbox img{max-width:92vw;max-height:86vh;object-fit:contain;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+  .lightbox .x{position:absolute;top:22px;right:28px;color:#fff;font-size:1.7rem;background:none;border:none;cursor:pointer}
+  .lightbox .nb{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid rgba(255,255,255,.3);color:#fff;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:1.4rem;transition:.3s}
+  .lightbox .nb:hover{background:rgba(255,255,255,.12)}
+  .lightbox .prev{left:24px}.lightbox .next{right:24px}
+
+  /* MENU PAGE */
+  .menu-page{position:fixed;inset:0;z-index:105;overflow-y:auto;background:var(--paper);transform:translateY(100%);transition:transform .75s cubic-bezier(.76,0,.24,1);visibility:hidden}
+  .menu-page.open{transform:translateY(0);visibility:visible}
+  .mp-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(22px,5vw,64px);background:rgba(251,248,241,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .mp-bar .logo img{height:40px}
+  .mp-bar .actions{display:flex;align-items:center;gap:22px}
+  .mp-bar .rsv{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--gold);padding:.85em 1.5em;cursor:pointer}
+  .mp-bar .rsv:hover{background:var(--navy)}
+  .mp-bar .back{display:inline-flex;align-items:center;gap:10px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);cursor:pointer;background:none;border:none;font-family:var(--sans);font-weight:500}
+  .mp-bar .back:hover{color:var(--gold)}
+  .mp-hero{position:relative;height:clamp(340px,54vh,540px);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+  .mp-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+  .mp-hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,38,.5),rgba(8,18,38,.68))}
+  .mp-hero .c{position:relative;z-index:2;color:#fff}
+  .mp-hero .eyebrow{color:var(--gold-soft);display:block;margin-bottom:16px}
+  .mp-hero h1{font-family:var(--disp);font-weight:300;font-size:clamp(2.6rem,7vw,5rem)}
+  .mp-hero p{font-family:var(--serif);font-style:italic;color:rgba(255,255,255,.9);font-size:clamp(1rem,2vw,1.3rem);margin-top:8px}
+  .mp-body{max-width:1180px;margin:0 auto;padding:clamp(60px,8vw,110px) clamp(22px,5vw,64px)}
+  .mp-intro{text-align:center;max-width:620px;margin:0 auto clamp(50px,7vw,80px);color:var(--muted);font-family:var(--serif);font-size:1.2rem;line-height:1.6}
+  .mp-cats{column-count:3;column-gap:clamp(30px,4vw,60px)}
+  @media(max-width:940px){.mp-cats{column-count:2}}
+  @media(max-width:620px){.mp-cats{column-count:1}}
+  .mcat{break-inside:avoid;margin-bottom:44px;display:inline-block;width:100%}
+  .mcat h3{font-family:var(--disp);font-weight:500;font-size:1.7rem;color:var(--navy);display:flex;align-items:center;gap:12px}
+  .mcat h3 .ln{flex:1;height:1px;background:var(--line)}
+  .mcat .sub{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:6px 0 18px}
+  .mcat ul{list-style:none;padding:0;margin:0}
+  .mcat li{padding:9px 0;border-bottom:1px dotted rgba(24,35,54,.14)}
+  .mcat li .nm{font-family:var(--serif);font-size:1.1rem;color:var(--ink)}
+  .mcat li .dsc{font-size:.8rem;color:var(--muted);margin-top:1px;line-height:1.45}
+  .mp-break{position:relative;height:clamp(240px,36vw,400px);overflow:hidden;margin:clamp(30px,5vw,60px) 0;break-inside:avoid}
+  .mp-break img{width:100%;height:100%;object-fit:cover}
+  .mp-foot{text-align:center;padding:clamp(50px,7vw,80px) 24px;background:var(--navy-deep);color:#fff}
+  .mp-foot p{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-soft);margin-bottom:1.4em;max-width:560px;margin-left:auto;margin-right:auto}
+  .mp-note{text-align:center;color:var(--muted);font-size:.8rem;margin-top:30px;letter-spacing:.02em}
+
+  html.anim .reveal{opacity:0;transform:translateY(34px);transition:opacity 1.1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,1,.22,1)}
+  html.anim .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001s!important;transition:none!important}
+    html.anim .reveal{opacity:1;transform:none}
+    #preloader{animation:plHide .3s ease .2s forwards}
+    .story .stack .main img{transform:none}
+    .menu-page{transition:none}
+  }
+</style>
+
+<div id="progress"></div>
+<div class="grain" aria-hidden="true"></div>
+<div id="preloader"><img src="assets/logo-restaurant.png" alt="Em Sherif" /><div class="pbar"><i></i></div></div>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="Em Sherif Restaurant">
+    <img class="w" src="assets/logo-restaurant.png" alt="Em Sherif Restaurant" />
+    <img class="n" src="assets/logo-restaurant.png" alt="Em Sherif Restaurant" />
+  </a>
+  <nav class="links">
+    <a href="#story">Story</a>
+    <a href="#gallery">Gallery</a>
+    <a data-menu>Menu</a>
+    <a href="#locations">Locations</a>
+    <a href="#recognition">Recognition</a>
+    <a class="rsv" href="#reserve">Reserve</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Close menu">&times;</button>
+  <a href="#story">Story</a><a href="#gallery">Gallery</a><a data-menu>Menu</a>
+  <a href="#locations">Locations</a><a href="#recognition">Recognition</a><a href="#reserve">Reserve</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay muted loop playsinline poster="assets/c3.jpg">
+      <source src="assets/hero-video.mp4" type="video/mp4" />
+    </video>
+    <div class="scrim"></div>
+    <div class="hero-inner">
+      <img class="brandmark" src="assets/logo-restaurant.png" alt="Em Sherif Restaurant" />
+      <span class="eyebrow">Beirut &middot; Since 2011</span>
+      <h1>The Art of <em>Lebanese</em> Dining</h1>
+      <p class="sub">A meticulously crafted tribute to the flavors, warmth and generosity of Lebanon, served at one unforgettable table.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#reserve"><span>Reserve a table</span></a>
+        <a class="btn btn-outline" data-menu><span>View the menu</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="wrap">
+      <div class="divider reveal"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+      <h2 class="reveal">There is no &agrave; la carte at Em Sherif. You take your seat, and the table begins to fill, dish after dish, until <em>generosity itself becomes the meal.</em></h2>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="stack reveal">
+        <div class="main imgclip"><img data-parimg src="assets/story-tall.jpg" alt="Mireille and Yasmina Hayek in the kitchen" /></div>
+        <div class="frame"></div>
+        <div class="cap">Mireille &amp; Yasmina Hayek</div>
+        <div class="inset"><img src="assets/c13.png" alt="Mireille Hayek" /></div>
+      </div>
+      <div class="txt">
+        <span class="eyebrow reveal">Our Story</span>
+        <h2 class="reveal">A Table Set with Love, for the World</h2>
+        <p class="reveal">Step into a realm of culinary splendor, where Lebanese traditions unfold with a timeless Em Sherif touch and flair. Each dish is a meticulous tribute to the art of Lebanese dining, honoring a rich culinary heritage with the finest flavors.</p>
+        <p class="reveal">What began in Beirut in 2011 as one woman&rsquo;s table has become a family of experiences carried across continents, without ever losing the warmth of home.</p>
+        <p class="quote reveal">&ldquo;I wanted to recreate the table of my mother, where no one ever leaves hungry, and every guest is treated like family.&rdquo;</p>
+        <div class="signoff reveal">Mireille Hayek<span>Founder &amp; Culinary Director</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND -->
+  <section class="band">
+    <div class="bg" data-parbg style="background-image:url('assets/loc-doha.jpg')"></div>
+    <div class="scrim"></div>
+    <div class="content reveal">
+      <span class="eyebrow">The Em Sherif welcome</span>
+      <blockquote>Every detail, the royal blue, the gold, the candlelight, exists to make a guest feel infinitely welcome.</blockquote>
+      <cite>Named Best Restaurant in Lebanon, 2025</cite>
+    </div>
+  </section>
+
+  <!-- SHOWCASE -->
+  <section class="showcase">
+    <div class="wrap">
+      <div class="show-row">
+        <div class="tx reveal">
+          <span class="eyebrow">The Mezze</span>
+          <h3>A Feast Without End</h3>
+          <p>Cold and hot mezze arrive in generous waves. Creamy hummus, smoked moutabal, hand rolled vine leaves and the freshest tabbouleh, each a small masterpiece meant to be shared.</p>
+        </div>
+        <div class="im reveal"><img src="assets/banner-1.jpg" alt="Overhead view of an Em Sherif mezze spread" /></div>
+      </div>
+      <div class="show-row rev">
+        <div class="tx reveal">
+          <span class="eyebrow">The Setting</span>
+          <h3>Royal Blue &amp; Candlelight</h3>
+          <p>Every room is dressed in the signature Em Sherif blue, warm brass and soft light. A space designed so that hospitality is felt before a single dish is served.</p>
+        </div>
+        <div class="im reveal"><img src="assets/cf2.jpg" alt="Warm wood-panelled Em Sherif dining room" /></div>
+      </div>
+      <div class="show-row">
+        <div class="tx reveal">
+          <span class="eyebrow">The Craft</span>
+          <h3>Tradition, Plated with Care</h3>
+          <p>Recipes passed through generations, prepared with precision and served with pride. This is Lebanese cuisine at its most refined, celebrated by the world&rsquo;s finest guides.</p>
+        </div>
+        <div class="im reveal"><img src="assets/press-vogue.jpg" alt="Mireille Hayek at the grill" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL GALLERY -->
+  <section class="hgallery" id="gallery">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow lt">The Experience</span>
+        <h2>A World in Royal Blue &amp; Gold</h2>
+      </div>
+      <div class="hgrid">
+        <figure class="panel" data-full="assets/banner-1.jpg"><img src="assets/banner-1.jpg" alt="Mezze spread"><figcaption class="cap"><small>The Feast</small><b>An endless table of mezze</b></figcaption></figure>
+        <figure class="panel" data-full="assets/c3.jpg"><img src="assets/c3.jpg" alt="Grand dining hall"><figcaption class="cap"><small>The Room</small><b>The grand hall</b></figcaption></figure>
+        <figure class="panel" data-full="assets/cf2.jpg"><img src="assets/cf2.jpg" alt="Wood-panelled dining room"><figcaption class="cap"><small>The Room</small><b>Brass &amp; candlelight</b></figcaption></figure>
+        <figure class="panel" data-full="assets/loc-doha.jpg"><img src="assets/loc-doha.jpg" alt="Chandelier dining room"><figcaption class="cap"><small>The Room</small><b>Chandeliers &amp; arches</b></figcaption></figure>
+        <figure class="panel" data-full="assets/c8.jpg"><img src="assets/c8.jpg" alt="Sea-view terrace"><figcaption class="cap"><small>Al Fresco</small><b>By the sea</b></figcaption></figure>
+        <figure class="panel" data-full="assets/cf6.jpg"><img src="assets/cf6.jpg" alt="Blue and white cafe"><figcaption class="cap"><small>The Room</small><b>Beneath the canopy</b></figcaption></figure>
+        <figure class="panel" data-full="assets/c4.jpg"><img src="assets/c4.jpg" alt="Blue domed dining room"><figcaption class="cap"><small>The Room</small><b>Under the dome</b></figcaption></figure>
+        <figure class="panel" data-full="assets/cf3.jpg"><img src="assets/cf3.jpg" alt="Window banquette with flowers"><figcaption class="cap"><small>The Room</small><b>The window table</b></figcaption></figure>
+        <figure class="panel" data-full="assets/c5.jpg"><img src="assets/c5.jpg" alt="Blue interior with olive trees"><figcaption class="cap"><small>The Room</small><b>Olive &amp; azure</b></figcaption></figure>
+        <figure class="panel" data-full="assets/c10.jpg"><img src="assets/c10.jpg" alt="Art deco lounge"><figcaption class="cap"><small>The Lounge</small><b>After dark</b></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU TEASER -->
+  <section class="mteaser">
+    <div class="bg" data-parbg style="background-image:url('assets/banner-1.jpg')"></div>
+    <div class="scrim"></div>
+    <div class="inner">
+      <span class="eyebrow">The Menu</span>
+      <h2>A Continuous Lebanese Feast</h2>
+      <p>From the oven, the mezze table and the grill, to sweets that close the afternoon.</p>
+      <a class="btn btn-gold" data-menu><span>Explore the full menu</span></a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap row">
+      <div class="stat reveal"><div class="n"><em data-count="2011">2011</em></div><div class="l">Founded in Beirut</div></div>
+      <div class="stat reveal"><div class="n"><em data-count="7">0</em></div><div class="l">Restaurant cities</div></div>
+      <div class="stat reveal"><div class="n"><em data-count="15">0</em></div><div class="l">Café cities worldwide</div></div>
+      <div class="stat reveal"><div class="n"><em data-count="14">0</em></div><div class="l">Years of hospitality</div></div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="locations" id="locations">
+    <div class="wrap">
+      <div class="sec-head-c">
+        <div class="divider"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+        <h2>From Beirut to the World</h2>
+        <p>The Em Sherif Restaurant table is now set across the Middle East and Europe.</p>
+      </div>
+      <div class="loc-grid">
+        <a class="loc reveal" href="#reserve"><img src="assets/banner-restaurant.jpg" alt="Beirut"><div class="info"><span class="flag">Lebanon</span><h3>Beirut</h3><span class="addr">Monot, the original since 2011</span></div></a>
+        <a class="loc reveal" href="#reserve"><img src="assets/loc-doha.jpg" alt="Doha"><div class="info"><span class="flag">Qatar</span><h3>Doha</h3><span class="addr">The grand dining room</span></div></a>
+        <a class="loc reveal" href="#reserve"><img src="assets/c8.jpg" alt="Muscat"><div class="info"><span class="flag">Oman</span><h3>Muscat</h3><span class="addr">By the gulf</span></div></a>
+        <a class="loc reveal" href="#reserve"><img src="assets/wide-1.jpg" alt="London"><div class="info"><span class="flag">United Kingdom</span><h3>London</h3><span class="addr">Mayfair</span></div></a>
+        <div class="loc txt reveal"><div><div class="flag">Kuwait</div><h3>Kuwait City</h3></div></div>
+        <div class="loc txt reveal"><div><div class="flag">Monaco</div><h3>Monte Carlo</h3></div></div>
+        <div class="loc txt reveal"><div><div class="flag">Syria</div><h3>Damascus</h3></div></div>
+        <div class="loc txt reveal"><div><div class="flag">Coming soon</div><h3>Riyadh</h3><div class="soon">Opening 2026</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section class="recog" id="recognition">
+    <div class="wrap">
+      <div class="sec-head-c">
+        <div class="divider"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+        <h2>Recognized Around the World</h2>
+        <p>Celebrated by the guides, the press, and generations of guests.</p>
+      </div>
+      <div class="recog-grid">
+        <div class="rcard reveal"><img src="assets/cf8.jpg" alt="Em Sherif grand dining hall"><div class="ov"><span class="tag">MENA&rsquo;s 50 Best</span><h3>Best Restaurant in Lebanon</h3><p>2025 selection</p></div></div>
+        <div class="rcard reveal"><img src="assets/yasmina.jpg" alt="Yasmina Hayek"><div class="ov"><span class="tag">MENA&rsquo;s 50 Best</span><h3>Best Female Chef 2025</h3><p>Yasmina Hayek</p></div></div>
+        <div class="rcard reveal"><img src="assets/press-vogue.jpg" alt="Mireille Hayek at the grill"><div class="ov"><span class="tag">In the press</span><h3>A Culinary Icon</h3><p>Mireille Hayek, featured in Vogue Arabia</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE -->
+  <section class="reserve" id="reserve">
+    <div class="bg" data-parbg style="background-image:url('assets/wide-2.jpg')"></div>
+    <div class="scrim"></div>
+    <div class="wrap reserve-grid">
+      <div>
+        <span class="eyebrow reveal">Reservations</span>
+        <h2 class="reveal">A Place is Kept <em>for You</em></h2>
+        <p class="serif-lead reveal" style="color:rgba(255,255,255,.85)">Reserve your table at Em Sherif Beirut and let the mezze begin.</p>
+        <div class="info-block">
+          <div class="reveal"><div class="lbl">Address</div><div class="val">Damascus Street, Monot, Beirut, Lebanon</div></div>
+          <div class="reveal"><div class="lbl">Opening Hours</div><div class="val">Monday to Sunday &middot; 12:30 PM to 4:00 PM</div></div>
+          <div class="reveal"><div class="lbl">Reservations</div><div class="val"><a href="tel:+96170919119">+961 70 919 119</a></div></div>
+        </div>
+      </div>
+      <form class="form reveal" onsubmit="return false;">
+        <div class="frow"><input type="text" placeholder="First name" aria-label="First name" /><input type="text" placeholder="Last name" aria-label="Last name" /></div>
+        <div class="frow"><input type="email" placeholder="Email" aria-label="Email" /><input type="tel" placeholder="Phone" aria-label="Phone" /></div>
+        <div class="frow"><input type="date" aria-label="Date" /><select aria-label="Guests"><option>Guests</option><option>2 guests</option><option>4 guests</option><option>6 guests</option><option>8+ guests</option></select></div>
+        <button class="btn btn-gold"><span>Request reservation</span></button>
+        <p class="note">A concierge will confirm your table within 24 hours.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="#top"><img src="assets/logo-restaurant.png" alt="Em Sherif Restaurant" /></a>
+        <p>Celebrating the art of Lebanese dining since 2011, where every table is an invitation.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <a href="#story">Our Story</a><a href="#gallery">Gallery</a><a data-menu>The Menu</a><a href="#locations">Locations</a>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <a href="#reserve">Reservations</a><a href="tel:+96170919119">+961 70 919 119</a><a href="#locations">Find a location</a><a href="#reserve">Private events</a>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/emsherifrestaurant" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://emsherifrestaurant.com" target="_blank" rel="noopener">emsherifrestaurant.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Em Sherif Restaurant &middot; Beirut, Lebanon</span>
+      <span class="pitch">Concept redesign, prepared for presentation</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MENU PAGE ============ -->
+<section class="menu-page" id="menuPage" aria-label="Full menu">
+  <div class="mp-bar">
+    <a class="logo" data-home aria-label="Back to home"><img src="assets/logo-restaurant.png" alt="Em Sherif Restaurant" /></a>
+    <div class="actions">
+      <button class="back" data-home>&larr; Back to site</button>
+      <a class="rsv" data-reserve-from-menu>Reserve</a>
+    </div>
+  </div>
+  <div class="mp-hero">
+    <div class="bg" style="background-image:url('assets/banner-1.jpg')"></div>
+    <div class="scrim"></div>
+    <div class="c">
+      <span class="eyebrow">Em Sherif</span>
+      <h1>The Menu</h1>
+      <p>A continuous Lebanese feast, served family style.</p>
+    </div>
+  </div>
+  <div class="mp-body">
+    <p class="mp-intro">Dish after dish arrives to your table, from the oven and the cold mezze, through the grill, to the sweets that close the meal. A selection from the Em Sherif kitchen follows.</p>
+
+    <div class="mp-cats">
+      <div class="mcat">
+        <h3>From the Oven <span class="ln"></span></h3>
+        <div class="sub">Men el Furn</div>
+        <ul>
+          <li><div class="nm">Man&rsquo;oushe Zaatar</div><div class="dsc">homemade thyme mix on flatbread</div></li>
+          <li><div class="nm">Man&rsquo;oushe Jebneh</div><div class="dsc">homemade cheese mix on flatbread</div></li>
+          <li><div class="nm">Bokjat Jebneh</div><div class="dsc">cheese mix pie, leafy greens</div></li>
+          <li><div class="nm">Lahme bi Ajeen</div><div class="dsc">spicy minced meat pie</div></li>
+          <li><div class="nm">Lahme bi Ajeen Debs</div><div class="dsc">minced meat, pomegranate molasses</div></li>
+          <li><div class="nm">Musakhan</div><div class="dsc">onion and sumac chicken on flatbread</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Eggs &amp; Dairy <span class="ln"></span></h3>
+        <div class="sub">Beyd w Albane</div>
+        <ul>
+          <li><div class="nm">Beyd Ouyoun</div><div class="dsc">sunny side up eggs</div></li>
+          <li><div class="nm">Beyd Soujouk</div><div class="dsc">eggs, Lebanese spicy sausage</div></li>
+          <li><div class="nm">Beyd bi Kawarma</div><div class="dsc">eggs, lamb confit</div></li>
+          <li><div class="nm">Beyd Shakshouka</div><div class="dsc">eggs, tomato and pepper sauce</div></li>
+          <li><div class="nm">Goat Milk Labneh</div><div class="dsc">homemade goat labneh, extra virgin olive oil</div></li>
+          <li><div class="nm">Halloum</div><div class="dsc">pan fried halloumi, tomato, wild zaatar</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Cold Mezze <span class="ln"></span></h3>
+        <div class="sub">Mezze Barde</div>
+        <ul>
+          <li><div class="nm">Hummus</div><div class="dsc">chickpea dip, tahini, lemon, olive oil</div></li>
+          <li><div class="nm">Hummus Snoubar</div><div class="dsc">chickpea, tahini, toasted pine nuts</div></li>
+          <li><div class="nm">Mutabbal</div><div class="dsc">flame grilled eggplant, tahini, pomegranate</div></li>
+          <li><div class="nm">Muhammara</div><div class="dsc">sweet pepper and walnut dip</div></li>
+          <li><div class="nm">Bemieh bil Zeit</div><div class="dsc">okra in tomato and olive oil</div></li>
+          <li><div class="nm">Mloukhiyeh bil Zeit</div><div class="dsc">mouloukhiya in olive oil, tahini sauce</div></li>
+          <li><div class="nm">Banadoura Shanklish</div><div class="dsc">heirloom tomato, shanklish cheese</div></li>
+          <li><div class="nm">Rosto</div><div class="dsc">roast beef, pickled sauce, radish</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Hot Mezze <span class="ln"></span></h3>
+        <div class="sub">Mezze Sokhna</div>
+        <ul>
+          <li><div class="nm">Hummus Lahme</div><div class="dsc">chickpea, tahini, minced beef</div></li>
+          <li><div class="nm">Kibbeh Summakiyeh</div><div class="dsc">meat and bulgur pie, onion and sumac</div></li>
+          <li><div class="nm">Sambousik</div><div class="dsc">meat filled pastries</div></li>
+          <li><div class="nm">Fatayer</div><div class="dsc">purslane and wild zaatar pastries</div></li>
+          <li><div class="nm">Falafel</div><div class="dsc">chickpea and herb fritters, tahini</div></li>
+          <li><div class="nm">Soujouk</div><div class="dsc">grilled spicy sausage, tomato and pepper</div></li>
+          <li><div class="nm">Makanek Debs Remmane</div><div class="dsc">Lebanese sausage, pomegranate molasses</div></li>
+          <li><div class="nm">Ras Asfour</div><div class="dsc">sautéed beef cubes, pomegranate, pine nuts</div></li>
+          <li><div class="nm">Batata Harra</div><div class="dsc">spicy potatoes, coriander</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Salads <span class="ln"></span></h3>
+        <div class="sub">Salatat</div>
+        <ul>
+          <li><div class="nm">Tabbouleh</div><div class="dsc">parsley, tomato, bulgur, lemon, olive oil</div></li>
+          <li><div class="nm">Fattoush</div><div class="dsc">chopped salad, sumac, crispy Arabic bread</div></li>
+          <li><div class="nm">Raheb</div><div class="dsc">flame grilled aubergine, lemon garlic</div></li>
+          <li><div class="nm">Shmandar</div><div class="dsc">beetroot, purslane, caramelized walnut</div></li>
+          <li><div class="nm">Kale Freekeh</div><div class="dsc">kale, freekeh, pistachio, seasonal fruit</div></li>
+          <li><div class="nm">Ardishawke</div><div class="dsc">artichoke, greens, pine nuts, grilled olives</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Nayy <span class="ln"></span></h3>
+        <div class="sub">Raw, the Em Sherif way</div>
+        <ul>
+          <li><div class="nm">Kebbeh Nayyeh</div><div class="dsc">creamy Lebanese beef tartar, bulgur, basil</div></li>
+          <li><div class="nm">Habra Nayyeh</div><div class="dsc">creamy Lebanese beef tartar</div></li>
+          <li><div class="nm">Frakeh</div><div class="dsc">beef tartar, spiced bulgur mix</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>From the Grill <span class="ln"></span></h3>
+        <div class="sub">Mashewe</div>
+        <ul>
+          <li><div class="nm">Beef Skewers</div><div class="dsc">tomato, chilli, onion</div></li>
+          <li><div class="nm">Kebab Skewers</div><div class="dsc">minced beef, cinnamon, tomato</div></li>
+          <li><div class="nm">Kefta Skewers</div><div class="dsc">minced beef, parsley, tomato</div></li>
+          <li><div class="nm">Kibbeh Skewers</div><div class="dsc">beef and bulgur, pistachio</div></li>
+          <li><div class="nm">Taouk Skewers</div><div class="dsc">marinated chicken, garlic cream</div></li>
+          <li><div class="nm">Riyash</div><div class="dsc">grilled marinated lamb chops</div></li>
+          <li><div class="nm">Mixed Grills</div><div class="dsc">taouk, kebab and beef skewers</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Sandwiches <span class="ln"></span></h3>
+        <div class="sub">Sandweech</div>
+        <ul>
+          <li><div class="nm">Burger Em Sherif</div><div class="dsc">beef patty, brioche, cheddar, coleslaw</div></li>
+          <li><div class="nm">Grilled Beef</div><div class="dsc">tenderloin, hummus, pickled cucumber</div></li>
+          <li><div class="nm">Arayes Kefta</div><div class="dsc">kefta and cheese on grilled Arabic bread</div></li>
+          <li><div class="nm">Shawarma Lahmeh</div><div class="dsc">beef shawarma, tahini sauce</div></li>
+          <li><div class="nm">Shawarma Djeij</div><div class="dsc">chicken shawarma, garlic cream</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Mains <span class="ln"></span></h3>
+        <div class="sub">Atbaq Raisiye</div>
+        <ul>
+          <li><div class="nm">Hummus Shawarma</div><div class="dsc">hummus, beef shawarma, parsley, onion</div></li>
+          <li><div class="nm">Beefteak w Batata</div><div class="dsc">pan fried steak, creamy walnut sauce</div></li>
+          <li><div class="nm">Sayadieh</div><div class="dsc">spiced fish, caramelized onion rice</div></li>
+        </ul>
+      </div>
+
+      <div class="mcat">
+        <h3>Desserts <span class="ln"></span></h3>
+        <div class="sub">Helo</div>
+        <ul>
+          <li><div class="nm">Aysh el Saraya</div><div class="dsc">caramelized toasted bread, ashta</div></li>
+          <li><div class="nm">Mafrouket Festok</div><div class="dsc">pistachio and semolina dough, ashta cream</div></li>
+          <li><div class="nm">Riz bi Halib</div><div class="dsc">orange blossom and rose rice pudding</div></li>
+          <li><div class="nm">Meghli</div><div class="dsc">spiced Lebanese pudding, mixed nuts</div></li>
+          <li><div class="nm">Bouza w Ghazel el Banet</div><div class="dsc">mastika ice cream, candy floss</div></li>
+          <li><div class="nm">Em Ali</div><div class="dsc">puffed pastry, vanilla milk, mixed nuts</div></li>
+          <li><div class="nm">Fawakeh</div><div class="dsc">seasonal fresh fruit salad</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mp-break"><img src="assets/cf3.jpg" alt="Em Sherif dining room" /></div>
+    <p class="mp-note">A selection from the Em Sherif kitchen. The full seasonal menu is presented at the table.</p>
+  </div>
+  <div class="mp-foot">
+    <p>Served family style, the Em Sherif feast is best enjoyed slowly, and shared with the people you love.</p>
+    <a class="btn btn-gold" data-reserve-from-menu><span>Reserve a table</span></a>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="x" id="lbClose" aria-label="Close">&times;</button>
+  <button class="nb prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" src="" alt="" />
+  <button class="nb next" id="lbNext" aria-label="Next">&#8250;</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine = window.matchMedia && window.matchMedia("(pointer:fine)").matches;
+
+  window.addEventListener("load",function(){ var pl=document.getElementById("preloader"); if(pl) setTimeout(function(){pl.classList.add("done");},700); });
+
+  var prog=document.getElementById("progress");
+  function upProg(){ var h=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(h>0?(window.scrollY/h*100):0)+"%"; }
+  window.addEventListener("scroll",upProg,{passive:true}); upProg();
+
+  var nav=document.getElementById("nav");
+  function onScroll(){ if(window.scrollY>60) nav.classList.add("scrolled"); else nav.classList.remove("scrolled"); }
+  onScroll(); window.addEventListener("scroll",onScroll,{passive:true});
+  var mm=document.getElementById("mobileMenu");
+  document.getElementById("burger").addEventListener("click",function(){mm.classList.add("open");});
+  document.getElementById("closeMenu").addEventListener("click",function(){mm.classList.remove("open");});
+  mm.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){mm.classList.remove("open");});});
+
+  /* MENU PAGE routing */
+  var menuPage=document.getElementById("menuPage");
+  function openMenu(){ menuPage.classList.add("open"); document.body.classList.add("noscroll"); menuPage.scrollTop=0; try{history.replaceState(null,"","#menu");}catch(e){} menuPage.querySelectorAll(".reveal").forEach(function(e){e.classList.add("in");}); }
+  function closeMenu(){ menuPage.classList.remove("open"); document.body.classList.remove("noscroll"); try{history.replaceState(null,"","#top");}catch(e){} }
+  document.querySelectorAll("[data-menu]").forEach(function(el){ el.addEventListener("click",function(e){e.preventDefault();mm.classList.remove("open");openMenu();}); });
+  document.querySelectorAll("[data-home]").forEach(function(el){ el.addEventListener("click",function(e){e.preventDefault();closeMenu();}); });
+  document.querySelectorAll("[data-reserve-from-menu]").forEach(function(el){ el.addEventListener("click",function(e){e.preventDefault();closeMenu();setTimeout(function(){var r=document.getElementById("reserve");if(r)r.scrollIntoView({behavior:"smooth"});},140);}); });
+  if(location.hash==="#menu") openMenu();
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape" && menuPage.classList.contains("open")) closeMenu(); });
+
+  if(!reduce && "IntersectionObserver" in window){
+    document.documentElement.classList.add("anim");
+    var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); },{threshold:0.12,rootMargin:"0px 0px -6% 0px"});
+    document.querySelectorAll(".reveal").forEach(function(el,i){ el.style.transitionDelay=(Math.min(i%3,2)*0.09)+"s"; io.observe(el); });
+  }
+
+  var hasGSAP = window.gsap && window.ScrollTrigger;
+  if(hasGSAP && !reduce){
+    gsap.registerPlugin(ScrollTrigger);
+    document.querySelectorAll("[data-parbg]").forEach(function(el){
+      gsap.fromTo(el,{yPercent:-8},{yPercent:8,ease:"none",scrollTrigger:{trigger:el.parentElement,start:"top bottom",end:"bottom top",scrub:true}});
+    });
+    document.querySelectorAll("[data-parimg]").forEach(function(el){
+      gsap.fromTo(el,{yPercent:-4},{yPercent:6,ease:"none",scrollTrigger:{trigger:el,start:"top bottom",end:"bottom top",scrub:true}});
+    });
+    document.querySelectorAll("[data-count]").forEach(function(node){
+      var end=+node.getAttribute("data-count"), isYear=end>1000, o={v:isYear?2000:0};
+      gsap.to(o,{v:end,duration:1.8,ease:"power2.out",scrollTrigger:{trigger:node,start:"top 90%"},onUpdate:function(){ node.textContent=Math.round(o.v); }});
+    });
+    setTimeout(function(){ScrollTrigger.refresh();},2300);
+  }
+
+  var panels=[].slice.call(document.querySelectorAll(".panel"));
+  var lb=document.getElementById("lightbox"), lbImg=document.getElementById("lbImg");
+  var srcs=panels.map(function(p){return p.getAttribute("data-full");});
+  var alts=panels.map(function(p){var i=p.querySelector("img");return i?i.alt:"";});
+  var idx=0, dragMoved=false;
+  function show(i){idx=(i+srcs.length)%srcs.length;lbImg.src=srcs[idx];lbImg.alt=alts[idx];}
+  function open(i){show(i);lb.classList.add("open");document.body.style.overflow="hidden";}
+  function close(){lb.classList.remove("open");document.body.style.overflow="";}
+  panels.forEach(function(p,i){ p.addEventListener("click",function(){ if(!dragMoved) open(i); }); });
+  document.getElementById("lbClose").addEventListener("click",close);
+  document.getElementById("lbPrev").addEventListener("click",function(){show(idx-1);});
+  document.getElementById("lbNext").addEventListener("click",function(){show(idx+1);});
+  lb.addEventListener("click",function(e){if(e.target===lb)close();});
+  document.addEventListener("keydown",function(e){ if(!lb.classList.contains("open"))return; if(e.key==="Escape")close(); else if(e.key==="ArrowLeft")show(idx-1); else if(e.key==="ArrowRight")show(idx+1); });
+})();
+</script>

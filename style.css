@@ -237,6 +237,11 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .mq__it{font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.4rem);font-weight:300;font-style:italic;color:var(--grey-light);display:flex;align-items:center;gap:clamp(28px,4vw,56px);flex-shrink:0;transition:color .3s}
 .mq__it:hover{color:var(--gold)}
 .mq__dot{width:3px;height:3px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:.5}
+/* Navy marquee — blends the contact panel into the footer (no ivory stripe) */
+.mq--navy{background:var(--navy);border-top-color:rgba(255,255,255,.06);border-bottom-color:rgba(255,255,255,.06)}
+.mq--navy .mq__it{color:rgba(255,255,255,.42)}
+.mq--navy .mq__it:hover{color:var(--gold-light)}
+.mq--navy .mq__dot{background:var(--gold-light);opacity:.6}
 
 /* ---- Locations ---- */
 .locs{border-top:1px solid var(--border)}

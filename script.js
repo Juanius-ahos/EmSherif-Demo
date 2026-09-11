@@ -17,7 +17,7 @@
 
   /* ---- Preloader ---- */
   window.addEventListener("load", function(){
-    setTimeout(function(){ var p=document.getElementById("pl"); if(p) p.classList.add("done"); }, 1800);
+    setTimeout(function(){ var p=document.getElementById("pl"); if(p) p.classList.add("done"); }, 600);
   });
 
   /* ---- Progress ---- */

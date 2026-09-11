@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sea Cafe — Where the Land Meets the Sea</title>
+  <title>Sea Cafe — Em Sherif</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- preloader -->
+
+  <!-- Preloader -->
   <div class="pl" id="pl">
-    <div class="pl__ar">أم شريف</div>
-    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <img src="assets/logo-restaurant.png" class="pl__logo">
+    <div class="pl__bar"><div class="pl__fill"></div></div>
   </div>
 
-  <!-- progress -->
-  <div class="prog" id="prog"></div>
-
-  <!-- nav -->
+  <!-- Navigation -->
   <nav class="nav" id="nav">
-    <a href="index.html" class="nav__logo"><img src="assets/logo-white.png" alt="Logo"></a>
+    <a class="nav__logo"><img src="assets/logo-restaurant.png"></a>
     <ul class="nav__links">
       <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
       <li><a href="cafe.html" class="nav__link">Cafe</a></li>
@@ -29,11 +27,15 @@
       <li><a href="deli.html" class="nav__link">Deli</a></li>
       <li><a href="locations.html" class="nav__link">Locations</a></li>
     </ul>
-    <a href="reservation.html" class="nav__cta btn btn--g">Reserve</a>
-    <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+    <a href="reservation.html" class="nav__cta btn btn--black">Reserve</a>
+    <button class="nav__b" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <!-- mobile -->
+  <!-- Mobile Menu -->
   <div class="mov" id="mov">
     <button class="mov__x" id="closeMov">&times;</button>
     <a href="restaurant.html"><span class="t">Restaurant</span></a>
@@ -41,124 +43,115 @@
     <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
     <a href="deli.html"><span class="t">Deli</span></a>
     <a href="locations.html"><span class="t">Locations</span></a>
-    <a href="reservation.html" class="btn btn--g"><span class="t">Reserve a Table</span></a>
+    <a href="reservation.html" class="btn btn--black"><span class="t">Reserve</span></a>
   </div>
 
-  <!-- HERO -->
-  <section class="ph" style="height:70vh">
-    <img src="assets/banner-2.jpg" alt="" class="bg" data-p>
+  <!-- Page Hero -->
+  <section class="ph">
+    <img src="assets/banner-2.jpg" class="bg">
     <div class="ph__g"></div>
     <div class="ph__ct">
-      <span class="ph__eb" data-ru>The Sea Cafe</span>
-      <h1 class="ph__h" data-ru>Where the Land<br>Meets <em>the Sea</em></h1>
-      <p class="ph__sub" data-ru>A Lebanese Mediterranean seafood restaurant paying tribute to earth and sea.</p>
+      <p class="ph__eb">The Sea Cafe</p>
+      <h1 class="ph__h">Where the Land<br>Meets <em>the Sea</em></h1>
+      <p class="ph__sub">A Lebanese Mediterranean seafood restaurant.</p>
     </div>
   </section>
 
-  <!-- STORY -->
+  <!-- Story -->
   <section class="sec">
     <div class="wrap">
-      <div class="g2" data-ru>
-        <div class="ir ir--tall">
-          <img src="assets/banner-3.jpg" alt="The Sea Cafe">
+      <div class="g2">
+        <div class="g2__m ir ir--tall" data-ri>
+          <img src="assets/banner-3.jpg">
         </div>
-        <div class="ch">
-          <span class="ch__eb"><span class="n">01</span></span>
-          <h2 class="ch__tx">A Culinary Tribute<br>to <em>Earth &amp; Sea</em></h2>
+        <div class="g2__ct">
+          <div class="ch__eb"><span class="n">01</span> Our Story</div>
           <div class="ch__tx">
-            <p>Born from a deep reverence for the Mediterranean, The Sea Cafe is where sun-kissed coastal flavors meet the warmth of Lebanese hospitality. Every dish is crafted with the freshest ingredients — wild-caught seafood, handpicked herbs, and the finest produce from local farms.</p>
-            <p>Here, the simplicity of the sea is elevated through refined preparation and an unwavering commitment to quality. From the raw bar to the grill, each creation is a celebration of the earth's generosity and the ocean's bounty.</p>
-            <blockquote>"The sea cafe is where Lebanon meets the Mediterranean — where the generosity of our land embraces the bounty of our waters."<br><span style="font-style:normal;font-size:.78rem;font-family:var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--grey)">— Mireille Hayek</span></blockquote>
+            <h2>A Culinary Tribute to <em>Earth & Sea</em></h2>
+            <p>A celebration of Mediterranean flavors where the finest land ingredients meet the treasures of the sea. Each dish is a tribute to the rich culinary heritage of Lebanon, reimagined through a coastal lens.</p>
+            <p>From the freshest catch of the day to signature grills, every plate tells a story of the Mediterranean — a place where land and sea converge in perfect harmony.</p>
+            <blockquote>"Where the land meets the sea, a new culinary journey begins — one that honors tradition while embracing the beauty of the coast."</blockquote>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MENU -->
-  <section class="sec sec--iv">
+  <!-- Menu -->
+  <section class="sec sec--grey">
     <div class="wrap">
-      <div class="sh" data-ru>
+      <div class="sh">
         <p class="sh__eb">Seafood Menu</p>
         <h2 class="sh__h">From the <em>Mediterranean</em></h2>
       </div>
-      <div class="g2" data-ru>
-        <div class="md">
-          <h3 class="md__t">Raw Bar</h3>
-          <div class="md__r"><span class="md__n">Oysters</span><span class="md__ln"></span><span class="md__p">Seasonal selection</span></div>
-          <div class="md__r"><span class="md__n">Tuna Tartare</span><span class="md__ln"></span><span class="md__p">Sesame, avocado, crispy shallots</span></div>
-          <div class="md__r"><span class="md__n">Seafood Ceviche</span><span class="md__ln"></span><span class="md__p">Citrus, chili, fresh herbs</span></div>
+      <div class="md">
+        <div class="mcat">
+          <p class="mcat__t">Raw Bar</p>
+          <div class="mcat__l"></div>
+          <div class="mrow"><span class="mrow__n">Oysters</span><span class="mrow__p"></span></div>
+          <div class="mrow"><span class="mrow__n">Tuna Tartare</span><span class="mrow__p"></span></div>
+          <div class="mrow"><span class="mrow__n">Seafood Ceviche</span><span class="mrow__p"></span></div>
         </div>
-        <div class="md">
-          <h3 class="md__t">From the Grill</h3>
-          <div class="md__r"><span class="md__n">Grilled Octopus</span><span class="md__ln"></span><span class="md__p">Charred lemon, olive oil, capers</span></div>
-          <div class="md__r"><span class="md__n">Sea Bass</span><span class="md__ln"></span><span class="md__p">Whole roasted, Mediterranean herbs</span></div>
-          <div class="md__r"><span class="md__n">Lobster</span><span class="md__ln"></span><span class="md__p">Grilled with garlic butter</span></div>
+        <div class="mcat">
+          <p class="mcat__t">From the Grill</p>
+          <div class="mcat__l"></div>
+          <div class="mrow"><span class="mrow__n">Grilled Octopus</span><span class="mrow__p"></span></div>
+          <div class="mrow"><span class="mrow__n">Sea Bass</span><span class="mrow__p"></span></div>
+          <div class="mrow"><span class="mrow__n">Lobster</span><span class="mrow__p"></span></div>
         </div>
-        <div class="md">
-          <h3 class="md__t">Mezze</h3>
-          <div class="md__r"><span class="md__n">Hummus with Seafood</span><span class="md__ln"></span><span class="md__p">Topped with sautéed shrimp</span></div>
-          <div class="md__r"><span class="md__n">Fattoush</span><span class="md__ln"></span><span class="md__p">Pomegranate dressing, crispy pita</span></div>
-          <div class="md__r"><span class="md__n">Tabbouleh</span><span class="md__ln"></span><span class="md__p">Classic preparation, fresh mint</span></div>
+        <div class="mcat">
+          <p class="mcat__t">Mezze</p>
+          <div class="mcat__l"></div>
+          <div class="mrow"><span class="mrow__n">Hummus with Seafood</span><span class="mrow__p"></span></div>
+          <div class="mrow"><span class="mrow__n">Fattoush</span><span class="mrow__p"></span></div>
         </div>
-        <div class="md">
-          <h3 class="md__t">Dessert</h3>
-          <div class="md__r"><span class="md__n">Mouhalabieh</span><span class="md__ln"></span><span class="md__p">Rose water, pistachio crumble</span></div>
-          <div class="md__r"><span class="md__n">Fresh Fruits</span><span class="md__ln"></span><span class="md__p">Seasonal, with orange blossom syrup</span></div>
+        <div class="mcat">
+          <p class="mcat__t">Dessert</p>
+          <div class="mcat__l"></div>
+          <div class="mrow"><span class="mrow__n">Mouhalabieh</span><span class="mrow__p"></span></div>
+          <div class="mrow"><span class="mrow__n">Fresh Fruits</span><span class="mrow__p"></span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LOCATIONS -->
-  <section class="sec sec--nv">
+  <!-- Locations -->
+  <section class="sec sec--black">
     <div class="wrap">
-      <div class="sh" data-ru>
+      <div class="sh">
         <p class="sh__eb">Our Sea Cafes</p>
         <h2 class="sh__h">By the <em>Shore</em></h2>
       </div>
-      <div class="locs" data-ru>
-        <a href="locations.html" class="loc">
+      <div class="locs">
+        <div class="loc">
           <span class="loc__i">01</span>
-          <div class="loc__c">Beirut<span class="fl">Lebanon · Zaitunay Bay</span></div>
-          <div class="loc__m"><span class="loc__ph">+961 78 988 989</span><span class="loc__hr">Mon–Sun 11:00 AM–1:00 AM</span></div>
-        </a>
-        <a href="locations.html" class="loc">
+          <span class="loc__c">Beirut — Lebanon <span class="fl">Zaitunay Bay</span></span>
+          <span class="loc__m"><span class="loc__ph">+961 78 988 989</span><span class="loc__hr">Mon–Sun 11:00 AM–1:00 AM</span></span>
+        </div>
+        <div class="loc">
           <span class="loc__i">02</span>
-          <div class="loc__c">Manama<span class="fl">Bahrain · The Avenues Mall, Gate 3</span></div>
-          <div class="loc__m"><span class="loc__ph">+973 77100777</span><span class="loc__hr">Mon–Sun 12:00 PM–12:00 AM</span></div>
-        </a>
-        <a href="locations.html" class="loc">
+          <span class="loc__c">Manama — Bahrain <span class="fl">The Avenues Mall, Gate 3</span></span>
+          <span class="loc__m"><span class="loc__ph">+973 77100777</span><span class="loc__hr">Mon–Sun 12:00 PM–12:00 AM</span></span>
+        </div>
+        <div class="loc">
           <span class="loc__i">03</span>
-          <div class="loc__c">Abu Dhabi<span class="fl">UAE · Rosewood Hotel, Al Maryah Island</span></div>
-          <div class="loc__m"><span class="loc__ph">+971 2 626 2895</span><span class="loc__hr">Mon–Sun 12:30 PM–12:00 AM</span></div>
-        </a>
-        <a href="locations.html" class="loc">
+          <span class="loc__c">Abu Dhabi — UAE <span class="fl">Rosewood Hotel, Al Maryah Island</span></span>
+          <span class="loc__m"><span class="loc__ph">+971 2 626 2895</span><span class="loc__hr">Mon–Sun 12:30 PM–12:00 AM</span></span>
+        </div>
+        <div class="loc">
           <span class="loc__i">04</span>
-          <div class="loc__c">Riyadh<span class="fl">Saudi Arabia · Laysen Valley</span></div>
-          <div class="loc__m"><span class="loc__ph">+966 920031130</span><span class="loc__hr">Sat–Wed 7:00 AM–12:00 AM · Thu–Fri 7:00 AM–1:00 AM</span></div>
-        </a>
+          <span class="loc__c">Riyadh — Saudi Arabia <span class="fl">Laysen Valley</span></span>
+          <span class="loc__m"><span class="loc__ph">+966 920031130</span><span class="loc__hr">Sat–Wed 7:00 AM–12:00 AM</span></span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="sec sec--dk">
-    <div class="wrap tc">
-      <div class="sh" data-ru>
-        <p class="sh__eb" style="color:var(--gold-l)">Reserve</p>
-        <h2 class="sh__h" style="color:#fff">Your Table Awaits</h2>
-        <p class="sh__s" style="color:rgba(255,255,255,.45)">Experience the art of Mediterranean seafood</p>
-      </div>
-      <a href="reservation.html" class="btn btn--gl" data-ru>Reserve a Table</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="ft">
     <div class="wrap">
       <div class="ft__top">
-        <a href="index.html"><img src="assets/logo-white.png" alt="Logo"></a>
+        <img src="assets/logo-restaurant.png" class="ft__logo">
         <p class="ft__tag">Lebanese Heritage, Redefined</p>
       </div>
       <div class="ft__cols">
@@ -173,34 +166,36 @@
           <p class="ft__ct">Explore</p>
           <a href="locations.html">Locations</a>
           <a href="reservation.html">Reservations</a>
+          <a href="#">Gallery</a>
+          <a href="#">Press</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Connect</p>
-          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank">Facebook</a>
-          <a href="https://www.linkedin.com/company/em-sherif-restaurant/" target="_blank">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TripAdvisor</a>
+          <a href="#">Contact</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Legal</p>
-          <a href="#">Terms of Use</a>
           <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
         </div>
       </div>
       <div class="ft__bt">
-        <p>&copy; 2025 Em Sherif. All Rights Reserved.</p>
+        <p>&copy; 2026 All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- lightbox -->
+  <!-- Lightbox -->
   <div class="lb" id="lb">
-    <button class="x" id="lbX">&times;</button>
-    <button class="nb pv" id="lbP">&#8249;</button>
-    <img src="" alt="" id="lbI">
-    <button class="nb nx" id="lbN">&#8250;</button>
+    <button class="lb__x" id="lbX">&times;</button>
+    <button class="lb__p" id="lbP">&#8249;</button>
+    <button class="lb__n" id="lbN">&#8250;</button>
+    <img id="lbI">
   </div>
 
-  <!-- scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>

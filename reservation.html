@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservations — Secure Your Table</title>
+  <title>Reservations — Em Sherif</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- preloader -->
+
   <div class="pl" id="pl">
-    <div class="pl__ar">أم شريف</div>
-    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <img src="assets/logo-restaurant.png" class="pl__logo">
+    <div class="pl__bar"><div class="pl__fill"></div></div>
   </div>
 
-  <!-- progress -->
-  <div class="prog" id="prog"></div>
-
-  <!-- nav -->
   <nav class="nav" id="nav">
-    <a href="index.html" class="nav__logo"><img src="assets/logo-white.png" alt="Logo"></a>
+    <a class="nav__logo"><img src="assets/logo-restaurant.png"></a>
     <ul class="nav__links">
       <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
       <li><a href="cafe.html" class="nav__link">Cafe</a></li>
@@ -29,11 +25,10 @@
       <li><a href="deli.html" class="nav__link">Deli</a></li>
       <li><a href="locations.html" class="nav__link">Locations</a></li>
     </ul>
-    <a href="reservation.html" class="nav__cta btn btn--g">Reserve</a>
+    <a href="reservation.html" class="nav__cta btn btn--black">Reserve</a>
     <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- mobile -->
   <div class="mov" id="mov">
     <button class="mov__x" id="closeMov">&times;</button>
     <a href="restaurant.html"><span class="t">Restaurant</span></a>
@@ -41,172 +36,125 @@
     <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
     <a href="deli.html"><span class="t">Deli</span></a>
     <a href="locations.html"><span class="t">Locations</span></a>
-    <a href="reservation.html" class="btn btn--g"><span class="t">Reserve a Table</span></a>
+    <a href="reservation.html" class="btn btn--black"><span class="t">Reserve</span></a>
   </div>
 
-  <!-- HERO -->
-  <section class="ph" style="height:70vh;min-height:440px">
-    <img src="assets/interior-cairo.jpg" alt="" class="bg" data-p>
+  <section class="ph">
+    <img src="assets/interior-cafe.jpg" class="bg">
     <div class="ph__g"></div>
     <div class="ph__ct">
-      <span class="ph__eb" data-ru>Reservations</span>
-      <h1 class="ph__h" data-ru>Reserve Your<br><em>Experience</em></h1>
-      <p class="ph__sub" data-ru>Secure your table at any of our locations worldwide.</p>
+      <span class="ph__eb">Reservations</span>
+      <h1 class="ph__h">Reserve Your <em>Experience</em></h1>
+      <p class="ph__sub">Secure your table at any of our locations worldwide.</p>
     </div>
   </section>
 
-  <!-- FORM -->
-  <section class="sec sec--nv">
+  <section class="sec sec--grey">
     <div class="wrap">
-      <div class="sh" data-ru>
+      <div class="sh">
         <p class="sh__eb">Book a Table</p>
         <h2 class="sh__h">Reserve <em>Now</em></h2>
       </div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:clamp(20px,3vw,36px)" data-ru>
+      <div style="max-width:800px;margin:0 auto;background:#fff;padding:clamp(24px,3vw,40px);border:1px solid var(--light-grey)">
         <form>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div>
-              <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Name</label>
-              <input type="text" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px">
-            </div>
-            <div>
-              <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Email</label>
-              <input type="email" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px">
-            </div>
+            <input type="text" placeholder="Name" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
+            <input type="email" placeholder="Email" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div>
-              <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Phone</label>
-              <input type="tel" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px">
-            </div>
-            <div>
-              <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Date</label>
-              <input type="date" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px">
-            </div>
+            <input type="tel" placeholder="Phone" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
+            <input type="date" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div>
-              <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Time</label>
-              <select style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px">
-                <option value="" disabled selected style="color:#222">Select a time</option>
-                <option value="12:00">12:00 PM</option>
-                <option value="12:30">12:30 PM</option>
-                <option value="13:00">1:00 PM</option>
-                <option value="13:30">1:30 PM</option>
-                <option value="14:00">2:00 PM</option>
-                <option value="14:30">2:30 PM</option>
-                <option value="15:00">3:00 PM</option>
-                <option value="18:00">6:00 PM</option>
-                <option value="18:30">6:30 PM</option>
-                <option value="19:00">7:00 PM</option>
-                <option value="19:30">7:30 PM</option>
-                <option value="20:00">8:00 PM</option>
-                <option value="20:30">8:30 PM</option>
-                <option value="21:00">9:00 PM</option>
-                <option value="21:30">9:30 PM</option>
-                <option value="22:00">10:00 PM</option>
-              </select>
-            </div>
-            <div>
-              <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Guests</label>
-              <select style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px">
-                <option value="" disabled selected style="color:#222">Number of guests</option>
-                <option value="1">1 Guest</option>
-                <option value="2">2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests</option>
-                <option value="5">5 Guests</option>
-                <option value="6">6 Guests</option>
-                <option value="7">7 Guests</option>
-                <option value="8">8 Guests</option>
-                <option value="9">9 Guests</option>
-                <option value="10">10 Guests</option>
-                <option value="11">11 Guests</option>
-                <option value="12">12 Guests</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Location</label>
-            <select style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px">
-              <option value="" disabled selected style="color:#222">Select a location</option>
-              <optgroup label="Restaurant">
-                <option value="restaurant-beirut">Beirut</option>
-                <option value="restaurant-kuwait">Kuwait City</option>
-                <option value="restaurant-damascus">Damascus</option>
-                <option value="restaurant-london">London</option>
-                <option value="restaurant-montecarlo">Monte Carlo</option>
-                <option value="restaurant-doha">Doha</option>
-                <option value="restaurant-muscat">Muscat</option>
-              </optgroup>
-              <optgroup label="Cafe">
-                <option value="cafe-beirut">Beirut</option>
-                <option value="cafe-paris">Paris</option>
-                <option value="cafe-kuwait">Kuwait City</option>
-                <option value="cafe-riyadh">Riyadh</option>
-                <option value="cafe-cairo-white">Cairo (White)</option>
-                <option value="cafe-cairo-park">Cairo (Park St)</option>
-                <option value="cafe-dubai">Dubai</option>
-                <option value="cafe-abudhabi">Abu Dhabi</option>
-                <option value="cafe-baghdad">Baghdad</option>
-                <option value="cafe-erbil">Erbil</option>
-                <option value="cafe-amman">Amman</option>
-                <option value="cafe-abidjan">Abidjan</option>
-                <option value="cafe-doha">Doha</option>
-                <option value="cafe-alkhobar">Al Khobar</option>
-                <option value="cafe-istanbul">Istanbul</option>
-                <option value="cafe-madrid">Madrid</option>
-              </optgroup>
-              <optgroup label="Sea Cafe">
-                <option value="sea-beirut">Beirut</option>
-                <option value="sea-manama">Manama</option>
-                <option value="sea-abudhabi">Abu Dhabi</option>
-                <option value="sea-riyadh">Riyadh</option>
-              </optgroup>
-              <optgroup label="Deli">
-                <option value="deli-london">London</option>
-                <option value="deli-beirut">Beirut</option>
-              </optgroup>
+            <input type="time" required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
+            <select required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
+              <option value="" disabled selected>Number of Guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+              <option value="7">7 Guests</option>
+              <option value="8">8 Guests</option>
+              <option value="9">9 Guests</option>
+              <option value="10">10 Guests</option>
+              <option value="11">11 Guests</option>
+              <option value="12">12 Guests</option>
             </select>
           </div>
-          <div>
-            <label style="display:block;color:rgba(255,255,255,.5);font-family:var(--sans);font-weight:300;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Special Requests</label>
-            <textarea rows="4" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-weight:300;font-size:.84rem;padding:10px 2px;margin-bottom:12px;resize:vertical"></textarea>
-          </div>
-          <button type="submit" class="btn btn--g" style="width:100%;justify-content:center">Request Reservation</button>
-          <p style="text-align:center;color:rgba(255,255,255,.4);font-family:var(--sans);font-weight:300;font-size:.75rem;margin-top:16px">For immediate assistance, please call our reservations team.</p>
+          <select required style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none">
+            <option value="" disabled selected>Select Location</option>
+            <optgroup label="Restaurant">
+              <option value="r-beirut">Beirut — Lebanon</option>
+              <option value="r-kuwait">Kuwait City — Kuwait</option>
+              <option value="r-damascus">Damascus — Syria</option>
+              <option value="r-london">London — UK</option>
+              <option value="r-monte-carlo">Monte Carlo — Monaco</option>
+              <option value="r-doha">Doha — Qatar</option>
+              <option value="r-muscat">Muscat — Oman</option>
+            </optgroup>
+            <optgroup label="Cafe">
+              <option value="c-beirut">Beirut — Lebanon</option>
+              <option value="c-paris">Paris — France</option>
+              <option value="c-kuwait">Kuwait City — Kuwait</option>
+              <option value="c-riyadh">Riyadh — Saudi Arabia</option>
+              <option value="c-cairo-white">Cairo — White by The Waterway</option>
+              <option value="c-cairo-park">Cairo — Park St.</option>
+              <option value="c-dubai">Dubai — UAE</option>
+              <option value="c-abu-dhabi">Abu Dhabi — UAE</option>
+              <option value="c-baghdad">Baghdad — Iraq</option>
+              <option value="c-erbil">Erbil — Iraq</option>
+              <option value="c-amman">Amman — Jordan</option>
+              <option value="c-abidjan">Abidjan — Côte d'Ivoire</option>
+              <option value="c-doha">Doha — Qatar</option>
+              <option value="c-al-khobar">Al Khobar — Saudi Arabia</option>
+              <option value="c-istanbul">Istanbul — Turkey</option>
+              <option value="c-madrid">Madrid — Spain</option>
+            </optgroup>
+            <optgroup label="Sea Cafe">
+              <option value="s-beirut">Beirut — Lebanon</option>
+              <option value="s-manama">Manama — Bahrain</option>
+              <option value="s-abu-dhabi">Abu Dhabi — UAE</option>
+              <option value="s-riyadh">Riyadh — Saudi Arabia</option>
+            </optgroup>
+            <optgroup label="Deli">
+              <option value="d-london">London — UK</option>
+              <option value="d-beirut">Beirut — Lebanon</option>
+            </optgroup>
+          </select>
+          <textarea placeholder="Special Requests" rows="3" style="width:100%;border:none;border-bottom:1px solid var(--light-grey);background:transparent;padding:10px 0;font-family:var(--sans);font-size:.85rem;color:var(--black);margin-bottom:12px;outline:none;resize:vertical"></textarea>
+          <button type="submit" class="btn btn--black" style="width:100%;justify-content:center">Request Reservation</button>
         </form>
+        <p style="text-align:center;font-size:.75rem;color:var(--grey);margin-top:16px">For immediate assistance, please call our reservations team.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="sec">
     <div class="wrap">
       <div class="g2">
-        <div class="ch">
-          <div class="ch__tx" data-ru>
-            <span class="ch__eb"><span class="n">01</span> Contact</span>
-            <h3>General Reservations</h3>
-            <p style="margin-bottom:24px"><a href="tel:+96170919119" style="color:var(--gold-l);text-decoration:none">+961 70 919 119</a></p>
-            <h3>Group Bookings (8+)</h3>
-            <p style="margin-bottom:24px"><a href="tel:+96170919119" style="color:var(--gold-l);text-decoration:none">+961 70 919 119</a></p>
-            <h3>Events &amp; Private Dining</h3>
-            <p><a href="mailto:events@emsherif.com" style="color:var(--gold-l);text-decoration:none">events@emsherif.com</a></p>
+        <div>
+          <div class="sh" style="text-align:left;margin:0 0 24px">
+            <p class="sh__eb">Get in Touch</p>
+            <h2 class="sh__h">Contact <em>Us</em></h2>
           </div>
+          <p style="font-size:.88rem;color:var(--grey);margin-bottom:24px">General Reservations</p>
+          <p style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.6rem);margin-bottom:32px">+961 70 919 119</p>
+          <p style="font-size:.88rem;color:var(--grey);margin-bottom:24px">Events & Private Dining</p>
+          <p style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.6rem)">events@emsherif.com</p>
         </div>
         <div class="ir ir--tall" data-ri>
-          <img src="assets/interior-dubai.jpg" alt="Interior">
+          <img src="assets/interior-dubai.jpg">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="ft">
     <div class="wrap">
       <div class="ft__top">
-        <a href="index.html"><img src="assets/logo-white.png" alt="Logo"></a>
+        <img src="assets/logo-restaurant.png" class="ft__logo">
         <p class="ft__tag">Lebanese Heritage, Redefined</p>
       </div>
       <div class="ft__cols">
@@ -221,34 +169,35 @@
           <p class="ft__ct">Explore</p>
           <a href="locations.html">Locations</a>
           <a href="reservation.html">Reservations</a>
+          <a href="#">Gallery</a>
+          <a href="#">Press</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Connect</p>
-          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank">Facebook</a>
-          <a href="https://www.linkedin.com/company/em-sherif-restaurant/" target="_blank">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TripAdvisor</a>
+          <a href="#">Contact</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Legal</p>
-          <a href="#">Terms of Use</a>
           <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
         </div>
       </div>
       <div class="ft__bt">
-        <p>&copy; 2025 Em Sherif. All Rights Reserved.</p>
+        <p>&copy; 2026 All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- lightbox -->
   <div class="lb" id="lb">
-    <button class="x" id="lbX">&times;</button>
-    <button class="nb pv" id="lbP">&#8249;</button>
-    <img src="" alt="" id="lbI">
-    <button class="nb nx" id="lbN">&#8250;</button>
+    <button class="lb__x" id="lbX">&times;</button>
+    <button class="lb__p" id="lbP">&#8249;</button>
+    <button class="lb__n" id="lbN">&#8250;</button>
+    <img id="lbI">
   </div>
 
-  <!-- scripts at bottom, NO defer, in this exact order -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>

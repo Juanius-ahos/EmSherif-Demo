@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Em Sherif — The Deli</title>
+  <title>Deli — Em Sherif</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- preloader -->
+
+  <!-- Preloader -->
   <div class="pl" id="pl">
-    <div class="pl__ar">أم شريف</div>
-    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <img src="assets/logo-restaurant.png" class="pl__logo">
+    <div class="pl__bar"><div class="pl__fill"></div></div>
   </div>
 
-  <!-- progress -->
-  <div class="prog" id="prog"></div>
-
-  <!-- nav -->
+  <!-- Navigation -->
   <nav class="nav" id="nav">
-    <a href="index.html" class="nav__logo"><img src="assets/logo-white.png" alt="Logo"></a>
+    <a class="nav__logo"><img src="assets/logo-restaurant.png"></a>
     <ul class="nav__links">
       <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
       <li><a href="cafe.html" class="nav__link">Cafe</a></li>
@@ -29,11 +27,15 @@
       <li><a href="deli.html" class="nav__link on">Deli</a></li>
       <li><a href="locations.html" class="nav__link">Locations</a></li>
     </ul>
-    <a href="reservation.html" class="nav__cta btn btn--g">Reserve</a>
-    <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+    <a href="reservation.html" class="nav__cta btn btn--black">Reserve</a>
+    <button class="nav__b" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <!-- mobile -->
+  <!-- Mobile Menu -->
   <div class="mov" id="mov">
     <button class="mov__x" id="closeMov">&times;</button>
     <a href="restaurant.html"><span class="t">Restaurant</span></a>
@@ -41,135 +43,120 @@
     <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
     <a href="deli.html"><span class="t">Deli</span></a>
     <a href="locations.html"><span class="t">Locations</span></a>
-    <a href="reservation.html" class="btn btn--g"><span class="t">Reserve a Table</span></a>
+    <a href="reservation.html" class="btn btn--black"><span class="t">Reserve</span></a>
   </div>
 
-  <!-- HERO -->
-  <section class="ph" style="height:70vh">
-    <img src="assets/food-1.jpg" alt="" class="bg" data-p>
+  <!-- Page Hero -->
+  <section class="ph">
+    <img src="assets/food-1.jpg" class="bg">
     <div class="ph__g"></div>
     <div class="ph__ct">
-      <span class="ph__eb">The Deli</span>
+      <p class="ph__eb">The Deli</p>
       <h1 class="ph__h">Ready to <em>Enjoy</em></h1>
       <p class="ph__sub">Ready-to-eat favorites, Mouneh pantry, and specialty beverages.</p>
     </div>
   </section>
 
-  <!-- STORY -->
+  <!-- Story -->
   <section class="sec">
     <div class="wrap">
       <div class="g2">
-        <div class="ir ir--tall" data-ri>
-          <img src="assets/food-3.jpg" alt="The Deli">
+        <div class="g2__m ir ir--tall" data-ri>
+          <img src="assets/food-3.jpg">
         </div>
-        <div class="ch">
-          <span class="ch__num">01</span>
-          <div class="ch__eb"><img src="assets/logo-deli.png" alt="Deli" style="height:22px;width:auto"></div>
+        <div class="g2__ct">
+          <div class="ch__eb"><span class="n">01</span> Our Story</div>
           <div class="ch__tx">
             <h2>The Newest <em>Chapter</em></h2>
-            <p>Delivers ready-to-eat favorites from the menu plus Deli-exclusive dishes — breakfast, plats du jour, sandwiches, salads, small bites and sweet treats.</p>
-            <p>Specialty beverage corner with Matté, Arak and natural wines. House-made Mouneh (Pantry).</p>
-            <p>First Deli opened at Harrods Food Hall London January 2022, then Beirut Starco building March 2023. Indoor and outdoor haven under Beirut's sunshine.</p>
+            <p>A modern interpretation of Lebanese comfort, offering ready-to-eat favorites and Deli-exclusive dishes. From hearty breakfasts and artisan sandwiches to the signature Mouneh pantry and curated Matté and Arak selections.</p>
+            <p>The first Deli opened at Harrods Food Hall in January 2022, followed by the Beirut Starco location in March 2023 — each bringing the warmth of Lebanese hospitality to a new generation of food lovers.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OFFERINGS -->
-  <section class="sec sec--nv">
+  <!-- Offerings -->
+  <section class="sec sec--black">
     <div class="wrap">
-      <div class="sh" data-ru>
+      <div class="sh">
         <p class="sh__eb">What We Offer</p>
-        <h2 class="sh__h">From Our Kitchen<br>to <em>Yours</em></h2>
+        <h2 class="sh__h">From Our Kitchen <em>to Yours</em></h2>
       </div>
-      <div class="g3" style="grid-template-columns:repeat(3,1fr)">
-        <div class="cc" data-ru>
-          <img src="assets/food-1.jpg" alt="To Go">
-          <div class="cc__ov">
-            <p class="cc__eb">To Go</p>
-            <h3 class="cc__h">Favorites</h3>
-            <p class="cc__d">Ready-to-enjoy from the menu</p>
+      <div class="g3">
+        <div class="cb__ct">
+          <div class="ch__eb"><span class="n">01</span></div>
+          <div class="ch__tx">
+            <h2>To Go</h2>
+            <p>Em Sherif Favorites</p>
           </div>
         </div>
-        <div class="cc" data-ru>
-          <img src="assets/food-2.jpg" alt="Morning">
-          <div class="cc__ov">
-            <p class="cc__eb">Morning</p>
-            <h3 class="cc__h">Breakfast &amp; Plats du Jour</h3>
-            <p class="cc__d">Lebanese breakfast and daily specials</p>
+        <div class="cb__ct">
+          <div class="ch__eb"><span class="n">02</span></div>
+          <div class="ch__tx">
+            <h2>Morning</h2>
+            <p>Breakfast & Plats du Jour</p>
           </div>
         </div>
-        <div class="cc" data-ru>
-          <img src="assets/food-3.jpg" alt="To Take Away">
-          <div class="cc__ov">
-            <p class="cc__eb">To Take Away</p>
-            <h3 class="cc__h">Sandwiches &amp; Salads</h3>
-            <p class="cc__d">Freshly made, small bites and treats</p>
+        <div class="cb__ct">
+          <div class="ch__eb"><span class="n">03</span></div>
+          <div class="ch__tx">
+            <h2>Take Away</h2>
+            <p>Sandwiches & Salads</p>
           </div>
         </div>
-        <div class="cc" data-ru>
-          <img src="assets/food-4.jpg" alt="Mouneh">
-          <div class="cc__ov">
-            <p class="cc__eb">Mouneh</p>
-            <h3 class="cc__h">The House Pantry</h3>
-            <p class="cc__d">House-made preserves and pantry staples</p>
+        <div class="cb__ct">
+          <div class="ch__eb"><span class="n">04</span></div>
+          <div class="ch__tx">
+            <h2>Mouneh</h2>
+            <p>The House Pantry</p>
           </div>
         </div>
-        <div class="cc" data-ru>
-          <img src="assets/food-5.jpg" alt="The Corner">
-          <div class="cc__ov">
-            <p class="cc__eb">The Corner</p>
-            <h3 class="cc__h">Specialty Beverages</h3>
-            <p class="cc__d">Innovative Matté, Arak and natural wines</p>
+        <div class="cb__ct">
+          <div class="ch__eb"><span class="n">05</span></div>
+          <div class="ch__tx">
+            <h2>The Corner</h2>
+            <p>Specialty Beverages</p>
           </div>
         </div>
-        <div class="cc" data-ru>
-          <img src="assets/food-6.jpg" alt="Sweet Treats">
-          <div class="cc__ov">
-            <p class="cc__eb">Sweet Treats</p>
-            <h3 class="cc__h">Lebanese Sweets</h3>
-            <p class="cc__d">Freshly made to enjoy on the go</p>
+        <div class="cb__ct">
+          <div class="ch__eb"><span class="n">06</span></div>
+          <div class="ch__tx">
+            <h2>Sweet Treats</h2>
+            <p>Lebanese Sweets</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LOCATIONS -->
+  <!-- Locations -->
   <section class="sec">
     <div class="wrap">
-      <div class="sh" data-ru>
+      <div class="sh">
         <p class="sh__eb">Find a Deli</p>
-        <h2 class="sh__h">London &amp; <em>Beirut</em></h2>
+        <h2 class="sh__h">London <em>&</em> Beirut</h2>
       </div>
-      <div class="locs" data-ru>
-        <a href="locations.html" class="loc">
+      <div class="locs">
+        <div class="loc">
           <span class="loc__i">01</span>
-          <div class="loc__c">London<span class="fl">United Kingdom</span></div>
-          <div class="loc__m">
-            <span class="loc__ph">020 7893 8072</span>
-            <span class="loc__hr">Harrods Food Hall, 87-135 Brompton Rd</span>
-            <span class="loc__hr">Mon–Sat 10:00 AM–9:00 PM</span>
-          </div>
-        </a>
-        <a href="locations.html" class="loc">
+          <span class="loc__c">London — UK <span class="fl">Harrods Food Hall</span></span>
+          <span class="loc__m"><span class="loc__ph">020 7893 8072</span><span class="loc__hr">Mon–Sat 10:00 AM–9:00 PM</span></span>
+        </div>
+        <div class="loc">
           <span class="loc__i">02</span>
-          <div class="loc__c">Beirut<span class="fl">Lebanon</span></div>
-          <div class="loc__m">
-            <span class="loc__ph">Starco Building, Downtown</span>
-            <span class="loc__hr">The all-day Deli, indoor and outdoor</span>
-          </div>
-        </a>
+          <span class="loc__c">Beirut — Lebanon <span class="fl">Starco Building, Downtown</span></span>
+          <span class="loc__m"></span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="ft">
     <div class="wrap">
       <div class="ft__top">
-        <a href="index.html"><img src="assets/logo-white.png" alt="Logo"></a>
+        <img src="assets/logo-restaurant.png" class="ft__logo">
         <p class="ft__tag">Lebanese Heritage, Redefined</p>
       </div>
       <div class="ft__cols">
@@ -184,34 +171,36 @@
           <p class="ft__ct">Explore</p>
           <a href="locations.html">Locations</a>
           <a href="reservation.html">Reservations</a>
+          <a href="#">Gallery</a>
+          <a href="#">Press</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Connect</p>
-          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank">Facebook</a>
-          <a href="https://www.linkedin.com/company/em-sherif-restaurant/" target="_blank">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TripAdvisor</a>
+          <a href="#">Contact</a>
         </div>
         <div class="ft__col">
           <p class="ft__ct">Legal</p>
-          <a href="#">Terms of Use</a>
           <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
         </div>
       </div>
       <div class="ft__bt">
-        <p>&copy; 2025 Em Sherif. All Rights Reserved.</p>
+        <p>&copy; 2026 All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- lightbox -->
+  <!-- Lightbox -->
   <div class="lb" id="lb">
-    <button class="x" id="lbX">&times;</button>
-    <button class="nb pv" id="lbP">&#8249;</button>
-    <img src="" alt="" id="lbI">
-    <button class="nb nx" id="lbN">&#8250;</button>
+    <button class="lb__x" id="lbX">&times;</button>
+    <button class="lb__p" id="lbP">&#8249;</button>
+    <button class="lb__n" id="lbN">&#8250;</button>
+    <img id="lbI">
   </div>
 
-  <!-- scripts at bottom, NO defer, in this exact order -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>

@@ -7,232 +7,214 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="pl" id="pl">
-    <div class="pl__ar">أم شريف</div>
-    <div class="pl__ln"><div class="pl__bar"></div></div>
+<div class="pl" id="pl"><img src="assets/logo-restaurant.png" class="pl__logo"><div class="pl__bar"><div class="pl__fill"></div></div></div>
+
+<nav class="nav" id="nav">
+  <a class="nav__logo"><img src="assets/logo-restaurant.png"></a>
+  <ul class="nav__links">
+    <li><a href="restaurant.html" class="nav__link on">Restaurant</a></li>
+    <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+    <li><a href="sea-cafe.html" class="nav__link">Sea Cafe</a></li>
+    <li><a href="deli.html" class="nav__link">Deli</a></li>
+    <li><a href="locations.html" class="nav__link">Locations</a></li>
+  </ul>
+  <a href="reservation.html" class="nav__cta btn btn--black">Reserve</a>
+  <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mov" id="mov">
+  <button class="mov__x" id="closeMov">&times;</button>
+  <a href="restaurant.html"><span class="t">Restaurant</span></a>
+  <a href="cafe.html"><span class="t">Cafe</span></a>
+  <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
+  <a href="deli.html"><span class="t">Deli</span></a>
+  <a href="locations.html"><span class="t">Locations</span></a>
+  <a href="reservation.html" class="btn btn--black"><span class="t">Reserve a Table</span></a>
+</div>
+
+<section class="ph">
+  <img src="assets/interior-hero.jpg" class="bg" data-p>
+  <div class="ph__g"></div>
+  <div class="ph__ct">
+    <span class="ph__eb eb">The Restaurant</span>
+    <h1>A Symphony of <em>Lebanese Elegance</em></h1>
+    <p class="ph__sub">Since 2011, our flagship restaurant has been the beating heart of Beirut's culinary scene.</p>
   </div>
+</section>
 
-  <div class="prog" id="prog"></div>
-
-  <nav class="nav" id="nav">
-    <a href="index.html" class="nav__logo"><img src="assets/logo-white.png" alt="Logo"></a>
-    <ul class="nav__links">
-      <li><a href="restaurant.html" class="nav__link on">Restaurant</a></li>
-      <li><a href="cafe.html" class="nav__link">Cafe</a></li>
-      <li><a href="sea-cafe.html" class="nav__link">Sea Cafe</a></li>
-      <li><a href="deli.html" class="nav__link">Deli</a></li>
-      <li><a href="locations.html" class="nav__link">Locations</a></li>
-    </ul>
-    <a href="reservation.html" class="nav__cta btn btn--g">Reserve</a>
-    <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
-  </nav>
-
-  <div class="mov" id="mov">
-    <button class="mov__x" id="closeMov">&times;</button>
-    <a href="restaurant.html"><span class="t">Restaurant</span></a>
-    <a href="cafe.html"><span class="t">Cafe</span></a>
-    <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
-    <a href="deli.html"><span class="t">Deli</span></a>
-    <a href="locations.html"><span class="t">Locations</span></a>
-    <a href="reservation.html" class="btn btn--g"><span class="t">Reserve a Table</span></a>
-  </div>
-
-  <section class="ph" style="height:70vh">
-    <img src="assets/interior-hero.jpg" alt="" class="bg" data-p>
-    <div class="ph__g"></div>
-    <div class="ph__ct">
-      <span class="ph__eb" data-ru>The Restaurant</span>
-      <h1 class="ph__h" data-ru>A Symphony of <em>Lebanese Elegance</em></h1>
-      <p class="ph__sub" data-ru>Since 2011, our flagship restaurant has been the beating heart of Beirut's culinary scene.</p>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap">
-      <div class="g2">
-        <div class="ir ir--tall" data-ri><img src="assets/story.jpg" alt=""></div>
-        <div class="ch">
-          <div class="ch__eb" data-ru><span class="n">01</span> Our Story</div>
-          <div class="ch__tx" data-ru>
-            <h2>Where Every Meal Becomes a <em>Celebration</em></h2>
-            <p>Step into a realm of culinary splendor where Lebanese traditions unfold with a timeless Em Sherif touch and flair. Our Restaurant invites you to embark on a culinary journey, where each dish is a meticulously crafted tribute to the art of Lebanese dining.</p>
-            <p>Founded in 2011 in Beirut by Mireille Hayek, the restaurant redefined Lebanese fine dining by preserving authentic flavors while embracing modern culinary artistry. Savor the finest flavors that pay homage to the rich culinary heritage of Lebanon and immerse yourself in our uniquely created ambiance to create an unforgettable dining experience.</p>
-            <blockquote>"Lebanese cuisine is not just food — it's the story of a civilization, told through flavors that have traveled through centuries."</blockquote>
-            <div class="ch__sg">Mireille Hayek <span>Founder &amp; President</span></div>
-          </div>
+<section class="sec">
+  <div class="wrap">
+    <div class="g2">
+      <div class="ir ir--tall" data-ri><img src="assets/story.jpg"></div>
+      <div>
+        <div class="ch__eb"><span class="n">01</span> Our Story</div>
+        <div class="ch__tx">
+          <h2>Where Every Meal Becomes a <em>Celebration</em></h2>
+          <p>A culinary splendor that transcends borders, Em Sherif Restaurant was founded in 2011 by the visionary Mireille Hayek. From the very first bite, guests are transported on a sensory journey through the rich tapestry of Lebanese cuisine — where tradition meets innovation, and every dish tells a story.</p>
+          <p>What began as a passion project in Beirut has grown into an international phenomenon, with locations spanning from the shores of the Mediterranean to the heart of London.</p>
+          <blockquote>"Lebanese cuisine is not just food — it is the story of a civilization, a celebration of life itself."</blockquote>
+          <div class="ch__sg"><span>Mireille Hayek</span> — Founder & President</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="sec sec--nv">
-    <div class="wrap">
-      <div class="g2 g2--r">
-        <div class="ch">
-          <div class="ch__eb" data-ru><span class="n">02</span> Leadership</div>
-          <div class="ch__tx" data-ru>
-            <h2>A Legacy of <em>Passion</em></h2>
-            <p>Mireille Hayek, Founder, opened the first Em Sherif in Beirut in 2011 and grew it into a family of Lebanese dining experiences across the Middle East and Europe. Her vision was to recreate the table of her own home, where generosity is a language and every guest is treated like family.</p>
-            <p>Yasmina Hayek carries that legacy forward and was named MENA's Best Female Chef 2025 by the region's 50 Best, bringing a refined, contemporary hand to timeless Lebanese recipes.</p>
-            <p>Together they have shaped a dining experience synonymous with Lebanese elegance across the world, from Beirut to London, Monte Carlo, Doha and Muscat.</p>
-          </div>
-        </div>
-        <div class="ir ir--tall" data-ri><img src="assets/yasmina.jpg" alt=""></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="mq">
-    <div class="mq__in" data-mq>
-      <span class="mq__it">Hummus<span class="mq__dot"></span></span>
-      <span class="mq__it">Kibbeh<span class="mq__dot"></span></span>
-      <span class="mq__it">Tabbouleh<span class="mq__dot"></span></span>
-      <span class="mq__it">Kafta<span class="mq__dot"></span></span>
-      <span class="mq__it">Knafeh<span class="mq__dot"></span></span>
-      <span class="mq__it">Fattoush<span class="mq__dot"></span></span>
-      <span class="mq__it">Taouk<span class="mq__dot"></span></span>
-      <span class="mq__it">Mouhalabieh<span class="mq__dot"></span></span>
     </div>
   </div>
+</section>
 
-  <section class="sec sec--iv">
-    <div class="wrap">
-      <div class="sh" data-ru>
-        <p class="sh__eb">Our Menus</p>
-        <h2 class="sh__h">Crafted with <em>Love</em></h2>
-      </div>
-      <div class="md" data-ru>
-        <div class="mcat">
-          <div class="mcat__t">Cold Mezze</div>
-          <div class="mcat__l"></div>
-          <div class="mrow"><span class="mrow__n">Hummus</span><span class="mrow__p">46,000</span></div>
-          <div class="mrow"><span class="mrow__n">Mutabbal Batenjen</span><span class="mrow__p">46,000</span></div>
-          <div class="mrow"><span class="mrow__n">Tabboule</span><span class="mrow__p">40,000</span></div>
-          <div class="mrow"><span class="mrow__n">Fattouch</span><span class="mrow__p">42,000</span></div>
-          <div class="mrow"><span class="mrow__n">Kibbeh Nayye</span><span class="mrow__p">87,000</span></div>
-          <div class="mrow"><span class="mrow__n">Samke Traboulsiyeh</span><span class="mrow__p">95,000</span></div>
-        </div>
-        <div class="mcat">
-          <div class="mcat__t">Hot Mezze &amp; Grill</div>
-          <div class="mcat__l"></div>
-          <div class="mrow"><span class="mrow__n">Kebab</span><span class="mrow__p">115,000</span></div>
-          <div class="mrow"><span class="mrow__n">Taouk</span><span class="mrow__p">95,000</span></div>
-          <div class="mrow"><span class="mrow__n">Makanek</span><span class="mrow__p">75,000</span></div>
-          <div class="mrow"><span class="mrow__n">Kibbeh Sajiyeh</span><span class="mrow__p">50,000</span></div>
-          <div class="mrow"><span class="mrow__n">Hummus Bil Lahme</span><span class="mrow__p">78,000</span></div>
-        </div>
-        <div class="mcat">
-          <div class="mcat__t">Dessert</div>
-          <div class="mcat__l"></div>
-          <div class="mrow"><span class="mrow__n">Knafeh</span><span class="mrow__p">55,000</span></div>
-          <div class="mrow"><span class="mrow__n">Mouhalabieh</span><span class="mrow__p">35,000</span></div>
-          <div class="mrow"><span class="mrow__n">Ashta Ice Cream</span><span class="mrow__p">40,000</span></div>
-        </div>
-        <div class="mcat">
-          <div class="mcat__t">Beverages</div>
-          <div class="mcat__l"></div>
-          <div class="mrow"><span class="mrow__n">Lebanese Coffee</span><span class="mrow__p">15,000</span></div>
-          <div class="mrow"><span class="mrow__n">Fresh Juices</span><span class="mrow__p">25,000</span></div>
-          <div class="mrow"><span class="mrow__n">Soft Drinks</span><span class="mrow__p">12,000</span></div>
+<section class="sec sec--black">
+  <div class="wrap">
+    <div class="g2 g2--r">
+      <div>
+        <div class="ch__eb"><span class="n">02</span> A Legacy</div>
+        <div class="ch__tx">
+          <h2>A Legacy of <em>Passion</em></h2>
+          <p>Mireille Hayek opened the first Em Sherif in 2011 with a simple yet profound vision: to share the authentic flavors of Lebanese home cooking with the world. Her dedication to quality and her innate understanding of flavor transformed a small restaurant into a global brand.</p>
+          <p>Today, that legacy continues with Yasmina Hayek, who was named MENA's Best Female Chef in 2025. Under her creative direction, Em Sherif continues to push culinary boundaries while honoring the traditions that made it beloved.</p>
         </div>
       </div>
+      <div class="ir ir--tall" data-ri><img src="assets/yasmina.jpg"></div>
     </div>
-  </section>
-
-  <section class="sec sec--nv">
-    <div class="wrap">
-      <div class="sh" data-ru>
-        <p class="sh__eb">Our Locations</p>
-        <h2 class="sh__h">Where to Find <em>Us</em></h2>
-      </div>
-      <div class="locs" data-ru>
-        <div class="loc">
-          <span class="loc__i">01</span>
-          <div class="loc__c">Beirut<span class="fl">Lebanon · Flagship</span></div>
-          <div class="loc__m"><span class="loc__ph">+961 70 919 119</span><span class="loc__hr">Mon–Sun 12:30 PM–4:00 PM</span></div>
-        </div>
-        <div class="loc">
-          <span class="loc__i">02</span>
-          <div class="loc__c">Kuwait City<span class="fl">Kuwait</span></div>
-          <div class="loc__m"><span class="loc__ph">+965 9097 7997</span><span class="loc__hr">Mon–Sun 12:30 PM–5:00 PM &amp; 8:00 PM–10:30 PM</span></div>
-        </div>
-        <div class="loc">
-          <span class="loc__i">03</span>
-          <div class="loc__c">Damascus<span class="fl">Syria · Four Seasons Hotel</span></div>
-          <div class="loc__m"><span class="loc__ph">+963 933 809 100</span><span class="loc__hr">Mon–Sun 9:00 AM–3:00 AM</span></div>
-        </div>
-        <div class="loc">
-          <span class="loc__i">04</span>
-          <div class="loc__c">London<span class="fl">United Kingdom · Harrods</span></div>
-          <div class="loc__m"><span class="loc__ph">020 7893 8072</span><span class="loc__hr">Mon–Sat 12:00 PM–9:00 PM</span></div>
-        </div>
-        <div class="loc">
-          <span class="loc__i">05</span>
-          <div class="loc__c">Monte Carlo<span class="fl">Monaco · Casino</span></div>
-          <div class="loc__m"><span class="loc__ph">+377 98 06 88 75</span><span class="loc__hr">Mon–Sun 9:00 AM–3:00 AM</span></div>
-        </div>
-        <div class="loc">
-          <span class="loc__i">06</span>
-          <div class="loc__c">Doha<span class="fl">Qatar · Al Maha Island</span></div>
-          <div class="loc__m"><span class="loc__ph">+974 5 105 6666</span><span class="loc__hr">Mon–Sun 1:00 PM–12:00 AM</span></div>
-        </div>
-        <div class="loc">
-          <span class="loc__i">07</span>
-          <div class="loc__c">Muscat<span class="fl">Oman · St. Regis Al Mouj</span></div>
-          <div class="loc__m"><span class="loc__ph">+968 2271 0460</span><span class="loc__hr">Mon–Sun 1:00 PM–11:30 PM</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="ft">
-    <div class="wrap">
-      <div class="ft__top">
-        <a href="index.html"><img src="assets/logo-white.png" alt="Logo"></a>
-        <p class="ft__tag">Lebanese Heritage, Redefined</p>
-      </div>
-      <div class="ft__cols">
-        <div class="ft__col">
-          <p class="ft__ct">Concepts</p>
-          <a href="restaurant.html">Restaurant</a>
-          <a href="cafe.html">Cafe</a>
-          <a href="sea-cafe.html">Sea Cafe</a>
-          <a href="deli.html">Deli</a>
-        </div>
-        <div class="ft__col">
-          <p class="ft__ct">Explore</p>
-          <a href="locations.html">Locations</a>
-          <a href="reservation.html">Reservations</a>
-        </div>
-        <div class="ft__col">
-          <p class="ft__ct">Connect</p>
-          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank">Facebook</a>
-        </div>
-        <div class="ft__col">
-          <p class="ft__ct">Legal</p>
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="ft__bt"><p>&copy; 2025 Em Sherif. All Rights Reserved.</p></div>
-    </div>
-  </footer>
-
-  <div class="lb" id="lb">
-    <button class="x" id="lbX">&times;</button>
-    <button class="nb pv" id="lbP">&#8249;</button>
-    <img src="" alt="" id="lbI">
-    <button class="nb nx" id="lbN">&#8250;</button>
   </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-  <script src="script.js"></script>
+<section class="sec sec--grey">
+  <div class="wrap">
+      <div class="sh">
+      <p class="sh__eb">Our Menus</p>
+      <h2 class="sh__h">Crafted with <em>Love</em></h2>
+    </div>
+    <div class="md">
+      <div class="mcat">
+        <p class="mcat__t">Cold Mezze</p>
+        <div class="mcat__l"></div>
+        <div class="mrow"><span class="mrow__n">Hummus</span><span class="mrow__p">46,000</span></div>
+        <div class="mrow"><span class="mrow__n">Mutabbal Batenjen</span><span class="mrow__p">46,000</span></div>
+        <div class="mrow"><span class="mrow__n">Tabboule</span><span class="mrow__p">40,000</span></div>
+        <div class="mrow"><span class="mrow__n">Fattouch</span><span class="mrow__p">42,000</span></div>
+        <div class="mrow"><span class="mrow__n">Kibbeh Nayye</span><span class="mrow__p">87,000</span></div>
+        <div class="mrow"><span class="mrow__n">Samke Traboulsiyeh</span><span class="mrow__p">95,000</span></div>
+      </div>
+      <div class="mcat">
+        <p class="mcat__t">Hot Mezze & Grill</p>
+        <div class="mcat__l"></div>
+        <div class="mrow"><span class="mrow__n">Kebab</span><span class="mrow__p">115,000</span></div>
+        <div class="mrow"><span class="mrow__n">Taouk</span><span class="mrow__p">95,000</span></div>
+        <div class="mrow"><span class="mrow__n">Makanek</span><span class="mrow__p">75,000</span></div>
+        <div class="mrow"><span class="mrow__n">Kibbeh Sajiyeh</span><span class="mrow__p">50,000</span></div>
+        <div class="mrow"><span class="mrow__n">Hummus Bil Lahme</span><span class="mrow__p">78,000</span></div>
+      </div>
+      <div class="mcat">
+        <p class="mcat__t">Dessert</p>
+        <div class="mcat__l"></div>
+        <div class="mrow"><span class="mrow__n">Knafeh</span><span class="mrow__p">55,000</span></div>
+        <div class="mrow"><span class="mrow__n">Mouhalabieh</span><span class="mrow__p">35,000</span></div>
+        <div class="mrow"><span class="mrow__n">Ashta Ice Cream</span><span class="mrow__p">40,000</span></div>
+      </div>
+      <div class="mcat">
+        <p class="mcat__t">Beverages</p>
+        <div class="mcat__l"></div>
+        <div class="mrow"><span class="mrow__n">Lebanese Coffee</span><span class="mrow__p">15,000</span></div>
+        <div class="mrow"><span class="mrow__n">Fresh Juices</span><span class="mrow__p">25,000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--black">
+  <div class="wrap">
+      <div class="sh">
+      <p class="sh__eb">Our Locations</p>
+      <h2 class="sh__h">Where to Find <em>Us</em></h2>
+    </div>
+    <div class="locs">
+      <div class="loc">
+        <span class="loc__i">01</span>
+        <div class="loc__c">Beirut — Lebanon <span class="fl">Flagship</span></div>
+        <div class="loc__m"><span class="loc__ph">+961 70 919 119</span><span class="loc__hr">Mon–Sun 12:30 PM–4:00 PM</span></div>
+      </div>
+      <div class="loc">
+        <span class="loc__i">02</span>
+        <div class="loc__c">Kuwait City — Kuwait</div>
+        <div class="loc__m"><span class="loc__ph">+965 9097 7997</span><span class="loc__hr">Mon–Sun 12:30 PM–5:00 PM & 8:00 PM–10:30 PM</span></div>
+      </div>
+      <div class="loc">
+        <span class="loc__i">03</span>
+        <div class="loc__c">Damascus — Syria <span class="fl">Four Seasons Hotel</span></div>
+        <div class="loc__m"><span class="loc__ph">+963 933 809 100</span><span class="loc__hr">Mon–Sun 9:00 AM–3:00 AM</span></div>
+      </div>
+      <div class="loc">
+        <span class="loc__i">04</span>
+        <div class="loc__c">London — UK <span class="fl">Harrods</span></div>
+        <div class="loc__m"><span class="loc__ph">020 7893 8072</span><span class="loc__hr">Mon–Sat 12:00 PM–9:00 PM</span></div>
+      </div>
+      <div class="loc">
+        <span class="loc__i">05</span>
+        <div class="loc__c">Monte Carlo — Monaco <span class="fl">Casino</span></div>
+        <div class="loc__m"><span class="loc__ph">+377 98 06 88 75</span><span class="loc__hr">Mon–Sun 9:00 AM–3:00 AM</span></div>
+      </div>
+      <div class="loc">
+        <span class="loc__i">06</span>
+        <div class="loc__c">Doha — Qatar <span class="fl">Al Maha Island</span></div>
+        <div class="loc__m"><span class="loc__ph">+974 5 105 6666</span><span class="loc__hr">Mon–Sun 1:00 PM–12:00 AM</span></div>
+      </div>
+      <div class="loc">
+        <span class="loc__i">07</span>
+        <div class="loc__c">Muscat — Oman <span class="fl">St. Regis Al Mouj</span></div>
+        <div class="loc__m"><span class="loc__ph">+968 2271 0460</span><span class="loc__hr">Mon–Sun 1:00 PM–11:30 PM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__top">
+      <img src="assets/logo-restaurant.png">
+      <p class="ft__tag">Lebanese Heritage, Redefined</p>
+    </div>
+    <div class="ft__cols">
+      <div class="ft__col">
+        <p class="ft__ct">Concepts</p>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="cafe.html">Cafe</a>
+        <a href="sea-cafe.html">Sea Cafe</a>
+        <a href="deli.html">Deli</a>
+      </div>
+      <div class="ft__col">
+        <p class="ft__ct">Explore</p>
+        <a href="locations.html">Locations</a>
+        <a href="reservation.html">Reservations</a>
+      </div>
+      <div class="ft__col">
+        <p class="ft__ct">Connect</p>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+      <div class="ft__col">
+        <p class="ft__ct">Legal</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="ft__bt">
+      <p>&copy; 2026 Em Sherif. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb">
+  <button class="lb__x" id="lbX">&times;</button>
+  <button class="lb__p" id="lbP">&#8249;</button>
+  <button class="lb__n" id="lbN">&#8250;</button>
+  <img class="lb__i" id="lbI">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

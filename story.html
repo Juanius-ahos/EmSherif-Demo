@@ -3,157 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Story</title>
+  <title>Our Story — Em Sherif</title>
+  <meta name="description" content="From a single kitchen in Beirut to a global culinary destination — the story of a family's passion for Lebanese cuisine.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
 </head>
 <body>
 
-  <header class="ph">
-    <a href="index.html"><img src="assets/logo-white.png" alt="Brand Logo"></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="story.html" aria-current="page">Our Story</a>
-      <a href="menu.html">Menu</a>
-      <a href="locations.html">Locations</a>
-      <a href="reservations.html">Reservations</a>
-    </nav>
-  </header>
+  <!-- Preloader -->
+  <div class="pl" id="pl">
+    <div class="pl__ar">أم شريف</div>
+    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <div class="pl__w">Our Story</div>
+  </div>
 
-  <section class="sec hero hero--story">
-    <div class="hero__bg">
-      <img src="assets/story.jpg" alt="Our story background">
-    </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <span class="hero__eyebrow">Our Story</span>
-      <h1 class="hero__title">A Story of <em>Heritage</em><br>& Vision</h1>
-      <p class="hero__subtitle">From a single kitchen in Beirut to a global culinary destination.</p>
-    </div>
-  </section>
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
 
-  <section class="sec sec--iv">
-    <div class="g2">
-      <div class="g2__img">
-        <div class="ir" data-ri>
-          <img src="assets/story.jpg" alt="The beginning of the story">
-        </div>
-      </div>
-      <div class="g2__txt">
-        <span class="g2__ch ch">01</span>
-        <h2 class="g2__title sh">Where It All <em>Began</em></h2>
-        <p class="g2__body">In 1995, in the heart of Beirut, a visionary woman named Mireille Hayek opened the doors of a restaurant that would forever change the landscape of Lebanese cuisine. What started as a humble family kitchen grew into one of the most celebrated culinary brands in the Middle East.</p>
-        <p class="g2__body">Mireille's vision was simple yet revolutionary: to preserve the soul of Lebanese cooking while elevating it to the standards of world-class fine dining.</p>
-      </div>
-    </div>
-  </section>
+  <!-- Custom Cursor -->
+  <div class="crs" id="crs">
+    <div class="crs-d"></div>
+    <div class="crs-r"></div>
+  </div>
 
-  <section class="sec sec--dk">
-    <div class="g2 g2--r">
-      <div class="g2__img">
-        <div class="ir ir--tall" data-ri>
-          <img src="assets/interior-hero.jpg" alt="Philosophy of cooking">
-        </div>
-      </div>
-      <div class="g2__txt">
-        <span class="g2__ch ch">02</span>
-        <h2 class="g2__title sh">Cooking is an <em>Act of Love</em></h2>
-        <p class="g2__body">At the heart of everything we do is a deep respect for Lebanese culinary heritage. Every dish we serve tells the story of generations — of grandmothers who perfected recipes in their kitchens, of families who gathered around tables laden with love and abundance. We don't just cook food; we preserve a legacy.</p>
-        <blockquote class="g2__quote">
-          <p>"Cooking is an act of love — it's a way of giving, a way of sharing, a way of saying 'I care about you.' This is what Lebanese cuisine means to me."</p>
-          <cite>— Mireille Hayek, Founder</cite>
-        </blockquote>
-      </div>
-    </div>
-  </section>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/logo-white.png" alt="Logo">
+    </a>
+    <ul class="nav__links">
+      <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+      <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+      <li><a href="deli.html" class="nav__link">Deli</a></li>
+      <li><a href="locations.html" class="nav__link">Locations</a></li>
+      <li><a href="press.html" class="nav__link">Press</a></li>
+    </ul>
+    <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+    <button class="nav__b" id="burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-  <section class="sec sec--iv">
-    <div class="marquee" data-marquee>
-      <div class="marquee__track">
-        <span>Heritage · Passion · Craft · Community · Tradition · Excellence · Innovation · Legacy</span>
-        <span>Heritage · Passion · Craft · Community · Tradition · Excellence · Innovation · Legacy</span>
-        <span>Heritage · Passion · Craft · Community · Tradition · Excellence · Innovation · Legacy</span>
-        <span>Heritage · Passion · Craft · Community · Tradition · Excellence · Innovation · Legacy</span>
-      </div>
+  <!-- Mobile Menu -->
+  <div class="mov" id="mov">
+    <button class="x" id="closeMov" aria-label="Close">&times;</button>
+    <a href="restaurant.html"><span class="c">Restaurant</span></a>
+    <a href="cafe.html"><span class="c">Cafe</span></a>
+    <a href="deli.html"><span class="c">Deli</span></a>
+    <a href="locations.html"><span class="c">Locations</span></a>
+    <a href="press.html"><span class="c">Press</span></a>
+    <a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a>
+  </div>
+
+  <!-- Hero -->
+  <section class="ph">
+    <div class="ph__bg">
+      <img src="assets/story.jpg" alt="" data-p="0.3">
+    </div>
+    <div class="ph__g"></div>
+    <div class="ph__ct">
+      <span class="ph__eb" data-ru>Our Story</span>
+      <h1 class="ph__h" data-ru>A Story of <em>Heritage</em><br>& Vision</h1>
+      <p class="ph__sub" data-ru>From a single kitchen in Beirut to a global culinary destination.</p>
     </div>
   </section>
 
+  <!-- Chapter 01 - The Beginning -->
   <section class="sec">
-    <div class="g2">
-      <div class="g2__img">
+    <div class="wrap">
+      <div class="g2">
         <div class="ir ir--tall" data-ri>
-          <img src="assets/yasmina.jpg" alt="The next chapter">
+          <img src="assets/founder.jpg" alt="Mireille Hayek">
+        </div>
+        <div>
+          <div data-ru>
+            <div class="ch__eb"><span class="nm">01</span> The Beginning</div>
+            <h2 style="font-family:var(--disp);font-weight:300;font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.1;margin-bottom:20px">Where It All <em>Began</em></h2>
+            <p style="font-size:.88rem;color:var(--grey);margin-bottom:1.3em;max-width:48ch">In 1995, in the heart of Beirut, a visionary woman named Mireille Hayek opened the doors of a restaurant that would forever change the landscape of Lebanese cuisine.</p>
+            <p style="font-size:.88rem;color:var(--grey);margin-bottom:1.3em;max-width:48ch">What started as a humble family kitchen grew into one of the most celebrated culinary brands in the Middle East. Mireille's vision was simple yet revolutionary: to preserve the soul of Lebanese cooking while elevating it to the standards of world-class fine dining.</p>
+            <p style="font-size:.88rem;color:var(--grey);margin-bottom:1.3em;max-width:48ch">Today, that single restaurant has grown into a global empire spanning three distinctive concepts — Restaurant, Cafe, and Deli — across seven countries, yet the founding principles remain unchanged: authenticity, quality, and an unwavering commitment to the art of Lebanese hospitality.</p>
+          </div>
         </div>
       </div>
-      <div class="g2__txt">
-        <span class="g2__ch ch">03</span>
-        <h2 class="g2__title sh">The Next <em>Chapter</em></h2>
-        <p class="g2__body">Today, the brand continues under the passionate leadership of Mireille and her daughter Yasmina Hayek, who serves as Executive Chef. Yasmina, trained at Le Cordon Bleu in Paris, brings a fresh perspective while honoring her mother's founding vision.</p>
-        <p class="g2__body">Together, they have expanded the family from one restaurant to a global empire spanning three distinctive concepts — Restaurant, Café, and Deli — across seven countries.</p>
-      </div>
     </div>
   </section>
 
-  <section class="sec sec--dk">
-    <div class="ir ir--wide" data-p>
-      <img src="assets/banner-restaurant.jpg" alt="30 years of excellence">
-      <div class="ir__overlay">
-        <h2 class="sh">30 Years of <em>Excellence</em></h2>
-      </div>
-    </div>
-  </section>
-
+  <!-- Chapter 02 - The Philosophy -->
   <section class="sec sec--nv">
-    <div class="concepts">
-      <div class="concept">
-        <img src="assets/restaurant-hero.jpg" alt="Restaurant concept">
-        <h3 class="sh">Restaurant</h3>
-        <p>A fine dining experience celebrating the richness of Lebanese cuisine with an elegant atmosphere and impeccable service.</p>
-        <a href="menu.html" class="btn btn--g">View Menu</a>
-      </div>
-      <div class="concept">
-        <img src="assets/cafe-hero.jpg" alt="Cafe concept">
-        <h3 class="sh">Café</h3>
-        <p>A relaxed setting for artisanal coffee, freshly baked pastries, and light Lebanese fare throughout the day.</p>
-        <a href="menu.html" class="btn btn--o">View Menu</a>
-      </div>
-      <div class="concept">
-        <img src="assets/deli-hero.jpg" alt="Deli concept">
-        <h3 class="sh">Deli</h3>
-        <p>A curated selection of signature products, gourmet provisions, and ready-to-enjoy dishes inspired by tradition.</p>
-        <a href="menu.html" class="btn btn--d">View Menu</a>
+    <div class="wrap">
+      <div class="g2 g2--r">
+        <div>
+          <div data-ru>
+            <div class="ch__eb"><span class="nm">02</span> The Philosophy</div>
+            <h2 style="font-family:var(--disp);font-weight:300;font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.1;color:#fff;margin-bottom:20px">Cooking is an <em>Act of Love</em></h2>
+            <p style="font-size:.88rem;color:rgba(255,255,255,.65);margin-bottom:1.3em;max-width:48ch">At the heart of everything we do is a deep respect for Lebanese culinary heritage. Every dish we serve tells the story of generations — of grandmothers who perfected recipes in their kitchens, of families who gathered around tables laden with love and abundance.</p>
+            <blockquote style="font-family:var(--disp);font-style:italic;font-size:1.15rem;color:rgba(255,255,255,.85);border-left:2px solid var(--gold-l);padding-left:22px;margin:1.5em 0;line-height:1.45">"Cooking is an act of love — it's a way of giving, a way of sharing, a way of saying 'I care about you.' This is what Lebanese cuisine means to me."</blockquote>
+            <div class="ch__sg" style="color:#fff">Mireille Hayek <span>Founder & President</span></div>
+          </div>
+        </div>
+        <div class="ir ir--tall" data-ri>
+          <img src="assets/interior-hero.jpg" alt="Restaurant interior">
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="ft">
-    <div class="ft__inner">
-      <div class="ft__brand">
-        <img src="assets/logo-white.png" alt="Brand Logo">
-      </div>
-      <div class="ft__links">
-        <a href="index.html">Home</a>
-        <a href="story.html">Our Story</a>
-        <a href="menu.html">Menu</a>
-        <a href="locations.html">Locations</a>
-        <a href="reservations.html">Reservations</a>
-      </div>
-      <div class="ft__social">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Facebook">FB</a>
-        <a href="#" aria-label="Twitter">TW</a>
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee__in" data-marquee>
+      <span class="marquee__it">Heritage<span class="dot"></span></span>
+      <span class="marquee__it">Passion<span class="dot"></span></span>
+      <span class="marquee__it">Craft<span class="dot"></span></span>
+      <span class="marquee__it">Community<span class="dot"></span></span>
+      <span class="marquee__it">Tradition<span class="dot"></span></span>
+      <span class="marquee__it">Excellence<span class="dot"></span></span>
+      <span class="marquee__it">Innovation<span class="dot"></span></span>
+      <span class="marquee__it">Legacy<span class="dot"></span></span>
+      <span class="marquee__it">Heritage<span class="dot"></span></span>
+      <span class="marquee__it">Passion<span class="dot"></span></span>
+      <span class="marquee__it">Craft<span class="dot"></span></span>
+      <span class="marquee__it">Community<span class="dot"></span></span>
+    </div>
+  </div>
+
+  <!-- Chapter 03 - The Founders -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="g2">
+        <div class="ir ir--tall" data-ri>
+          <img src="assets/yasmina.jpg" alt="Yasmina Hayek">
+        </div>
+        <div>
+          <div data-ru>
+            <div class="ch__eb"><span class="nm">03</span> The Next Chapter</div>
+            <h2 style="font-family:var(--disp);font-weight:300;font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.1;margin-bottom:20px">The Next <em>Chapter</em></h2>
+            <p style="font-size:.88rem;color:var(--grey);margin-bottom:1.3em;max-width:48ch">Today, the brand continues under the passionate leadership of Mireille and her daughter Yasmina Hayek, who serves as Executive Chef. Yasmina, trained at Le Cordon Bleu in Paris, brings a fresh perspective while honoring her mother's founding vision.</p>
+            <p style="font-size:.88rem;color:var(--grey);margin-bottom:1.3em;max-width:48ch">Together, they have expanded the family from one restaurant to a global empire spanning three distinctive concepts across seven countries, proving that Lebanese cuisine belongs on the world stage.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="ft__copy">
-      <p>&copy; 2026 All Rights Reserved.</p>
+  </section>
+
+  <!-- Chapter 04 - The Legacy -->
+  <section class="sec" style="padding:0">
+    <div class="ir" style="height:60vh;min-height:400px" data-ri>
+      <img src="assets/banner-restaurant.jpg" alt="" data-p>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,14,26,.3),rgba(7,14,26,.7));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;z-index:2">
+        <div data-ru style="text-align:center">
+          <div class="ch__eb" style="color:var(--gold-l);justify-content:center"><span class="nm" style="font-size:clamp(3rem,8vw,8rem);opacity:.15;position:static">04</span></div>
+          <h2 style="font-family:var(--disp);font-weight:300;font-size:clamp(2rem,5vw,4rem);color:#fff;margin-top:16px">30 Years of <em style="color:var(--gold-l)">Excellence</em></h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Concepts -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sh" data-ru>
+        <p class="sh__eb">Our Concepts</p>
+        <h2 class="sh__h">Three Worlds,<br><em>One Vision</em></h2>
+      </div>
+      <div class="g3">
+        <a href="restaurant.html" class="cc" data-ru>
+          <img src="assets/dish-1.jpg" alt="Fine Dining">
+          <div class="cc__ov">
+            <p class="cc__eb">Fine Dining</p>
+            <h3 class="cc__h">The Restaurant</h3>
+            <p class="cc__d">Beirut's most celebrated Lebanese dining experience</p>
+          </div>
+        </a>
+        <a href="cafe.html" class="cc" data-ru>
+          <img src="assets/cf1.jpg" alt="Cafe & Patisserie">
+          <div class="cc__ov">
+            <p class="cc__eb">Cafe & Patisserie</p>
+            <h3 class="cc__h">The Cafe</h3>
+            <p class="cc__d">European elegance meets Lebanese warmth</p>
+          </div>
+        </a>
+        <a href="deli.html" class="cc" data-ru>
+          <img src="assets/food-1.jpg" alt="Artisan Deli">
+          <div class="cc__ov">
+            <p class="cc__eb">Artisan Deli</p>
+            <h3 class="cc__h">The Deli</h3>
+            <p class="cc__d">Curated provisions and ready-to-enjoy creations</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="ft">
+    <div class="wrap">
+      <div class="ft__br">
+        <a href="index.html"><img src="assets/logo-white.png" alt="Logo" style="height:44px;width:auto"></a>
+        <p class="ft__tg">Lebanese Heritage, Redefined</p>
+      </div>
+      <div class="ft__cols">
+        <div class="ft__col">
+          <p class="ft__ct">Concepts</p>
+          <a href="restaurant.html">The Restaurant</a>
+          <a href="cafe.html">The Cafe</a>
+          <a href="deli.html">The Deli</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Explore</p>
+          <a href="story.html">Our Story</a>
+          <a href="locations.html">Locations</a>
+          <a href="press.html">Press</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Connect</p>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Visit</p>
+          <a href="reservation.html">Reserve</a>
+          <a href="#">Private Dining</a>
+          <a href="#">Events</a>
+        </div>
+      </div>
+      <div class="ft__bt">
+        <p>&copy; 2025 All Rights Reserved</p>
+        <p class="pt">Lebanese Heritage, Redefined</p>
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/dist/lenis.min.js"></script>
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <button class="x" id="lbX" aria-label="Close">&times;</button>
+    <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
+    <img src="" alt="" id="lbI">
+    <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -8,6 +8,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+  <style>
+    .menu-tabs{position:relative}
+    .menu-tabs>input[type="radio"]{display:none}
+    .menu-tabs__nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vw,52px)}
+    .menu-tabs__nav label{
+      font-family:var(--sans);font-weight:600;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;
+      padding:11px 24px;cursor:pointer;border:1px solid var(--line);color:var(--grey);
+      transition:all .4s var(--ease);background:transparent
+    }
+    .menu-tabs__nav label:hover{border-color:var(--gold);color:var(--navy)}
+    #tab-beirut:checked ~ .menu-tabs__nav label[for="tab-beirut"],
+    #tab-doha:checked ~ .menu-tabs__nav label[for="tab-doha"],
+    #tab-london:checked ~ .menu-tabs__nav label[for="tab-london"],
+    #tab-cafe:checked ~ .menu-tabs__nav label[for="tab-cafe"]{
+      background:var(--navy);color:#fff;border-color:var(--navy)
+    }
+    .menu-tabs__panel{display:none}
+    #tab-beirut:checked ~ #panel-beirut,
+    #tab-doha:checked ~ #panel-doha,
+    #tab-london:checked ~ #panel-london,
+    #tab-cafe:checked ~ #panel-cafe{display:block}
+  </style>
 </head>
 <body>
 
@@ -26,16 +51,17 @@
 
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav">
-  <a href="index.html" class="nav__logo"><img src="assets/logo-restaurant.png" alt="Restaurant"></a>
-  <div class="nav__links">
-    <a href="index.html" class="nav__link">Home</a>
-    <a href="restaurant.html" class="nav__link nav__link--active">Restaurant</a>
-    <a href="cafe.html" class="nav__link">Café</a>
-    <a href="gallery.html" class="nav__link">Gallery</a>
-    <a href="press.html" class="nav__link">Press</a>
-    <a href="contact.html" class="nav__link nav__rsvp">Reserve</a>
-  </div>
-  <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+  <a href="index.html" class="nav__logo"><img src="assets/logo-white.png" alt="Logo"></a>
+  <ul class="nav__links">
+    <li><a href="index.html" class="nav__link">Home</a></li>
+    <li><a href="restaurant.html" class="nav__link nav__link--active">Restaurant</a></li>
+    <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+    <li><a href="deli.html" class="nav__link">Deli</a></li>
+    <li><a href="locations.html" class="nav__link">Locations</a></li>
+    <li><a href="press.html" class="nav__link">Press</a></li>
+  </ul>
+  <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
+  <button class="nav__b" id="burger"><span></span><span></span></button>
 </nav>
 
 <!-- ============ MOBILE OVERLAY ============ -->
@@ -43,10 +69,11 @@
   <button class="x" id="closeMov">&times;</button>
   <a href="index.html"><span class="c">Home</span></a>
   <a href="restaurant.html"><span class="c">Restaurant</span></a>
-  <a href="cafe.html"><span class="c">Café</span></a>
-  <a href="gallery.html"><span class="c">Gallery</span></a>
+  <a href="cafe.html"><span class="c">Cafe</span></a>
+  <a href="deli.html"><span class="c">Deli</span></a>
+  <a href="locations.html"><span class="c">Locations</span></a>
   <a href="press.html"><span class="c">Press</span></a>
-  <a href="contact.html"><span class="c">Reserve</span></a>
+  <a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a>
 </div>
 
 <!-- ============ PAGE HERO ============ -->
@@ -333,23 +360,20 @@
       <div class="ft__col">
         <div class="ft__ct">Concepts</div>
         <a href="restaurant.html">Restaurant</a>
-        <a href="cafe.html">Café</a>
+        <a href="cafe.html">Cafe</a>
         <a href="deli.html">Deli</a>
-        <a href="sea.html">Seafood</a>
       </div>
       <div class="ft__col">
-        <div class="ft__ct">Company</div>
-        <a href="about.html">About</a>
+        <div class="ft__ct">Explore</div>
+        <a href="story.html">Our Story</a>
         <a href="press.html">Press</a>
-        <a href="careers.html">Careers</a>
-        <a href="franchise.html">Franchise</a>
+        <a href="locations.html">Locations</a>
       </div>
       <div class="ft__col">
-        <div class="ft__ct">Experience</div>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html">Reservations</a>
-        <a href="location.html">Locations</a>
+        <div class="ft__ct">Visit</div>
+        <a href="reservation.html">Reservations</a>
+        <a href="#">Private Dining</a>
+        <a href="#">Events</a>
       </div>
       <div class="ft__col">
         <div class="ft__ct">Connect</div>
@@ -374,34 +398,7 @@
 </div>
 
 <!-- ============ SCRIPTS ============ -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 <script src="script.js"></script>
-
-<!-- ============ MENU TABS ============ -->
-<style>
-  .menu-tabs{position:relative}
-  .menu-tabs>input[type="radio"]{display:none}
-  .menu-tabs__nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vw,52px)}
-  .menu-tabs__nav label{
-    font-family:var(--sans);font-weight:600;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;
-    padding:11px 24px;cursor:pointer;border:1px solid var(--line);color:var(--grey);
-    transition:all .4s var(--ease);background:transparent
-  }
-  .menu-tabs__nav label:hover{border-color:var(--gold);color:var(--navy)}
-  #tab-beirut:checked ~ .menu-tabs__nav label[for="tab-beirut"],
-  #tab-doha:checked ~ .menu-tabs__nav label[for="tab-doha"],
-  #tab-london:checked ~ .menu-tabs__nav label[for="tab-london"],
-  #tab-cafe:checked ~ .menu-tabs__nav label[for="tab-cafe"]{
-    background:var(--navy);color:#fff;border-color:var(--navy)
-  }
-  .menu-tabs__panel{display:none}
-  #tab-beirut:checked ~ #panel-beirut,
-  #tab-doha:checked ~ #panel-doha,
-  #tab-london:checked ~ #panel-london,
-  #tab-cafe:checked ~ #panel-cafe{display:block}
-</style>
 
 </body>
 </html>

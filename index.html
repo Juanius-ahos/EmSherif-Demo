@@ -5,117 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Em Sherif | Lebanese Heritage, Redefined</title>
   <meta name="description" content="Four distinctive culinary destinations united by a singular vision — to transform every meal into a moment of beauty.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
 </head>
 <body>
 
   <!-- Preloader -->
-  <div class="pl">
-    <div class="pl__tx">أم شريف</div>
-    <div class="pl__bar"><div class="prog"></div></div>
+  <div class="pl" id="pl">
+    <div class="pl__ar">أم شريف</div>
+    <div class="pl__ln"><div class="pl__bar"></div></div>
+    <div class="pl__w">Lebanese Heritage, Redefined</div>
   </div>
 
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
+
   <!-- Custom Cursor -->
-  <div class="crs"></div>
+  <div class="crs" id="crs">
+    <div class="crs-d"></div>
+    <div class="crs-r"></div>
+  </div>
 
   <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav" id="nav">
     <a href="index.html" class="nav__logo">
-      <img src="assets/logo-white.png" alt="Logo" class="nav__logo-img">
+      <img src="assets/logo-white.png" alt="Logo">
     </a>
     <ul class="nav__links">
-      <li><a href="restaurant.html">Restaurant</a></li>
-      <li><a href="cafe.html">Cafe</a></li>
-      <li><a href="deli.html">Deli</a></li>
-      <li><a href="locations.html">Locations</a></li>
-      <li><a href="press.html">Press</a></li>
+      <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+      <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+      <li><a href="deli.html" class="nav__link">Deli</a></li>
+      <li><a href="locations.html" class="nav__link">Locations</a></li>
+      <li><a href="press.html" class="nav__link">Press</a></li>
     </ul>
     <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
-    <button class="nav__b" aria-label="Menu">
+    <button class="nav__b" id="burger" aria-label="Menu">
       <span></span>
       <span></span>
     </button>
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mov">
-    <ul class="mov__links">
-      <li><a href="restaurant.html">Restaurant</a></li>
-      <li><a href="cafe.html">Cafe</a></li>
-      <li><a href="deli.html">Deli</a></li>
-      <li><a href="locations.html">Locations</a></li>
-      <li><a href="press.html">Press</a></li>
-      <li><a href="reservation.html" class="btn btn--g">Reserve a Table</a></li>
-    </ul>
+  <div class="mov" id="mov">
+    <button class="x" id="closeMov" aria-label="Close">&times;</button>
+    <a href="restaurant.html"><span class="c">Restaurant</span></a>
+    <a href="cafe.html"><span class="c">Cafe</span></a>
+    <a href="deli.html"><span class="c">Deli</span></a>
+    <a href="locations.html"><span class="c">Locations</span></a>
+    <a href="press.html"><span class="c">Press</span></a>
+    <a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="ph">
     <div class="ph__bg">
       <img src="assets/interior-hero.jpg" alt="" data-p="0.3">
     </div>
     <div class="ph__g"></div>
     <div class="ph__ct">
-      <p class="ph__eyebrow" data-ru>Est. 1995 · Beirut, Lebanon</p>
-      <h1 class="ph__h" data-ru>Where Heritage Meets<br><em>the Art of Dining</em></h1>
+      <span class="ph__eb" data-ru>Est. 1995 · Beirut, Lebanon</span>
+      <h1 class="ph__h" data-ru><span class="ln"><span>Where Heritage</span></span> <span class="ln"><span>Meets <em>the Art</em></em></span> <span class="ln"><span>of Dining</span></span></h1>
       <p class="ph__sub" data-ru>Four distinctive culinary destinations united by a singular vision — to transform every meal into a moment of beauty.</p>
-      <div class="ph__btns" data-ru>
+      <div data-ru style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px">
         <a href="reservation.html" class="btn btn--g">Reserve a Table</a>
         <a href="story.html" class="btn btn--o">Our Story</a>
       </div>
-      <div class="ph__meta" data-ru>
-        <div class="ph__meta-item">
-          <span class="ph__meta-n">3</span>
-          <span class="ph__meta-l">Concepts</span>
-        </div>
-        <div class="ph__meta-item">
-          <span class="ph__meta-n">15+</span>
-          <span class="ph__meta-l">Locations</span>
-        </div>
-        <div class="ph__meta-item">
-          <span class="ph__meta-n">50+</span>
-          <span class="ph__meta-l">Awards</span>
-        </div>
+      <div data-ru style="display:flex;gap:36px;margin-top:48px">
+        <div><span style="font-family:var(--disp);font-size:1.5rem;color:var(--gold-l)">3</span><br><span style="font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)">Concepts</span></div>
+        <div><span style="font-family:var(--disp);font-size:1.5rem;color:var(--gold-l)">15+</span><br><span style="font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)">Locations</span></div>
+        <div><span style="font-family:var(--disp);font-size:1.5rem;color:var(--gold-l)">50+</span><br><span style="font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)">Awards</span></div>
       </div>
     </div>
   </section>
 
   <!-- Concept Grid -->
   <section class="sec">
-    <div class="sec__in">
+    <div class="wrap">
       <div class="sh" data-ru>
         <p class="sh__eb">Our Concepts</p>
         <h2 class="sh__h">Three Worlds,<br><em>One Vision</em></h2>
       </div>
       <div class="g3">
         <a href="restaurant.html" class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/dish-1.jpg" alt="Fine Dining">
-          </div>
-          <div class="cc__ct">
+          <img src="assets/dish-1.jpg" alt="Fine Dining">
+          <div class="cc__ov">
             <p class="cc__eb">Fine Dining</p>
             <h3 class="cc__h">The Restaurant</h3>
             <p class="cc__d">Beirut's most celebrated Lebanese dining experience</p>
           </div>
         </a>
         <a href="cafe.html" class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/cf1.jpg" alt="Café & Pâtisserie">
-          </div>
-          <div class="cc__ct">
-            <p class="cc__eb">Café & Pâtisserie</p>
-            <h3 class="cc__h">The Café</h3>
+          <img src="assets/cf1.jpg" alt="Cafe & Patisserie">
+          <div class="cc__ov">
+            <p class="cc__eb">Cafe & Patisserie</p>
+            <h3 class="cc__h">The Cafe</h3>
             <p class="cc__d">European elegance meets Lebanese warmth</p>
           </div>
         </a>
         <a href="deli.html" class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/food-1.jpg" alt="Artisan Deli">
-          </div>
-          <div class="cc__ct">
+          <img src="assets/food-1.jpg" alt="Artisan Deli">
+          <div class="cc__ov">
             <p class="cc__eb">Artisan Deli</p>
             <h3 class="cc__h">The Deli</h3>
             <p class="cc__d">Curated provisions and ready-to-enjoy creations</p>
@@ -126,74 +120,73 @@
   </section>
 
   <!-- Brand Statement -->
-  <section class="ch sec--nv">
-    <div class="sec__in">
+  <section class="sec sec--nv">
+    <div class="wrap">
       <div class="ch__n" data-ru>01</div>
-      <div class="ch__eb" data-ru>
-        <img src="assets/logo-white.png" alt="Logo" class="ch__logo">
-      </div>
-      <h2 class="ch__tx h2" data-ru>Every dish is a love letter to <em>Lebanese heritage</em> — written in the language of modern cuisine.</h2>
-      <div class="ch__sg" data-ru>
-        <p class="ch__sg-n">Mireille Hayek</p>
-        <p class="ch__sg-t">Founder</p>
-      </div>
+      <div class="ch__eb" data-ru><img src="assets/logo-white.png" alt="Logo" style="height:28px;width:auto"></div>
+      <h2 class="ch__tx" data-ru style="font-family:var(--disp);font-weight:300;font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.15;max-width:22ch;margin:0 auto 20px;text-align:center">Every dish is a love letter to <em style="color:var(--gold-l)">Lebanese heritage</em> — written in the language of modern cuisine.</h2>
+      <div class="ch__sg" data-ru style="text-align:center">Mireille Hayek <span>Founder</span></div>
     </div>
   </section>
 
   <!-- Marquee -->
-  <div class="marquee" data-marquee>
-    <div class="marquee__in">
-      <span class="marquee__it">Beirut</span>
-      <span class="dot"></span>
-      <span class="marquee__it">London</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Doha</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Muscat</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Cairo</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Amman</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Riyadh</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Jeddah</span>
-      <span class="dot"></span>
+  <div class="marquee">
+    <div class="marquee__in" data-marquee>
+      <span class="marquee__it">Beirut<span class="dot"></span></span>
+      <span class="marquee__it">London<span class="dot"></span></span>
+      <span class="marquee__it">Doha<span class="dot"></span></span>
+      <span class="marquee__it">Muscat<span class="dot"></span></span>
+      <span class="marquee__it">Cairo<span class="dot"></span></span>
+      <span class="marquee__it">Amman<span class="dot"></span></span>
+      <span class="marquee__it">Riyadh<span class="dot"></span></span>
+      <span class="marquee__it">Jeddah<span class="dot"></span></span>
+      <span class="marquee__it">Beirut<span class="dot"></span></span>
+      <span class="marquee__it">London<span class="dot"></span></span>
+      <span class="marquee__it">Doha<span class="dot"></span></span>
+      <span class="marquee__it">Muscat<span class="dot"></span></span>
     </div>
   </div>
 
   <!-- Gallery -->
   <section class="sec">
-    <div class="sec__in">
+    <div class="wrap2">
       <div class="sh" data-ru>
         <p class="sh__eb">Gallery</p>
         <h2 class="sh__h">A Feast for<br><em>the Eyes</em></h2>
       </div>
-      <div class="gal" data-gs>
-        <div class="gal__sc" data-gt>
+      <div class="gal__sc" data-gs>
+        <div class="gal__tk" data-gt>
           <div class="gal__i gal__i--lg" data-f="assets/dish-2.jpg">
-            <img src="assets/dish-2.jpg" alt="Signature dish" data-ri>
+            <img src="assets/dish-2.jpg" alt="Signature dish">
+            <div class="cap"><small>Signature</small><b>Plated Perfection</b></div>
           </div>
           <div class="gal__i gal__i--md" data-f="assets/dish-3.jpg">
-            <img src="assets/dish-3.jpg" alt="Plated dish" data-ri>
+            <img src="assets/dish-3.jpg" alt="Plated dish">
+            <div class="cap"><small>Main Course</small><b>Lebanese Heritage</b></div>
           </div>
           <div class="gal__i gal__i--sm" data-f="assets/cf2.jpg">
-            <img src="assets/cf2.jpg" alt="Dessert" data-ri>
+            <img src="assets/cf2.jpg" alt="Dessert">
+            <div class="cap"><small>Patisserie</small><b>Sweet Elegance</b></div>
           </div>
           <div class="gal__i gal__i--md" data-f="assets/dish-4.jpg">
-            <img src="assets/dish-4.jpg" alt="Traditional dish" data-ri>
+            <img src="assets/dish-4.jpg" alt="Traditional dish">
+            <div class="cap"><small>Traditional</small><b>Timeless Flavors</b></div>
           </div>
           <div class="gal__i gal__i--lg" data-f="assets/food-2.jpg">
-            <img src="assets/food-2.jpg" alt="Artisan platter" data-ri>
+            <img src="assets/food-2.jpg" alt="Artisan platter">
+            <div class="cap"><small>Deli</small><b>Artisan Selection</b></div>
           </div>
           <div class="gal__i gal__i--sm" data-f="assets/cf3.jpg">
-            <img src="assets/cf3.jpg" alt="Patisserie" data-ri>
+            <img src="assets/cf3.jpg" alt="Patisserie">
+            <div class="cap"><small>Cafe</small><b>Handcrafted</b></div>
           </div>
-          <div class="gal__i gal__i--md" data-f="assets/dish-5.jpg">
-            <img src="assets/dish-5.jpg" alt="Grilled dish" data-ri>
+          <div class="gal__i gal__i--md" data-f="assets/dish-1.jpg">
+            <img src="assets/dish-1.jpg" alt="Fine dining">
+            <div class="cap"><small>Fine Dining</small><b>Art on a Plate</b></div>
           </div>
           <div class="gal__i gal__i--sm" data-f="assets/food-3.jpg">
-            <img src="assets/food-3.jpg" alt="Deli selection" data-ri>
+            <img src="assets/food-3.jpg" alt="Deli selection">
+            <div class="cap"><small>Deli</small><b>Curated Provisions</b></div>
           </div>
         </div>
       </div>
@@ -202,88 +195,63 @@
 
   <!-- Locations Preview -->
   <section class="sec sec--iv">
-    <div class="sec__in">
+    <div class="wrap">
       <div class="sh" data-ru>
         <p class="sh__eb">Locations</p>
         <h2 class="sh__h">Find Us<br><em>Near You</em></h2>
       </div>
       <div class="loc__ls">
         <a href="locations.html" class="loc__r" data-ru>
-          <div class="loc__c">
-            <h3 class="loc__city">Beirut</h3>
-            <p class="loc__concept">Restaurant · Cafe · Deli</p>
-          </div>
-          <div class="loc__info">
-            <p class="loc__phone">+961 1 333 999</p>
-            <p class="loc__hours">Daily 12:00 PM – 12:00 AM</p>
-          </div>
+          <span class="loc__i">01</span>
+          <div class="loc__c">Beirut<span class="fl">Restaurant · Cafe · Deli</span></div>
+          <div class="loc__m">+961 1 989 898</div>
         </a>
         <a href="locations.html" class="loc__r" data-ru>
-          <div class="loc__c">
-            <h3 class="loc__city">London</h3>
-            <p class="loc__concept">Restaurant · Cafe</p>
-          </div>
-          <div class="loc__info">
-            <p class="loc__phone">+44 20 7581 9999</p>
-            <p class="loc__hours">Daily 12:00 PM – 11:00 PM</p>
-          </div>
+          <span class="loc__i">02</span>
+          <div class="loc__c">London<span class="fl">Restaurant · Cafe · Deli</span></div>
+          <div class="loc__m">+44 20 7225 5544</div>
         </a>
         <a href="locations.html" class="loc__r" data-ru>
-          <div class="loc__c">
-            <h3 class="loc__city">Doha</h3>
-            <p class="loc__concept">Restaurant · Cafe</p>
-          </div>
-          <div class="loc__info">
-            <p class="loc__phone">+974 4412 9999</p>
-            <p class="loc__hours">Daily 12:00 PM – 12:00 AM</p>
-          </div>
+          <span class="loc__i">03</span>
+          <div class="loc__c">Doha<span class="fl">Restaurant · Cafe</span></div>
+          <div class="loc__m">+974 4408 0740</div>
         </a>
         <a href="locations.html" class="loc__r" data-ru>
-          <div class="loc__c">
-            <h3 class="loc__city">Muscat</h3>
-            <p class="loc__concept">Restaurant</p>
-          </div>
-          <div class="loc__info">
-            <p class="loc__phone">+968 2456 9999</p>
-            <p class="loc__hours">Daily 12:00 PM – 11:00 PM</p>
-          </div>
+          <span class="loc__i">04</span>
+          <div class="loc__c">Muscat<span class="fl">Restaurant · Cafe</span></div>
+          <div class="loc__m">+968 2458 3535</div>
         </a>
         <a href="locations.html" class="loc__r" data-ru>
-          <div class="loc__c">
-            <h3 class="loc__city">Cairo</h3>
-            <p class="loc__concept">Cafe</p>
-          </div>
-          <div class="loc__info">
-            <p class="loc__phone">+20 2 2735 9999</p>
-            <p class="loc__hours">Daily 9:00 AM – 12:00 AM</p>
-          </div>
+          <span class="loc__i">05</span>
+          <div class="loc__c">Cairo<span class="fl">Restaurant · Cafe</span></div>
+          <div class="loc__m">+20 2 2792 0000</div>
         </a>
       </div>
-      <div class="sec__cta" data-ru>
-        <a href="locations.html" class="btn btn--o">View All Locations</a>
+      <div style="text-align:center;margin-top:36px" data-ru>
+        <a href="locations.html" class="btn btn--d">View All Locations</a>
       </div>
     </div>
   </section>
 
   <!-- Stats -->
   <section class="sec sec--dk">
-    <div class="sec__in">
-      <div class="g3">
+    <div class="wrap">
+      <div class="g4">
         <div class="stat" data-ru>
-          <span class="stat__n" data-c="7">0</span>
-          <span class="stat__l">Restaurant Locations</span>
+          <div class="stat__n" data-c="7">0</div>
+          <div class="stat__l">Restaurant Locations</div>
         </div>
         <div class="stat" data-ru>
-          <span class="stat__n" data-c="15">0</span>
-          <span class="stat__l">Cafe Locations</span>
+          <div class="stat__n" data-c="15">0</div>
+          <div class="stat__l">Cafe Locations</div>
         </div>
         <div class="stat" data-ru>
-          <span class="stat__n" data-c="30">0</span>
-          <span class="stat__l">Years Heritage</span>
+          <div class="stat__n" data-c="30">0</div>
+          <div class="stat__l">Years Heritage</div>
         </div>
         <div class="stat" data-ru>
-          <span class="stat__n" data-c="9">0</span>
-          <span class="stat__l">MENA's 50 Best</span>
+          <div class="stat__n" data-c="9">0</div>
+          <div class="stat__l">MENA's 50 Best</div>
         </div>
       </div>
     </div>
@@ -291,66 +259,64 @@
 
   <!-- Reservation CTA -->
   <section class="sec sec--nv">
-    <div class="sec__in sec__in--ct">
-      <h2 class="sec__h" data-ru>Your Table Awaits</h2>
-      <p class="sec__sub" data-ru>Experience the art of Lebanese hospitality</p>
-      <a href="reservation.html" class="btn btn--g" data-ru>Reserve a Table</a>
+    <div class="wrap tac">
+      <div class="sh" data-ru>
+        <p class="sh__eb" style="color:var(--gold-l)">Reserve</p>
+        <h2 class="sh__h" style="color:#fff">Your Table Awaits</h2>
+        <p class="sh__s" style="color:rgba(255,255,255,.5)">Experience the art of Lebanese hospitality</p>
+      </div>
+      <a href="reservation.html" class="btn btn--gl" data-ru>Reserve a Table</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="ft">
-    <div class="ft__br">
-      <a href="index.html">
-        <img src="assets/logo-white.png" alt="Logo" class="ft__logo">
-      </a>
-      <p class="ft__tagline">Lebanese Heritage, Redefined</p>
-    </div>
-    <div class="ft__cols">
-      <div class="ft__col">
-        <h4 class="ft__h">Concepts</h4>
-        <ul>
-          <li><a href="restaurant.html">The Restaurant</a></li>
-          <li><a href="cafe.html">The Cafe</a></li>
-          <li><a href="deli.html">The Deli</a></li>
-        </ul>
+    <div class="wrap">
+      <div class="ft__br">
+        <a href="index.html"><img src="assets/logo-white.png" alt="Logo" style="height:44px;width:auto"></a>
+        <p class="ft__tg">Lebanese Heritage, Redefined</p>
       </div>
-      <div class="ft__col">
-        <h4 class="ft__h">Explore</h4>
-        <ul>
-          <li><a href="story.html">Our Story</a></li>
-          <li><a href="locations.html">Locations</a></li>
-          <li><a href="press.html">Press</a></li>
-        </ul>
+      <div class="ft__cols">
+        <div class="ft__col">
+          <p class="ft__ct">Concepts</p>
+          <a href="restaurant.html">The Restaurant</a>
+          <a href="cafe.html">The Cafe</a>
+          <a href="deli.html">The Deli</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Explore</p>
+          <a href="story.html">Our Story</a>
+          <a href="locations.html">Locations</a>
+          <a href="press.html">Press</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Connect</p>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Visit</p>
+          <a href="reservation.html">Reserve</a>
+          <a href="#">Private Dining</a>
+          <a href="#">Events</a>
+        </div>
       </div>
-      <div class="ft__col">
-        <h4 class="ft__h">Connect</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
+      <div class="ft__bt">
+        <p>&copy; 2025 All Rights Reserved</p>
+        <p class="pt">Lebanese Heritage, Redefined</p>
       </div>
-      <div class="ft__col">
-        <h4 class="ft__h">Visit</h4>
-        <ul>
-          <li><a href="reservation.html">Reserve</a></li>
-          <li><a href="#">Private Dining</a></li>
-          <li><a href="#">Events</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft__bt">
-      <p>&copy; 2025 All Rights Reserved</p>
     </div>
   </footer>
 
   <!-- Lightbox -->
-  <div class="lb">
-    <button class="lb__cl" aria-label="Close">&times;</button>
-    <img src="" alt="" class="lb__img">
+  <div class="lb" id="lb">
+    <button class="x" id="lbX" aria-label="Close">&times;</button>
+    <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
+    <img src="" alt="" id="lbI">
+    <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
   </div>
 
-  <script src="assets/js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -83,7 +83,9 @@
 
   .hero{position:relative;height:100svh;min-height:620px;max-height:1000px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--navy-deep)}
   .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,31,46,.5),rgba(14,31,46,.3) 40%,rgba(14,31,46,.6))}
+  .hero .poster.kb{animation:kenburns 22s ease-in-out infinite alternate;transform-origin:center}
+  @keyframes kenburns{from{transform:scale(1.03)}to{transform:scale(1.13)}}
+  .hero .scrim{position:absolute;inset:0;z-index:1;background:radial-gradient(120% 100% at 50% 30%,rgba(14,31,46,.34),rgba(14,31,46,.52) 62%,rgba(11,25,38,.78))}
   .hero-inner{position:relative;z-index:2;color:#fff;padding:0 22px;max-width:960px}
   .hero .brandmark{height:clamp(72px,11vw,120px);margin:0 auto 26px;filter:brightness(0) invert(1) drop-shadow(0 6px 30px rgba(0,0,0,.4))}
   .hero .eyebrow{color:var(--gold-soft);display:block;margin-bottom:20px}
@@ -149,11 +151,13 @@
   .sec-head-c .divider{margin-bottom:24px}
   .sec-head-c h2{font-size:clamp(2.1rem,4.6vw,3.5rem);font-weight:300;margin-bottom:.35em}
   .sec-head-c p{color:var(--muted)}
-  .hgrid{column-count:3;column-gap:16px}
-  @media(max-width:900px){.hgrid{column-count:2}}
-  @media(max-width:560px){.hgrid{column-count:1}}
-  .panel{position:relative;overflow:hidden;cursor:pointer;break-inside:avoid;margin-bottom:16px;display:block;background:var(--cream-2)}
-  .panel img{width:100%;height:auto;display:block;transition:transform 1.2s cubic-bezier(.19,1,.22,1)}
+  .hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:900px){.hgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.hgrid{grid-template-columns:1fr}}
+  .panel{position:relative;overflow:hidden;cursor:pointer;display:block;background:var(--cream-2);aspect-ratio:3/2}
+  .panel.feature{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  @media(max-width:560px){.panel.feature{grid-column:span 1;aspect-ratio:3/2}}
+  .panel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.19,1,.22,1)}
   .panel:hover img{transform:scale(1.05)}
   .panel .cap{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(180deg,transparent,rgba(14,31,46,.82));color:#fff;opacity:0;transition:.5s}
   .panel:hover .cap{opacity:1}
@@ -322,9 +326,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video autoplay muted loop playsinline poster="assets/c3.jpg">
-      <source src="assets/hero-video.mp4" type="video/mp4" />
-    </video>
+    <img class="poster kb" src="assets/c3.jpg" alt="The Em Sherif dining room" />
     <div class="scrim"></div>
     <div class="hero-inner">
       <img class="brandmark" src="assets/logo-restaurant.png" alt="Em Sherif Restaurant" />
@@ -397,7 +399,7 @@
           <h3>Royal Blue &amp; Candlelight</h3>
           <p>Dressed in the signature Em Sherif blue, warm brass and soft light, every room is designed so that hospitality is felt before a single dish is served.</p>
         </div>
-        <div class="im reveal"><img src="assets/c3.jpg" alt="Em Sherif dining hall" /></div>
+        <div class="im reveal"><img src="assets/wide-1.jpg" alt="Em Sherif dining hall" /></div>
       </div>
       <div class="show-row">
         <div class="tx reveal">
@@ -483,7 +485,7 @@
         <p>Celebrated by the guides, the press, and generations of guests.</p>
       </div>
       <div class="recog-grid">
-        <div class="rcard reveal"><img src="assets/c3.jpg" alt="Em Sherif dining hall"><div class="ov"><span class="tag">MENA&rsquo;s 50 Best Restaurants</span><h3>A Celebrated Table</h3><p>Among the region&rsquo;s most acclaimed Lebanese dining</p></div></div>
+        <div class="rcard reveal"><img src="assets/loc-doha.jpg" alt="Em Sherif dining hall"><div class="ov"><span class="tag">MENA&rsquo;s 50 Best Restaurants</span><h3>A Celebrated Table</h3><p>Among the region&rsquo;s most acclaimed Lebanese dining</p></div></div>
         <div class="rcard reveal"><img src="assets/yasmina.jpg" alt="Yasmina Hayek"><div class="ov"><span class="tag">MENA&rsquo;s 50 Best</span><h3>Best Female Chef 2025</h3><p>Yasmina Hayek</p></div></div>
         <div class="rcard reveal"><img src="assets/press-vogue.jpg" alt="Mireille Hayek"><div class="ov"><span class="tag">In the press</span><h3>A Culinary Icon</h3><p>Mireille Hayek, founder</p></div></div>
       </div>

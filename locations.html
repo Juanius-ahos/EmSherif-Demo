@@ -3,272 +3,379 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Locations — Em Sherif</title>
-  <meta name="description" content="Three distinctive concepts across the globe — find the location nearest you.">
+  <title>All Locations</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- ============ PRELOADER ============ -->
-<div class="pl" id="pl">
-  <div class="pl__ar">أم شريف</div>
-  <div class="pl__ln"><div class="pl__bar"></div></div>
-  <div class="pl__w">Locations</div>
-</div>
-
-<!-- ============ PROGRESS ============ -->
-<div class="prog" id="prog"></div>
-
-<!-- ============ CURSOR ============ -->
-<div class="crs" id="crs">
-  <div class="crs-d"></div>
-  <div class="crs-r"></div>
-</div>
-
-<!-- ============ NAV ============ -->
-<nav class="nav" id="nav">
-  <a href="index.html" class="nav__logo">
-    <img src="assets/logo-white.png" alt="" class="nav__logo-img">
-  </a>
-  <ul class="nav__links">
-    <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
-    <li><a href="cafe.html" class="nav__link">Café</a></li>
-    <li><a href="deli.html" class="nav__link">Deli</a></li>
-    <li><a href="locations.html" class="nav__link nav__link--active">Locations</a></li>
-    <li><a href="press.html" class="nav__link">Press</a></li>
-  </ul>
-  <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
-  <button class="nav__b" id="burger" aria-label="Menu">
-    <span></span>
-    <span></span>
-  </button>
-</nav>
-
-<!-- ============ MOBILE MENU ============ -->
-<div class="mov" id="mov">
-  <button class="x" id="closeMov" aria-label="Close">&times;</button>
-  <ul class="mov__links">
-    <li><a href="restaurant.html"><span class="c">Restaurant</span></a></li>
-    <li><a href="cafe.html"><span class="c">Café</span></a></li>
-    <li><a href="deli.html"><span class="c">Deli</span></a></li>
-    <li><a href="locations.html"><span class="c">Locations</span></a></li>
-    <li><a href="press.html"><span class="c">Press</span></a></li>
-    <li><a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a></li>
-  </ul>
-</div>
-
-<!-- ============ PAGE HERO ============ -->
-<section class="ph">
-  <div class="ph__bg">
-    <img src="assets/banner-restaurant.jpg" alt="" data-p="0.3">
+  <!-- preloader -->
+  <div class="pl" id="pl">
+    <div class="pl__ar">أم شريف</div>
+    <div class="pl__ln"><div class="pl__bar"></div></div>
   </div>
-  <div class="ph__g"></div>
-  <div class="ph__ct">
-    <p class="ph__eb" data-ru>Our World</p>
-    <h1 class="ph__h" data-ru>Where to Find<br><em>Us</em></h1>
-    <p class="ph__sub" data-ru>Three distinctive concepts across the globe — each a destination in its own right.</p>
+
+  <!-- progress -->
+  <div class="prog" id="prog"></div>
+
+  <!-- nav -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo"><img src="assets/logo-white.png" alt="Logo"></a>
+    <ul class="nav__links">
+      <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
+      <li><a href="cafe.html" class="nav__link">Cafe</a></li>
+      <li><a href="sea-cafe.html" class="nav__link">Sea Cafe</a></li>
+      <li><a href="deli.html" class="nav__link">Deli</a></li>
+      <li><a href="locations.html" class="nav__link on">Locations</a></li>
+    </ul>
+    <a href="reservation.html" class="nav__cta btn btn--g">Reserve</a>
+    <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- mobile -->
+  <div class="mov" id="mov">
+    <button class="mov__x" id="closeMov">&times;</button>
+    <a href="restaurant.html"><span class="t">Restaurant</span></a>
+    <a href="cafe.html"><span class="t">Cafe</span></a>
+    <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
+    <a href="deli.html"><span class="t">Deli</span></a>
+    <a href="locations.html"><span class="t">Locations</span></a>
+    <a href="reservation.html" class="btn btn--g"><span class="t">Reserve a Table</span></a>
   </div>
-</section>
 
-<!-- ============ THE RESTAURANT LOCATIONS ============ -->
-<section class="sec sec--iv">
-  <div class="sec__in">
-    <div class="sh" data-ru>
-      <p class="sh__eb">The Restaurant</p>
-      <h2 class="sh__h">Fine Dining<br><em>Across the Globe</em></h2>
-      <p class="sh__s">Seven restaurants bringing the art of Lebanese fine dining to the Middle East and Europe.</p>
+  <!-- HERO -->
+  <section class="ph" style="height:70vh;min-height:440px">
+    <img src="assets/banner-restaurant.jpg" alt="" class="bg" data-p>
+    <div class="ph__g"></div>
+    <div class="ph__ct">
+      <span class="ph__eb" data-ru>Our World</span>
+      <h1 class="ph__h" data-ru>Where to Find<br><em>Us</em></h1>
+      <p class="ph__sub" data-ru>Four distinctive concepts across the globe.</p>
     </div>
+  </section>
 
-    <div class="loc__ls">
-      <div class="loc__r" data-ru>
-        <span class="loc__i">01</span>
-        <div>
-          <span class="loc__c">Beirut <span class="fl">— Lebanon</span> <span class="tag">Flagship</span></span>
-          <span class="loc__ph">Damascus Street, Monot, Beirut, Lebanon</span>
-          <span class="loc__hr">☎ +961 70 919 119 · Monday–Sunday 12:30 PM–4:00 PM</span>
-        </div>
+  <!-- RESTAURANT LOCATIONS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sh" data-ru>
+        <p class="sh__eb">The Restaurant</p>
+        <h2 class="sh__h">Fine Dining<br><em>Across the Globe</em></h2>
       </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">02</span>
-        <div>
-          <span class="loc__c">Kuwait City <span class="fl">— Kuwait</span></span>
-          <span class="loc__ph">Em Sherif Restaurant</span>
+      <div class="locs" data-ru>
+        <div class="loc" data-ri>
+          <span class="loc__i">01</span>
+          <div class="loc__c">Beirut<span class="fl">Lebanon · Flagship · Damascus Street, Monot</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+961 70 919 119</span>
+            <span class="loc__hr">Mon–Sun 12:30 PM–4:00 PM</span>
+          </div>
         </div>
-      </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">03</span>
-        <div>
-          <span class="loc__c">Damascus <span class="fl">— Syria</span></span>
-          <span class="loc__ph">Em Sherif Restaurant</span>
+        <div class="loc" data-ri>
+          <span class="loc__i">02</span>
+          <div class="loc__c">Kuwait City<span class="fl">Kuwait · Palms Hotel, Rumaithiya</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+965 9097 7997</span>
+            <span class="loc__hr">Mon–Sun 12:30 PM–5:00 PM &amp; 8:00 PM–10:30 PM</span>
+          </div>
         </div>
-      </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">04</span>
-        <div>
-          <span class="loc__c">London <span class="fl">— United Kingdom</span></span>
-          <span class="loc__ph">Mayfair, London</span>
+        <div class="loc" data-ri>
+          <span class="loc__i">03</span>
+          <div class="loc__c">Damascus<span class="fl">Syria · Four Seasons Hotel</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+963 933 809 100</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–3:00 AM</span>
+          </div>
         </div>
-      </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">05</span>
-        <div>
-          <span class="loc__c">Monte Carlo <span class="fl">— Monaco</span></span>
-          <span class="loc__ph">Em Sherif Restaurant</span>
+        <div class="loc" data-ri>
+          <span class="loc__i">04</span>
+          <div class="loc__c">London<span class="fl">UK · Harrods, 87-135 Brompton Rd</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">020 7893 8072</span>
+            <span class="loc__hr">Mon–Sat 12:00 PM–9:00 PM</span>
+          </div>
         </div>
-      </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">06</span>
-        <div>
-          <span class="loc__c">Doha <span class="fl">— Qatar</span></span>
-          <span class="loc__ph">Em Sherif Restaurant</span>
+        <div class="loc" data-ri>
+          <span class="loc__i">05</span>
+          <div class="loc__c">Monte Carlo<span class="fl">Monaco · Casino, Boulingrins</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+377 98 06 88 75</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–3:00 AM</span>
+          </div>
         </div>
-      </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">07</span>
-        <div>
-          <span class="loc__c">Muscat <span class="fl">— Oman</span></span>
-          <span class="loc__ph">Em Sherif Restaurant</span>
+        <div class="loc" data-ri>
+          <span class="loc__i">06</span>
+          <div class="loc__c">Doha<span class="fl">Qatar · Al Maha Island</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+974 5 105 6666</span>
+            <span class="loc__hr">Mon–Sun 1:00 PM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">07</span>
+          <div class="loc__c">Muscat<span class="fl">Oman · St. Regis Al Mouj</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+968 2271 0460</span>
+            <span class="loc__hr">Mon–Sun 1:00 PM–11:30 PM</span>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- CAFE LOCATIONS -->
+  <section class="sec sec--nv">
+    <div class="wrap">
+      <div class="sh" data-ru>
+        <p class="sh__eb">The Cafe</p>
+        <h2 class="sh__h">All-Day<br><em>Lebanese Haven</em></h2>
+      </div>
+      <div class="locs" data-ru>
+        <div class="loc" data-ri>
+          <span class="loc__i">01</span>
+          <div class="loc__c">Beirut<span class="fl">Lebanon · Minet El Hosn, Downtown</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+961 78 988 989</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–1:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">02</span>
+          <div class="loc__c">Paris<span class="fl">France · Boulevard Haussmann 134</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+33 1 89 89 34 34</span>
+            <span class="loc__hr">Tue–Sat 12:00 PM–5:30 PM &amp; 7:00 PM–11:30 PM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">03</span>
+          <div class="loc__c">Kuwait City<span class="fl">Kuwait · The Avenues Mall Phase 4</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+965 9777 5180</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–10:30 PM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">04</span>
+          <div class="loc__c">Riyadh<span class="fl">Saudi Arabia · The Zone, Al Takhassousi St.</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+966 920017617</span>
+            <span class="loc__hr">Mon–Sun 8:00 AM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">05</span>
+          <div class="loc__c">Cairo<span class="fl">Egypt · White by The Waterway</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+20 1022500345</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">06</span>
+          <div class="loc__c">Cairo<span class="fl">Egypt · Park St.</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+20 1222355439</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">07</span>
+          <div class="loc__c">Dubai<span class="fl">UAE · Heritage Hotel, Downtown</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+971 4 330 4444</span>
+            <span class="loc__hr">Mon–Sun 10:00 AM–2:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">08</span>
+          <div class="loc__c">Abu Dhabi<span class="fl">UAE · Corniche Rd, Al Bateen</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+971 2 691 9999</span>
+            <span class="loc__hr">Mon–Sun 12:00 PM–1:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">09</span>
+          <div class="loc__c">Baghdad<span class="fl">Iraq · Dijlah Village</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+964 774 040 2080</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–1:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">10</span>
+          <div class="loc__c">Erbil<span class="fl">Iraq · Erbil Rotana, Gulan Street</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+964 750 030 0404</span>
+            <span class="loc__hr">Mon–Sun 5:00 PM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">11</span>
+          <div class="loc__c">Amman<span class="fl">Jordan · Rafiq Al Hariri Ave 14</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+962 06 5151717</span>
+            <span class="loc__hr">Mon–Sun 12:00 PM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">12</span>
+          <div class="loc__c">Abidjan<span class="fl">Côte d'Ivoire · Zone 4, Rue Paul Langevin</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+225 07 00 09 00 00</span>
+            <span class="loc__hr">Mon–Sun 12:00 PM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">13</span>
+          <div class="loc__c">Doha<span class="fl">Qatar · Millennium Hotel, Al Sadd</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+974 44145822</span>
+            <span class="loc__hr">Mon–Sun 9:00 AM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">14</span>
+          <div class="loc__c">Al Khobar<span class="fl">Saudi Arabia · Ajdan Rise</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+966 920017617</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">15</span>
+          <div class="loc__c">Istanbul<span class="fl">Turkey · Tersanne, Beyoğlu</span></div>
+          <div class="loc__m"></div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">16</span>
+          <div class="loc__c">Madrid<span class="fl">Spain</span></div>
+          <div class="loc__m">
+            <span class="loc__hr">Mon–Thu 13:00–16:00 &amp; 19:00–23:30, Fri–Sun 13:00–16:30 &amp; 19:00–23:30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEA CAFE LOCATIONS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sh" data-ru>
+        <p class="sh__eb">The Sea Cafe</p>
+        <h2 class="sh__h">By the <em>Shore</em></h2>
+      </div>
+      <div class="locs" data-ru>
+        <div class="loc" data-ri>
+          <span class="loc__i">01</span>
+          <div class="loc__c">Beirut<span class="fl">Lebanon · Zaitunay Bay</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+961 78 988 989</span>
+            <span class="loc__hr">Mon–Sun 11:00 AM–1:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">02</span>
+          <div class="loc__c">Manama<span class="fl">Bahrain · The Avenues Mall, Gate 3</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+973 77100777</span>
+            <span class="loc__hr">Mon–Sun 12:00 PM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">03</span>
+          <div class="loc__c">Abu Dhabi<span class="fl">UAE · Rosewood Hotel, Al Maryah Island</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+971 2 626 2895</span>
+            <span class="loc__hr">Mon–Sun 12:30 PM–12:00 AM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">04</span>
+          <div class="loc__c">Riyadh<span class="fl">Saudi Arabia · Laysen Valley</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">+966 920031130</span>
+            <span class="loc__hr">Sat–Wed 7:00 AM–12:00 AM · Thu–Fri 7:00 AM–1:00 AM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELI LOCATIONS -->
+  <section class="sec sec--nv">
+    <div class="wrap">
+      <div class="sh" data-ru>
+        <p class="sh__eb">The Deli</p>
+        <h2 class="sh__h">London &amp; <em>Beirut</em></h2>
+      </div>
+      <div class="locs" data-ru>
+        <div class="loc" data-ri>
+          <span class="loc__i">01</span>
+          <div class="loc__c">London<span class="fl">UK · Harrods Food Hall, 87-135 Brompton Rd</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">020 7893 8072</span>
+            <span class="loc__hr">Mon–Sat 10:00 AM–9:00 PM</span>
+          </div>
+        </div>
+        <div class="loc" data-ri>
+          <span class="loc__i">02</span>
+          <div class="loc__c">Beirut<span class="fl">Lebanon · Starco Building, Downtown</span></div>
+          <div class="loc__m"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ft">
+    <div class="wrap">
+      <div class="ft__top">
+        <a href="index.html"><img src="assets/logo-white.png" alt="Logo"></a>
+        <p class="ft__tag">Lebanese Heritage, Redefined</p>
+      </div>
+      <div class="ft__cols">
+        <div class="ft__col">
+          <p class="ft__ct">Concepts</p>
+          <a href="restaurant.html">Restaurant</a>
+          <a href="cafe.html">Cafe</a>
+          <a href="sea-cafe.html">Sea Cafe</a>
+          <a href="deli.html">Deli</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Explore</p>
+          <a href="locations.html">Locations</a>
+          <a href="reservation.html">Reservations</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Connect</p>
+          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank">Facebook</a>
+          <a href="https://www.linkedin.com/company/em-sherif-restaurant/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Legal</p>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="ft__bt">
+        <p>&copy; 2025 Em Sherif. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- lightbox -->
+  <div class="lb" id="lb">
+    <button class="x" id="lbX">&times;</button>
+    <button class="nb pv" id="lbP">&#8249;</button>
+    <img src="" alt="" id="lbI">
+    <button class="nb nx" id="lbN">&#8250;</button>
   </div>
-</section>
 
-<!-- ============ THE CAFE LOCATIONS ============ -->
-<section class="sec sec--nv">
-  <div class="sec__in">
-    <div class="sh" data-ru>
-      <p class="sh__eb">The Café</p>
-      <h2 class="sh__h">Everyday<br><em>Indulgence</em></h2>
-      <p class="sh__s">Fifteen all-day cafés around the world, each a neighborhood haven of Lebanese flavors and hospitality.</p>
-    </div>
-
-    <div class="loc__ls">
-      <div class="loc__r" data-ru>
-        <span class="loc__i">01</span>
-        <div>
-          <span class="loc__c">Beirut <span class="fl">— Lebanon</span></span>
-          <span class="loc__ph">Minet El Hosn, Downtown, Beirut</span>
-          <span class="loc__hr">☎ +961 78 988 989 · Open Daily 9:00 AM–1:00 AM</span>
-        </div>
-      </div>
-      <div class="loc__r" data-ru><span class="loc__i">02</span><div><span class="loc__c">Paris <span class="fl">— France</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">03</span><div><span class="loc__c">London <span class="fl">— United Kingdom</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">04</span><div><span class="loc__c">Dubai <span class="fl">— United Arab Emirates</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">05</span><div><span class="loc__c">Abu Dhabi <span class="fl">— United Arab Emirates</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">06</span><div><span class="loc__c">Doha <span class="fl">— Qatar</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">07</span><div><span class="loc__c">Kuwait City <span class="fl">— Kuwait</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">08</span><div><span class="loc__c">Riyadh <span class="fl">— Saudi Arabia</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">09</span><div><span class="loc__c">Al Khobar <span class="fl">— Saudi Arabia</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">10</span><div><span class="loc__c">Cairo <span class="fl">— Egypt</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">11</span><div><span class="loc__c">Amman <span class="fl">— Jordan</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">12</span><div><span class="loc__c">Baghdad <span class="fl">— Iraq</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">13</span><div><span class="loc__c">Erbil <span class="fl">— Iraq</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">14</span><div><span class="loc__c">Istanbul <span class="fl">— Türkiye</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-      <div class="loc__r" data-ru><span class="loc__i">15</span><div><span class="loc__c">Madrid <span class="fl">— Spain</span></span><span class="loc__ph">Em Sherif Café</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ THE DELI LOCATIONS ============ -->
-<section class="sec sec--dk">
-  <div class="sec__in">
-    <div class="sh" data-ru>
-      <p class="sh__eb">The Deli</p>
-      <h2 class="sh__h">Artisan<br><em>Provisions</em></h2>
-      <p class="sh__s">Three curated deli locations bringing restaurant-quality artisan provisions to your table.</p>
-    </div>
-
-    <div class="loc__ls">
-      <div class="loc__r" data-ru>
-        <span class="loc__i">01</span>
-        <div>
-          <span class="loc__c">London <span class="fl">— Harrods Food Hall</span></span>
-          <span class="loc__ph">87–135 Brompton Rd, Knightsbridge, London SW1X 7XL, UK</span>
-          <span class="loc__hr">☎ +44 20 7225 5500 · Mon–Sat 10:00 AM–9:00 PM, Sun 11:30 AM–6:00 PM</span>
-        </div>
-      </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">02</span>
-        <div>
-          <span class="loc__c">Beirut <span class="fl">— Downtown</span></span>
-          <span class="loc__ph">Riad El Solh, Beirut Central District</span>
-          <span class="loc__hr">☎ +961 1 989 899 · Open Daily 9:00 AM–9:00 PM</span>
-        </div>
-      </div>
-      <div class="loc__r" data-ru>
-        <span class="loc__i">03</span>
-        <div>
-          <span class="loc__c">Beirut <span class="fl">— Achrafieh</span></span>
-          <span class="loc__ph">Sassine Square, Achrafieh, Beirut</span>
-          <span class="loc__hr">☎ +961 1 200 222 · Open Daily 9:00 AM–9:00 PM</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="ft">
-  <div class="ft__br">
-    <a href="index.html">
-      <img src="assets/logo-white.png" alt="" class="ft__logo">
-    </a>
-    <p class="ft__tg">Lebanese Heritage, Redefined</p>
-  </div>
-  <div class="ft__cols">
-    <div class="ft__col">
-      <h4 class="ft__ct">Concepts</h4>
-      <ul>
-        <li><a href="restaurant.html">The Restaurant</a></li>
-        <li><a href="cafe.html">The Café</a></li>
-        <li><a href="deli.html">The Deli</a></li>
-      </ul>
-    </div>
-    <div class="ft__col">
-      <h4 class="ft__ct">Explore</h4>
-      <ul>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="locations.html">Locations</a></li>
-        <li><a href="press.html">Press</a></li>
-      </ul>
-    </div>
-    <div class="ft__col">
-      <h4 class="ft__ct">Connect</h4>
-      <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-      </ul>
-    </div>
-    <div class="ft__col">
-      <h4 class="ft__ct">Visit</h4>
-      <ul>
-        <li><a href="reservation.html">Reserve</a></li>
-        <li><a href="#">Private Dining</a></li>
-        <li><a href="#">Events</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="ft__bt">
-    <p>&copy; 2025 All Rights Reserved</p>
-  </div>
-</footer>
-
-<!-- ============ LIGHTBOX ============ -->
-<div class="lb" id="lb">
-  <button class="x" id="lbX" aria-label="Close">&times;</button>
-  <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
-  <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
-  <img src="" alt="" class="lb__img" id="lbI">
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

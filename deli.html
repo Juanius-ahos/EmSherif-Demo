@@ -3,292 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Em Sherif | The Deli — Artisan Provisions</title>
-  <meta name="description" content="Artisan provisions and ready-to-enjoy creations — bringing the Em Sherif experience to your table.">
+  <title>Em Sherif — The Deli</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Preloader -->
+  <!-- preloader -->
   <div class="pl" id="pl">
     <div class="pl__ar">أم شريف</div>
     <div class="pl__ln"><div class="pl__bar"></div></div>
-    <div class="pl__w">The Deli</div>
   </div>
 
-  <!-- Custom Cursor -->
-  <div class="crs" id="crs">
-    <div class="crs-d"></div>
-    <div class="crs-r"></div>
-  </div>
-
-  <!-- Progress -->
+  <!-- progress -->
   <div class="prog" id="prog"></div>
 
-  <!-- Navigation -->
+  <!-- nav -->
   <nav class="nav" id="nav">
-    <a href="index.html" class="nav__logo">
-      <img src="assets/logo-white.png" alt="" class="nav__logo-img">
-    </a>
+    <a href="index.html" class="nav__logo"><img src="assets/logo-white.png" alt="Logo"></a>
     <ul class="nav__links">
       <li><a href="restaurant.html" class="nav__link">Restaurant</a></li>
       <li><a href="cafe.html" class="nav__link">Cafe</a></li>
-      <li><a href="deli.html" class="nav__link nav__link--active">Deli</a></li>
+      <li><a href="sea-cafe.html" class="nav__link">Sea Cafe</a></li>
+      <li><a href="deli.html" class="nav__link on">Deli</a></li>
       <li><a href="locations.html" class="nav__link">Locations</a></li>
-      <li><a href="press.html" class="nav__link">Press</a></li>
     </ul>
-    <a href="reservation.html" class="nav__rsvp btn btn--g">Reserve</a>
-    <button class="nav__b" id="burger" aria-label="Menu">
-      <span></span>
-      <span></span>
-    </button>
+    <a href="reservation.html" class="nav__cta btn btn--g">Reserve</a>
+    <button class="nav__b" id="burger"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- Mobile Menu -->
+  <!-- mobile -->
   <div class="mov" id="mov">
-    <button class="x" id="closeMov" aria-label="Close">&times;</button>
-    <ul class="mov__links">
-      <li><a href="restaurant.html"><span class="c">Restaurant</span></a></li>
-      <li><a href="cafe.html"><span class="c">Cafe</span></a></li>
-      <li><a href="deli.html"><span class="c">Deli</span></a></li>
-      <li><a href="locations.html"><span class="c">Locations</span></a></li>
-      <li><a href="press.html"><span class="c">Press</span></a></li>
-      <li><a href="reservation.html" class="btn btn--g"><span class="c">Reserve a Table</span></a></li>
-    </ul>
+    <button class="mov__x" id="closeMov">&times;</button>
+    <a href="restaurant.html"><span class="t">Restaurant</span></a>
+    <a href="cafe.html"><span class="t">Cafe</span></a>
+    <a href="sea-cafe.html"><span class="t">Sea Cafe</span></a>
+    <a href="deli.html"><span class="t">Deli</span></a>
+    <a href="locations.html"><span class="t">Locations</span></a>
+    <a href="reservation.html" class="btn btn--g"><span class="t">Reserve a Table</span></a>
   </div>
 
-  <!-- Hero Section -->
-  <section class="ph">
-    <div class="ph__bg">
-      <img src="assets/food-1.jpg" alt="" data-p="0.3">
-    </div>
+  <!-- HERO -->
+  <section class="ph" style="height:70vh">
+    <img src="assets/food-1.jpg" alt="" class="bg" data-p>
     <div class="ph__g"></div>
     <div class="ph__ct">
-      <p class="ph__eb" data-ru>The Deli</p>
-      <h1 class="ph__h" data-ru>Curated with <em>Passion</em>,<br>Savored at Home</h1>
-      <p class="ph__sub" data-ru>Artisan provisions and ready-to-enjoy creations — bringing the experience to your table.</p>
-      <div class="ph__btns" data-ru>
-        <a href="#offerings" class="btn btn--g">Explore Offerings</a>
-        <a href="#locations" class="btn btn--o">Find a Deli</a>
-      </div>
+      <span class="ph__eb">The Deli</span>
+      <h1 class="ph__h">Ready to <em>Enjoy</em></h1>
+      <p class="ph__sub">Ready-to-eat favorites, Mouneh pantry, and specialty beverages.</p>
     </div>
   </section>
 
-  <!-- Our Story -->
+  <!-- STORY -->
   <section class="sec">
-    <div class="sec__in">
+    <div class="wrap">
       <div class="g2">
         <div class="ir ir--tall" data-ri>
-          <img src="assets/food-3.jpg" alt="Artisan deli provisions">
+          <img src="assets/food-3.jpg" alt="The Deli">
         </div>
-        <div>
-          <div class="ch__eb" data-ru>
-            <span class="nm">01</span> The Story
-          </div>
-          <div class="ch__tx" data-ru>
-            <h2>The Art of <em>Everyday Dining</em></h2>
-            <p>Em Sherif Deli is the family's newest concept: an all-day, welcoming spot in Beirut for ready-to-enjoy favorites from the Em Sherif menu, alongside Deli-exclusive dishes to go, breakfast offerings, plats du jour, sandwiches, salads, small bites and sweet treats.</p>
-            <p>It is also home to a house-made Mouneh (pantry) and a specialty beverage corner with innovative takes on traditional drinks like Matté, Arak and natural wines, served indoors and outdoors under Beirut's sunshine.</p>
+        <div class="ch">
+          <span class="ch__num">01</span>
+          <div class="ch__eb"><img src="assets/logo-deli.png" alt="Deli" style="height:22px;width:auto"></div>
+          <div class="ch__tx">
+            <h2>The Newest <em>Chapter</em></h2>
+            <p>Delivers ready-to-eat favorites from the menu plus Deli-exclusive dishes — breakfast, plats du jour, sandwiches, salads, small bites and sweet treats.</p>
+            <p>Specialty beverage corner with Matté, Arak and natural wines. House-made Mouneh (Pantry).</p>
+            <p>First Deli opened at Harrods Food Hall London January 2022, then Beirut Starco building March 2023. Indoor and outdoor haven under Beirut's sunshine.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Philosophy -->
-  <section class="sec sec--iv">
-    <div class="sec__in">
-      <div class="g2 g2--r">
-        <div>
-          <div class="ch__eb" data-ru>
-            <span class="nm">02</span> The Philosophy
-          </div>
-          <div class="ch__tx" data-ru>
-            <h2>From Our Kitchen<br>to <em>Yours</em></h2>
-            <p>Every product in our deli is either made in-house or carefully sourced from trusted artisan producers. We believe in transparency, quality, and the kind of attention to detail that transforms ingredients into experiences.</p>
-            <blockquote>"The deli is my love letter to the everyday — proof that beauty and flavor belong in every moment, not just the special ones."</blockquote>
-            <p class="ch__sg">Mireille Hayek <span>Founder</span></p>
-          </div>
-        </div>
-        <div class="g2__m ir ir--tall" data-ri>
-          <img src="assets/food-4.jpg" alt="Deli kitchen preparations">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What We Offer -->
-  <section class="sec sec--nv" id="offerings">
-    <div class="sec__in">
+  <!-- OFFERINGS -->
+  <section class="sec sec--nv">
+    <div class="wrap">
       <div class="sh" data-ru>
         <p class="sh__eb">What We Offer</p>
-        <h2 class="sh__h">Curated for<br><em>Every Occasion</em></h2>
+        <h2 class="sh__h">From Our Kitchen<br>to <em>Yours</em></h2>
       </div>
-      <div class="g3">
+      <div class="g3" style="grid-template-columns:repeat(3,1fr)">
         <div class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/food-2.jpg" alt="Ready-to-Enjoy Platters">
-          </div>
+          <img src="assets/food-1.jpg" alt="To Go">
           <div class="cc__ov">
             <p class="cc__eb">To Go</p>
-            <h3 class="cc__h">Em Sherif Favorites</h3>
-            <p class="cc__d">Ready-to-enjoy favorites from the Em Sherif menu, and Deli-exclusive dishes</p>
+            <h3 class="cc__h">Favorites</h3>
+            <p class="cc__d">Ready-to-enjoy from the menu</p>
           </div>
         </div>
         <div class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/food-5.jpg" alt="Artisan Provisions">
-          </div>
+          <img src="assets/food-2.jpg" alt="Morning">
           <div class="cc__ov">
             <p class="cc__eb">Morning</p>
             <h3 class="cc__h">Breakfast &amp; Plats du Jour</h3>
-            <p class="cc__d">Lebanese breakfast offerings and daily plats du jour from the kitchen</p>
+            <p class="cc__d">Lebanese breakfast and daily specials</p>
           </div>
         </div>
         <div class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/food-6.jpg" alt="Pastries and Desserts">
-          </div>
+          <img src="assets/food-3.jpg" alt="To Take Away">
           <div class="cc__ov">
             <p class="cc__eb">To Take Away</p>
             <h3 class="cc__h">Sandwiches &amp; Salads</h3>
-            <p class="cc__d">Freshly made sandwiches, salads, small bites and sweet treats</p>
+            <p class="cc__d">Freshly made, small bites and treats</p>
           </div>
         </div>
         <div class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/dish-2.jpg" alt="Bespoke Gifting">
-          </div>
+          <img src="assets/food-4.jpg" alt="Mouneh">
           <div class="cc__ov">
             <p class="cc__eb">Mouneh</p>
             <h3 class="cc__h">The House Pantry</h3>
-            <p class="cc__d">A house-made Lebanese Mouneh of preserves and pantry staples</p>
+            <p class="cc__d">House-made preserves and pantry staples</p>
           </div>
         </div>
         <div class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/dish-4.jpg" alt="Seasonal Collections">
-          </div>
+          <img src="assets/food-5.jpg" alt="The Corner">
           <div class="cc__ov">
             <p class="cc__eb">The Corner</p>
             <h3 class="cc__h">Specialty Beverages</h3>
-            <p class="cc__d">Innovative takes on Matté, Arak and natural wines</p>
+            <p class="cc__d">Innovative Matté, Arak and natural wines</p>
           </div>
         </div>
         <div class="cc" data-ru>
-          <div class="cc__img">
-            <img src="assets/dish-6.jpg" alt="Private Catering">
-          </div>
+          <img src="assets/food-6.jpg" alt="Sweet Treats">
           <div class="cc__ov">
-            <p class="cc__eb">Small Bites</p>
-            <h3 class="cc__h">Sweet Treats</h3>
-            <p class="cc__d">Lebanese sweets and small bites, freshly made to enjoy on the go</p>
+            <p class="cc__eb">Sweet Treats</p>
+            <h3 class="cc__h">Lebanese Sweets</h3>
+            <p class="cc__d">Freshly made to enjoy on the go</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Locations -->
-  <section class="sec" id="locations">
-    <div class="sec__in">
+  <!-- LOCATIONS -->
+  <section class="sec">
+    <div class="wrap">
       <div class="sh" data-ru>
-        <p class="sh__eb">Locations</p>
-        <h2 class="sh__h">Find Us<br><em>Near You</em></h2>
+        <p class="sh__eb">Find a Deli</p>
+        <h2 class="sh__h">London &amp; <em>Beirut</em></h2>
       </div>
-      <div class="loc__ls">
-        <div class="loc__r" data-ru>
-          <div class="loc__i">01</div>
-          <div class="loc__c">
-            Beirut<span class="fl">Lebanon</span>
-          </div>
+      <div class="locs" data-ru>
+        <a href="locations.html" class="loc">
+          <span class="loc__i">01</span>
+          <div class="loc__c">London<span class="fl">United Kingdom</span></div>
           <div class="loc__m">
-            The all-day Em Sherif Deli, indoor and outdoor
-            <span class="loc__hr">A quaint, bustling haven in Beirut</span>
+            <span class="loc__ph">020 7893 8072</span>
+            <span class="loc__hr">Harrods Food Hall, 87-135 Brompton Rd</span>
+            <span class="loc__hr">Mon–Sat 10:00 AM–9:00 PM</span>
           </div>
-        </div>
+        </a>
+        <a href="locations.html" class="loc">
+          <span class="loc__i">02</span>
+          <div class="loc__c">Beirut<span class="fl">Lebanon</span></div>
+          <div class="loc__m">
+            <span class="loc__ph">Starco Building, Downtown</span>
+            <span class="loc__hr">The all-day Deli, indoor and outdoor</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Marquee -->
-  <div class="marquee" data-marquee>
-    <div class="marquee__in">
-      <span class="marquee__it">Artisan Provisions</span>
-      <span class="dot"></span>
-      <span class="marquee__it">House-Made Preserves</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Signature Mezze</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Handcrafted Desserts</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Bespoke Gifting</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Seasonal Collections</span>
-      <span class="dot"></span>
-      <span class="marquee__it">Private Catering</span>
-      <span class="dot"></span>
-    </div>
-  </div>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="ft">
-    <div class="ft__br">
-      <a href="index.html">
-        <img src="assets/logo-white.png" alt="" class="ft__logo">
-      </a>
-      <p class="ft__tg">Lebanese Heritage, Redefined</p>
-    </div>
-    <div class="ft__cols">
-      <div class="ft__col">
-        <h4 class="ft__ct">Concepts</h4>
-        <ul>
-          <li><a href="restaurant.html">The Restaurant</a></li>
-          <li><a href="cafe.html">The Cafe</a></li>
-          <li><a href="deli.html">The Deli</a></li>
-        </ul>
+    <div class="wrap">
+      <div class="ft__top">
+        <a href="index.html"><img src="assets/logo-white.png" alt="Logo"></a>
+        <p class="ft__tag">Lebanese Heritage, Redefined</p>
       </div>
-      <div class="ft__col">
-        <h4 class="ft__ct">Explore</h4>
-        <ul>
-          <li><a href="story.html">Our Story</a></li>
-          <li><a href="locations.html">Locations</a></li>
-          <li><a href="press.html">Press</a></li>
-        </ul>
+      <div class="ft__cols">
+        <div class="ft__col">
+          <p class="ft__ct">Concepts</p>
+          <a href="restaurant.html">Restaurant</a>
+          <a href="cafe.html">Cafe</a>
+          <a href="sea-cafe.html">Sea Cafe</a>
+          <a href="deli.html">Deli</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Explore</p>
+          <a href="locations.html">Locations</a>
+          <a href="reservation.html">Reservations</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Connect</p>
+          <a href="https://www.instagram.com/emsherifrestaurant/" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/Emsheriflebanon" target="_blank">Facebook</a>
+          <a href="https://www.linkedin.com/company/em-sherif-restaurant/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="ft__col">
+          <p class="ft__ct">Legal</p>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+        </div>
       </div>
-      <div class="ft__col">
-        <h4 class="ft__ct">Connect</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
+      <div class="ft__bt">
+        <p>&copy; 2025 Em Sherif. All Rights Reserved.</p>
       </div>
-      <div class="ft__col">
-        <h4 class="ft__ct">Visit</h4>
-        <ul>
-          <li><a href="reservation.html">Reserve</a></li>
-          <li><a href="#">Private Dining</a></li>
-          <li><a href="#">Events</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft__bt">
-      <p>&copy; 2025 All Rights Reserved</p>
     </div>
   </footer>
 
-  <!-- Lightbox -->
+  <!-- lightbox -->
   <div class="lb" id="lb">
-    <button class="x" id="lbX" aria-label="Close">&times;</button>
-    <button class="nb pv" id="lbP" aria-label="Previous">&#8249;</button>
-    <button class="nb nx" id="lbN" aria-label="Next">&#8250;</button>
-    <img src="" alt="" class="lb__img" id="lbI">
+    <button class="x" id="lbX">&times;</button>
+    <button class="nb pv" id="lbP">&#8249;</button>
+    <img src="" alt="" id="lbI">
+    <button class="nb nx" id="lbN">&#8250;</button>
   </div>
 
+  <!-- scripts at bottom, NO defer, in this exact order -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>

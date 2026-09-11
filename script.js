@@ -235,9 +235,9 @@
       scrollTrigger:{ trigger:h, start:"top bottom", end:"bottom top", scrub:true } });
   });
 
-  /* ---- Concept card images parallax on scroll ---- */
+  /* ---- Concept card images: parallax + zoom ---- */
   gsap.utils.toArray(".card img").forEach(function(img){
-    gsap.fromTo(img, { yPercent:-6 }, { yPercent:6, ease:"none",
+    gsap.fromTo(img, { yPercent:-6, scale:1.03 }, { yPercent:6, scale:1.14, ease:"none",
       scrollTrigger:{ trigger:img.closest(".card"), start:"top bottom", end:"bottom top", scrub:true } });
   });
 
@@ -258,13 +258,19 @@
     gsap.fromTo(el, { clipPath:"inset(0 0 100% 0)" }, { clipPath:"inset(0 0 0% 0)",
       duration:1.1, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 85%" } });
     var img = el.querySelector("img");
-    if(img) gsap.fromTo(img, { scale:1.12 }, { scale:1, duration:1.4, ease:"power3.out",
+    if(img && !img.hasAttribute("data-p")) gsap.fromTo(img, { scale:1.12 }, { scale:1, duration:1.4, ease:"power3.out",
       scrollTrigger:{ trigger:el, start:"top 85%" } });
   });
 
-  /* ---- Parallax ---- */
+  /* ---- Subtle 3D tilt-up reveal on full-bleed media ---- */
+  gsap.utils.toArray(".edi__media,.fullmedia").forEach(function(el){
+    gsap.from(el, { rotateX:6, transformPerspective:1100, transformOrigin:"center bottom",
+      duration:1.2, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 88%" } });
+  });
+
+  /* ---- Parallax + continuous scroll-zoom (living images) ---- */
   gsap.utils.toArray("[data-p]").forEach(function(el){
-    gsap.fromTo(el, { yPercent:-6 }, { yPercent:6, ease:"none",
+    gsap.fromTo(el, { yPercent:-6, scale:1.05 }, { yPercent:6, scale:1.16, ease:"none",
       scrollTrigger:{ trigger:el.parentElement || el, start:"top bottom", end:"bottom top", scrub:true } });
   });
 
@@ -286,9 +292,12 @@
       onUpdate:function(){ n.textContent = Math.round(obj.v).toLocaleString(); } });
   });
 
-  /* ---- Marquee loop ---- */
+  /* ---- Marquee loop (duplicate content for a seamless, gapless loop) ---- */
   var mq = document.querySelector("[data-mq]");
-  if(mq) gsap.to(mq, { x:-(mq.scrollWidth / 2), ease:"none", duration:22, repeat:-1 });
+  if(mq){
+    mq.innerHTML += mq.innerHTML;
+    gsap.to(mq, { xPercent:-50, ease:"none", duration:30, repeat:-1 });
+  }
 
   /* ---- Section header stagger ---- */
   gsap.utils.toArray(".sh").forEach(function(sh){
